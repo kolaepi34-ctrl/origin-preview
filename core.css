@@ -5524,3 +5524,10 @@ body.home .hero form.quote textarea{
   color:#FFFFFF !important; border-radius:9px !important; min-height:76px !important;
 }
 body.home .hero form.quote textarea::placeholder{ color:#8DA2C2 !important; }
+
+/* Абзац под заголовком — крупнее */
+body.home .hero .pitch .lead{
+  font-size:19px !important;
+  line-height:1.65 !important;
+  max-width:48ch !important;
+}
