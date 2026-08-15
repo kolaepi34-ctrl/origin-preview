@@ -4415,3 +4415,27 @@ body.home .topnote a[href^="tel:"],
 body.home .topbar .om-hl{ color:#E86A0C !important; }
 body.home .est__box,
 body.home .q30 .q30__in form.q30__form{ border-color:rgba(255,255,255,.45) !important; }
+
+/* Все заголовки блоков — один размер, как «Four steps, no surprises» (56 px).
+   Выбивались: блок доверия 46, оценка 49, карта 44, финал 54, гео 58. */
+body.home h2,
+body.home .group-label,
+body.home .trustb h2,
+body.home .est h2,
+body.home .final h2,
+body.home .svcarea h2,
+body.home .areas h2,
+body.home .reviews h2,
+body.home .alsoneed h2,
+body.home #services .sec-head h2,
+body.home .seo-content .prose h2{
+  font-size:clamp(32px,4.6vw,56px) !important;
+  font-weight:900 !important;
+  line-height:1.05 !important;
+  letter-spacing:-.025em !important;
+}
+/* Внутренние подзаголовки SEO-текста оставляем мельче основных */
+body.home .seo-content .prose h3{
+  font-size:clamp(22px,2.4vw,30px) !important;
+  letter-spacing:-.015em !important;
+}
