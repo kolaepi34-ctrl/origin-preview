@@ -4005,3 +4005,12 @@ body.home #services{ padding-bottom:18px !important; }
 
 /* Заголовок «Get a free moving estimate» — на 10% меньше */
 body.home .est h2{ font-size:clamp(29px,4vw,49px) !important; }
+
+/* Затемнение над свёрнутым SEO-текстом осталось тёмно-синим от прежнего фона
+   и ложилось грязным пятном на светлый блок. Красим под новый фон. */
+body.home .seo-content .seo-body::after{
+  background:linear-gradient(180deg, rgba(241,245,251,0) 0%, rgba(241,245,251,.92) 70%, #F1F5FB 100%) !important;
+  height:88px !important;
+}
+body.home .seo-content.is-open .seo-body::after{ display:none !important; }
+body.home .seo-content{ padding-bottom:24px !important; }
