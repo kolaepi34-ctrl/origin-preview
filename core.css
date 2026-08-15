@@ -4926,3 +4926,39 @@ body.home .hero::after{
     rgba(12,30,60,.30) 72%,
     rgba(12,30,60,.18) 100%) !important;
 }
+
+/* ══════════════════════════════════════════════════════════════════════
+   ПЕРВЫЙ ЭКРАН — СВЕТЛЫЙ ФОН БЕЗ ЗАТЕМНЕНИЯ
+   Форма вернулась в фирменный синий, поэтому тонировать под неё ещё и
+   фото не нужно: снимок показываем в естественной яркости, слева лёгкая
+   белая дымка под тёмный текст. Так синяя форма читается как объект
+   на светлом кадре, а не как пятно на тёмном.
+   ══════════════════════════════════════════════════════════════════════ */
+body.home .hero::before{
+  filter:saturate(1.04) brightness(1.0) contrast(1.0) !important;
+}
+body.home .hero::after{
+  background:linear-gradient(90deg,
+    rgba(255,255,255,.94) 0%,
+    rgba(255,255,255,.86) 26%,
+    rgba(255,255,255,.55) 44%,
+    rgba(255,255,255,.18) 60%,
+    rgba(255,255,255,0)   74%) !important;
+}
+body.home .hero h1{ color:#0C1E3C !important; text-shadow:none !important; }
+body.home .hero h1 .accent{ color:#E86A0C !important; }
+body.home .hero .pitch .eyebrow{ color:#E86A0C !important; }
+body.home .hero .pitch .lead{ color:#39506F !important; text-shadow:none !important; }
+body.home .hero .badges .badge,
+body.home .hero .badges .badge *{ color:#0C1E3C !important; }
+body.home .hero .badges .stars{ color:#E86A0C !important; }
+body.home .hero .pitch a:not([href^="tel:"]){
+  background:#FFFFFF !important; border:2px solid #0C1E3C !important; color:#0C1E3C !important;
+}
+body.home .hero .pitch a:not([href^="tel:"]):hover{ background:#0C1E3C !important; color:#FFFFFF !important; }
+
+/* Секция под формой — светлая, без затемнения */
+body.home .stats{
+  background:#F4F7FC !important;
+  background-image:none !important;
+}
