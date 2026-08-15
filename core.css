@@ -5881,3 +5881,17 @@ body.home .final .btn-white{
   border-radius:10px !important; text-transform:none !important;
 }
 body.home .final p{ font-size:17px !important; }
+
+/* Последняя пара мелочей */
+/* «Learn more» — на светлом блоке читаемый синий, в тёмной оранжевый */
+body.home a.learn,
+body.home .card a[href]:not(.callus){ color:#0C1E3C !important; }
+:root[data-theme="dark"] body.home a.learn,
+:root[data-theme="dark"] body.home .card a[href]:not(.callus){ color:#FFA24D !important; }
+/* Кнопки финального блока строго на одной линии */
+body.home .final .btns,
+body.home .final .actions,
+body.home .final .wrap > div:has(> a){ align-items:center !important; }
+body.home .final a.btn,
+body.home .final .btn-lg,
+body.home .final .btn-white{ align-self:center !important; margin:0 !important; }
