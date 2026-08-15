@@ -5179,3 +5179,12 @@ body.home .brand .logo b{ color:#E86A0C !important; }
 body.home .hero form.quote .sub{ text-align:center !important; }
 body.home .hero form.quote h3{ text-align:center !important; }
 body.home .hero form.quote .q-eyebrow{ text-align:center !important; }
+
+/* Блок доверия: кнопки под фото убраны — призыв к звонку уже стоит
+   выше в полосе фактов и ниже в перечне услуг. */
+body.home .trustb .trustb__actions{ display:none !important; }
+body.home .trustb .trustb__photo{
+  grid-template-rows:1fr !important;
+  gap:0 !important;
+  height:calc(100% - 33px) !important;
+}
