@@ -4696,3 +4696,233 @@ body.home #services .cards .card .callus{
   border-radius:999px !important;
 }
 body.home #services .cards .card .callus:hover{ background:#0C1E3C !important; color:#FFFFFF !important; }
+
+/* ══════════════════════════════════════════════════════════════════════
+   «Not sure what you need?» — собран заново.
+   Причина всех прошлых правок вхолостую: у карточки три слоя — белый фон,
+   фото в ::before и тёмная плёнка в ::after. Мои правки красили фон, а
+   поверх него всё равно лежали фото и плёнка. Слои убираем совсем:
+   ровная синяя карточка, белый текст, оранжевая кнопка.
+   ══════════════════════════════════════════════════════════════════════ */
+body.home #services .cards .card.dark{
+  background:#0C1E3C !important;
+  background-image:none !important;
+  border:1px solid rgba(255,255,255,.16) !important;
+  box-shadow:0 14px 34px rgba(12,30,60,.26) !important;
+  overflow:hidden !important;
+}
+body.home #services .cards .card.dark::before,
+body.home #services .cards .card.dark::after{
+  content:none !important;
+  display:none !important;
+  background:none !important;
+}
+body.home #services .cards .card.dark > *{ position:relative !important; z-index:1 !important; }
+body.home #services .cards .card.dark h3{ color:#FFFFFF !important; }
+body.home #services .cards .card.dark p{ color:#C7D6EC !important; }
+body.home #services .cards .card.dark .ic{
+  background:rgba(255,255,255,.12) !important; border-radius:10px !important;
+}
+body.home #services .cards .card.dark .ic svg{ color:#E86A0C !important; stroke:#E86A0C !important; }
+body.home #services .cards .card.dark .callus{
+  background:#E86A0C !important; border:1.5px solid #E86A0C !important;
+  color:#FFFFFF !important; font-weight:800 !important;
+}
+body.home #services .cards .card.dark .callus:hover{
+  background:#C25508 !important; border-color:#C25508 !important; color:#FFFFFF !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   ФОРМА ПЕРВОГО ЭКРАНА — фирменная шапка + светлое тело
+   Белая панель целиком читалась как чужой элемент. Даём ей ту же
+   структуру, что у всего сайта: тёмно-синяя шапка с заголовком,
+   светлое тело с полями, красная кнопка отправки.
+   ══════════════════════════════════════════════════════════════════════ */
+body.home .hero form.quote{
+  padding:0 !important;
+  overflow:hidden !important;
+  border:0 !important;
+  border-radius:16px !important;
+  box-shadow:0 30px 70px rgba(6,16,34,.5) !important;
+  background:#FFFFFF !important;
+}
+/* Шапка формы */
+body.home .hero form.quote .q-eyebrow,
+body.home .hero form.quote h3,
+body.home .hero form.quote .sub{
+  background:#0C1E3C !important;
+  margin:0 !important;
+  padding-inline:26px !important;
+  display:block !important;
+  text-align:left !important;
+}
+body.home .hero form.quote .q-eyebrow{
+  padding-top:22px !important; padding-bottom:6px !important;
+  color:#E86A0C !important; font-size:11.5px !important;
+  letter-spacing:.2em !important; text-transform:uppercase !important; font-weight:800 !important;
+}
+body.home .hero form.quote h3{
+  color:#FFFFFF !important;
+  font-size:clamp(24px,2.1vw,31px) !important;
+  font-weight:900 !important; letter-spacing:-.02em !important;
+  padding-bottom:4px !important;
+}
+body.home .hero form.quote .sub{
+  color:#C7D6EC !important; font-size:14px !important;
+  padding-bottom:20px !important;
+}
+/* Тело формы */
+body.home .hero form.quote .field,
+body.home .hero form.quote .row2{ margin-inline:26px !important; }
+body.home .hero form.quote .field:first-of-type{ margin-top:22px !important; }
+body.home .hero form.quote label{
+  color:#5A6B85 !important; font-size:12px !important; font-weight:700 !important;
+  letter-spacing:.04em !important; text-transform:uppercase !important;
+}
+body.home .hero form.quote .req{ color:#E86A0C !important; }
+body.home .hero form.quote input,
+body.home .hero form.quote select{
+  background:#FFFFFF !important;
+  border:1.5px solid #D9E2F0 !important;
+  border-radius:10px !important;
+  height:48px !important;
+  font-size:15px !important;
+}
+body.home .hero form.quote input:hover,
+body.home .hero form.quote select:hover{ border-color:#B9C9E0 !important; }
+/* Ряд кнопок */
+body.home .hero form.quote .btnrow,
+body.home .hero form.quote > div:last-of-type:not(.field):not(.row2){
+  margin:16px 26px 0 !important;
+}
+body.home .hero form.quote button[type="submit"]{
+  background:#D62828 !important; border:0 !important; color:#FFFFFF !important;
+  height:52px !important; border-radius:10px !important;
+  font-size:16px !important; font-weight:800 !important; letter-spacing:.01em !important;
+}
+body.home .hero form.quote button[type="submit"]:hover{ background:#B01F1F !important; }
+body.home .hero form.quote a{
+  height:52px !important; border-radius:10px !important;
+  border:1.5px solid #D9E2F0 !important; color:#0C1E3C !important; background:#FFFFFF !important;
+  font-weight:700 !important;
+}
+body.home .hero form.quote a:hover{ border-color:#0C1E3C !important; }
+/* Подпись под кнопками */
+body.home .hero form.quote .fineprint,
+body.home .hero form.quote p:last-of-type{
+  margin:14px 26px 22px !important;
+  color:#8195B2 !important; font-size:12px !important; line-height:1.5 !important;
+  text-align:left !important; background:transparent !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   ФОРМА — ФИНАЛЬНАЯ СБОРКА
+   Что было видно на экране: подписи бледно-серые и почти нечитаемые,
+   в парах «Phone/Email» и «Move date/Service» поля стояли на разной
+   высоте, форма не помещалась в первый экран и обрезалась.
+   ══════════════════════════════════════════════════════════════════════ */
+/* Шапка формы — один сплошной блок, без ступенек */
+body.home .hero form.quote .q-eyebrow{ padding:20px 24px 4px !important; }
+body.home .hero form.quote h3{ padding:0 24px 2px !important; }
+body.home .hero form.quote .sub{ padding:0 24px 18px !important; }
+
+/* Тело: единый ритм и выравнивание пар по верхнему краю */
+body.home .hero form.quote .field,
+body.home .hero form.quote .row2{ margin:0 24px 12px !important; }
+body.home .hero form.quote .field:first-of-type{ margin-top:20px !important; }
+body.home .hero form.quote .row2{
+  display:grid !important;
+  grid-template-columns:1fr 1fr !important;
+  gap:12px 14px !important;
+  align-items:start !important;
+}
+body.home .hero form.quote .row2 > .field{ margin:0 !important; }
+body.home .hero form.quote .field{
+  display:flex !important; flex-direction:column !important; gap:6px !important;
+}
+/* Подписи — тёмные и читаемые */
+body.home .hero form.quote label{
+  color:#0C1E3C !important;
+  font-size:12px !important; font-weight:800 !important;
+  letter-spacing:.06em !important; text-transform:uppercase !important;
+  margin:0 !important; line-height:1.2 !important; min-height:15px !important;
+}
+body.home .hero form.quote input,
+body.home .hero form.quote select{
+  height:44px !important; margin:0 !important;
+  border:1.5px solid #D2DDEC !important; border-radius:9px !important;
+  font-size:15px !important; color:#0C1E3C !important; background:#FFFFFF !important;
+}
+body.home .hero form.quote input::placeholder{ color:#9AAAC4 !important; }
+
+/* Кнопки и мелкий текст — компактнее, чтобы форма влезала в экран */
+body.home .hero form.quote button[type="submit"],
+body.home .hero form.quote a{ height:48px !important; }
+body.home .hero form.quote .fineprint,
+body.home .hero form.quote p:last-of-type{ margin:12px 24px 18px !important; font-size:11.5px !important; }
+
+/* ══════════════════════════════════════════════════════════════════════
+   ФОРМА — ВОЗВРАТ К ФИРМЕННОМУ СИНЕМУ
+   Белая панель выбивалась из палитры. Форма снова тёмно-синяя, как весь
+   сайт, но отделена от фото светлым контуром и глубокой тенью — именно
+   отсутствие этой границы и делало её «слипшейся» с фоном.
+   ══════════════════════════════════════════════════════════════════════ */
+body.home .hero form.quote{
+  background:#0C1E3C !important;
+  border:1px solid rgba(255,255,255,.18) !important;
+  border-radius:16px !important;
+  box-shadow:0 34px 80px rgba(3,10,24,.62) !important;
+  overflow:hidden !important;
+}
+/* Шапка — чуть светлее тела, чтобы был перепад */
+body.home .hero form.quote .q-eyebrow,
+body.home .hero form.quote h3,
+body.home .hero form.quote .sub{
+  background:#122744 !important;
+  border-bottom:1px solid rgba(255,255,255,.10) !important;
+}
+body.home .hero form.quote .q-eyebrow{ border-bottom:0 !important; color:#E86A0C !important; }
+body.home .hero form.quote h3{ border-bottom:0 !important; color:#FFFFFF !important; }
+body.home .hero form.quote .sub{ color:#AFC1DC !important; }
+
+/* Поля на тёмном */
+body.home .hero form.quote label{ color:#AFC1DC !important; }
+body.home .hero form.quote .req{ color:#E86A0C !important; }
+body.home .hero form.quote input,
+body.home .hero form.quote select{
+  background:rgba(255,255,255,.07) !important;
+  border:1.5px solid rgba(255,255,255,.20) !important;
+  color:#FFFFFF !important;
+}
+body.home .hero form.quote input::placeholder{ color:#8DA2C2 !important; }
+body.home .hero form.quote input:focus,
+body.home .hero form.quote select:focus{
+  border-color:#E86A0C !important;
+  background:rgba(255,255,255,.10) !important;
+  box-shadow:0 0 0 3px rgba(232,106,12,.22) !important;
+}
+body.home .hero form.quote select option{ background:#0C1E3C !important; color:#FFFFFF !important; }
+
+/* Кнопки */
+body.home .hero form.quote button[type="submit"]{
+  background:#D62828 !important; color:#FFFFFF !important; border:0 !important;
+}
+body.home .hero form.quote button[type="submit"]:hover{ background:#B01F1F !important; }
+body.home .hero form.quote a{
+  background:transparent !important;
+  border:1.5px solid rgba(255,255,255,.35) !important;
+  color:#FFFFFF !important;
+}
+body.home .hero form.quote a:hover{ border-color:#FFFFFF !important; background:rgba(255,255,255,.08) !important; }
+body.home .hero form.quote .fineprint,
+body.home .hero form.quote p:last-of-type{ color:#8DA2C2 !important; }
+
+/* Справа вуаль легче — фото видно вокруг формы, и она читается как объект */
+body.home .hero::after{
+  background:linear-gradient(90deg,
+    rgba(9,22,45,.95) 0%,
+    rgba(9,22,45,.88) 30%,
+    rgba(10,25,50,.62) 52%,
+    rgba(12,30,60,.30) 72%,
+    rgba(12,30,60,.18) 100%) !important;
+}
