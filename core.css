@@ -3126,3 +3126,14 @@ body.home .topnote__in a[href^="tel:"]{ white-space:nowrap !important; text-deco
   body.home .topnote__in{ flex-wrap:wrap !important; }
   body.home .topnote__in p{ white-space:normal !important; text-align:center !important; }
 }
+
+/* Телефон в белой полосе: та же базовая линия, что у текста,
+   и без белой подчёркивающей рамки — она осталась от оранжевой версии */
+body.home .topnote__in{ align-items:baseline !important; }
+body.home .topnote__in a[href^="tel:"]{
+  display:inline !important;
+  font-size:15px !important;
+  padding:0 !important;
+  border:0 !important;
+  line-height:inherit !important;
+}
