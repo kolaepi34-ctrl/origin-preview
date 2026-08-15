@@ -5117,3 +5117,12 @@ body.home .hero .pitch{ padding-top:6px !important; }
 body.home .hero .pitch .lead{ display:none !important; }
 body.home .hero .pitch{ padding-top:10px !important; }
 body.home .hero .pitch h1{ margin-bottom:26px !important; }
+
+/* В главном блоке остаётся только надзаголовок и заголовок.
+   Кнопка звонка убрана — телефон и так в шапке, в белой полосе и в форме. */
+body.home .hero .pitch a[href^="tel:"],
+body.home .hero .pitch .cta,
+body.home .hero .pitch .btns,
+body.home .hero .pitch > div:has(> a[href^="tel:"]){ display:none !important; }
+body.home .hero .pitch h1{ margin-bottom:0 !important; }
+body.home .hero .pitch{ align-self:center !important; }
