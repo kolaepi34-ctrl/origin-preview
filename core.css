@@ -2560,3 +2560,17 @@ body .gallery .gshot .cap b{ color:#E86A0C !important; font-weight:800 !importan
 body .gallery{ padding-top:22px !important; padding-bottom:22px !important; }
 body .gallery .head{ margin-bottom:14px !important; }
 body .gallery h2::after{ margin:10px auto 0 !important; }
+
+/* ── Первый экран: светлое фото, бригада видна между текстом и формой ── */
+body .hero::before{
+  background-position:64% center !important;
+  filter:saturate(1.06) brightness(1.02) !important;
+}
+body .hero::after{
+  background:linear-gradient(90deg,
+    rgba(255,255,255,.96) 0%,
+    rgba(255,255,255,.90) 26%,
+    rgba(255,255,255,.55) 44%,
+    rgba(255,255,255,.10) 60%,
+    rgba(255,255,255,0)   72%) !important;
+}
