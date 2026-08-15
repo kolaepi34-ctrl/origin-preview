@@ -4014,3 +4014,10 @@ body.home .seo-content .seo-body::after{
 }
 body.home .seo-content.is-open .seo-body::after{ display:none !important; }
 body.home .seo-content{ padding-bottom:24px !important; }
+
+/* SEO-блок: затемнение поверх текста убираем совсем — оно перекрывало
+   и текст, и кнопку «Read more». */
+body.home .seo-content .seo-body::after{ display:none !important; content:none !important; }
+
+/* В подвале было две горизонтальных линии подряд — оставляем одну */
+body.home footer.site .cols{ border-bottom:0 !important; }
