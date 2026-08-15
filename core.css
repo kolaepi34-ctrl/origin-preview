@@ -3726,3 +3726,268 @@ body.home .reviews .rev .stars{ color:#FFB877 !important; font-size:19px !import
 body.home .reviews .rev-title{ font-size:19px !important; margin:6px 0 8px !important; }
 body.home .reviews .rev p{ font-size:15px !important; line-height:1.65 !important; }
 body.home .reviews .rev b{ display:block; margin-top:12px; color:#C7D6EC !important; font-size:14px !important; }
+
+/* Отзывы настоящие — служебная пометка Sample больше не нужна */
+body.home .reviews .rev-badge{ display:none !important; }
+body.home .reviews .rev{ border-style:solid !important; }
+body.home .reviews .rev p{ font-style:normal !important; }
+
+/* SEO-текст «Movers in Denver, CO» — по ширине колонки */
+body.home .seo-content .prose p,
+body.home .seo-content .prose li{
+  text-align:justify !important;
+  text-justify:inter-word !important;
+  hyphens:auto !important;
+}
+
+/* ══ Карточки отзывов ══════════════════════════════════════════════════ */
+body.home .reviews .rev{
+  display:flex !important;
+  flex-direction:column !important;
+  gap:0 !important;
+  padding:26px 24px 22px !important;
+  background:linear-gradient(160deg,#16305A 0%,#0F2648 100%) !important;
+  border:1px solid rgba(255,255,255,.14) !important;
+  border-radius:16px !important;
+  box-shadow:0 18px 40px rgba(0,0,0,.38) !important;
+  position:relative !important;
+}
+/* Кавычка-водяной знак */
+body.home .reviews .rev::before{
+  content:'\201C';
+  position:absolute; top:6px; right:18px;
+  font-family:Georgia, serif; font-size:76px; line-height:1;
+  color:rgba(232,106,12,.22);
+}
+body.home .reviews .rev .stars{
+  color:#FFB877 !important; font-size:18px !important; letter-spacing:.12em !important;
+  margin:0 0 10px !important;
+}
+body.home .reviews .rev .rev-kicker{
+  display:inline-block !important;
+  align-self:flex-start !important;
+  background:rgba(232,106,12,.16) !important;
+  border:1px solid rgba(232,106,12,.42) !important;
+  color:#FFB877 !important;
+  font-size:11px !important; font-weight:800 !important;
+  letter-spacing:.12em !important; text-transform:uppercase !important;
+  padding:5px 11px !important; border-radius:999px !important;
+  margin:0 0 12px !important;
+}
+body.home .reviews .rev p{
+  color:#E6EEFA !important;
+  font-size:15px !important; line-height:1.7 !important;
+  margin:0 0 16px !important;
+  flex:1 1 auto !important;
+  text-align:left !important;
+}
+body.home .reviews .rev b{
+  display:block !important;
+  margin:0 !important;
+  padding-top:14px !important;
+  border-top:1px solid rgba(255,255,255,.14) !important;
+  color:#FFFFFF !important;
+  font-size:14.5px !important; font-weight:800 !important;
+  letter-spacing:.01em !important;
+}
+body.home .reviews .rev-ic{ display:none !important; }
+body.home .rev-marquee .rev{ flex:0 0 340px !important; }
+
+/* ══ Карта зоны обслуживания (своя, вместо виджета по адресу офиса) ═════ */
+body.home .svcarea{
+  background:linear-gradient(160deg,#0C1E3C 0%,#16305A 100%) !important;
+  padding-block:56px !important;
+  text-align:center !important;
+}
+body.home .svcarea .eyebrow{
+  display:block; color:#FFB877 !important;
+  font-size:12.5px; letter-spacing:.22em; text-transform:uppercase; font-weight:800;
+}
+body.home .svcarea h2{
+  color:#FFFFFF !important;
+  font-size:clamp(28px,3.6vw,44px) !important;
+  margin:10px 0 22px !important;
+}
+body.home .svcarea h2 .accent{ color:#FF9A4D !important; }
+body.home .svcarea .svcmap__box{
+  background:rgba(6,16,34,.45);
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:18px;
+  padding:18px;
+  box-shadow:0 18px 44px rgba(0,0,0,.35);
+}
+body.home .svcarea .svcmap{ width:100%; height:auto; display:block; }
+body.home .svcarea .svcmap__cap{
+  color:#C7D6EC !important; font-size:14px !important; margin:16px 0 0 !important;
+}
+@media (max-width:700px){
+  body.home .svcarea .svcmap__box{ padding:10px; }
+  body.home .svcarea .svcmap text{ font-size:22px !important; }
+}
+
+/* Карта: настоящая подложка OSM, метки городов — свои, поверх */
+body.home .svcarea .svcmap__box{ position:relative !important; padding:0 !important; overflow:hidden !important; }
+body.home .svcarea .svcmap__box iframe{
+  display:block; width:100%; height:520px; border:0;
+  filter:saturate(.88) contrast(1.02);
+}
+body.home .svcarea .svcmap__pins{ position:absolute; inset:0; pointer-events:none; }
+body.home .svcarea .pin{
+  position:absolute; transform:translate(-50%,-50%);
+  display:flex; align-items:center; gap:7px; white-space:nowrap;
+}
+body.home .svcarea .pin i{
+  width:11px; height:11px; border-radius:50%;
+  background:#E86A0C; box-shadow:0 0 0 3px rgba(255,255,255,.9), 0 2px 6px rgba(0,0,0,.35);
+  flex:0 0 auto;
+}
+body.home .svcarea .pin b{
+  font-size:13px; font-weight:800; color:#0C1E3C;
+  background:rgba(255,255,255,.92); border-radius:6px; padding:2px 7px;
+  box-shadow:0 2px 8px rgba(0,0,0,.18);
+}
+body.home .svcarea .pin--big i{ width:16px; height:16px; background:#D62828; }
+body.home .svcarea .pin--big b{ font-size:15px; background:#0C1E3C; color:#fff; }
+@media (max-width:700px){
+  body.home .svcarea .svcmap__box iframe{ height:380px; }
+  body.home .svcarea .pin b{ font-size:11px; padding:1px 5px; }
+}
+
+/* Метки нарисованы поверх карты и рассчитаны под один масштаб — значит масштаб
+   менять нельзя, иначе точки уедут. Виджет делаем статичным, а для «покрутить»
+   даём ссылку на большую карту. */
+body.home .svcarea .svcmap__box{ pointer-events:none !important; }
+body.home .svcarea .svcmap__box iframe{ pointer-events:none !important; }
+body.home .svcarea .svcmap__open{
+  pointer-events:auto;
+  display:inline-block; margin-top:16px;
+  color:#FFB877 !important; font-weight:800; font-size:15px; text-decoration:none;
+  border-bottom:1px solid rgba(255,184,119,.5); padding-bottom:2px;
+}
+body.home .svcarea .svcmap__open:hover{ color:#FFFFFF !important; border-color:#FFFFFF; }
+
+/* Заголовок гео-блока — как остальные заголовки страницы */
+body.home .areas h2{ font-size:clamp(34px,4.6vw,58px) !important; }
+@media (min-width:1200px){ body.home .areas h2{ white-space:nowrap !important; } }
+@media (max-width:1199px){ body.home .areas h2{ white-space:normal !important; } }
+
+/* ══ Подвал: колонки сливались в одно тёмное пятно ══════════════════════ */
+body.home footer.site{
+  background:linear-gradient(180deg,#0A1830 0%,#0C1E3C 100%) !important;
+  padding-top:56px !important;
+}
+body.home footer.site .cols{
+  gap:36px !important;
+  padding-bottom:34px !important;
+  border-bottom:1px solid rgba(255,255,255,.12) !important;
+}
+/* Разделители между колонками — чтобы блоки читались отдельно */
+@media (min-width:900px){
+  body.home footer.site .cols > * + *{
+    border-left:1px solid rgba(255,255,255,.10) !important;
+    padding-left:34px !important;
+  }
+}
+body.home footer.site h4{
+  color:#FFB877 !important;
+  font-size:12.5px !important; letter-spacing:.18em !important;
+  padding-bottom:10px !important;
+  border-bottom:2px solid rgba(232,106,12,.45) !important;
+  display:inline-block !important;
+}
+body.home footer.site li a{ color:#C7D6EC !important; }
+body.home footer.site li a:hover{ color:#FF9A4D !important; }
+body.home footer.site p{ color:#AFC1DC !important; }
+
+/* Телефон вдвое крупнее */
+body.home footer.site a[href^="tel:"]{
+  font-size:34px !important;
+  line-height:1.1 !important;
+  font-weight:900 !important;
+  letter-spacing:-.02em !important;
+  display:block !important;
+  margin:6px 0 10px !important;
+}
+@media (max-width:900px){
+  body.home footer.site a[href^="tel:"]{ font-size:28px !important; }
+}
+
+/* «You might also need» — тёмный блок, следующий за ним SEO-текст — светлый */
+body.home .alsoneed{
+  background:linear-gradient(160deg,#0C1E3C 0%,#16305A 100%) !important;
+  padding-block:52px !important;
+}
+body.home .alsoneed h2,
+body.home .alsoneed h3{ color:#FFFFFF !important; }
+body.home .alsoneed .eyebrow{ color:#FFB877 !important; }
+body.home .alsoneed p{ color:#C7D6EC !important; }
+body.home .alsoneed .card,
+body.home .alsoneed .also-card{
+  background:rgba(255,255,255,.06) !important;
+  border:1px solid rgba(255,255,255,.14) !important;
+  box-shadow:0 12px 30px rgba(0,0,0,.30) !important;
+}
+body.home .alsoneed .card h3{ color:#FFFFFF !important; }
+body.home .alsoneed .card p{ color:#C7D6EC !important; }
+body.home .alsoneed .callus,
+body.home .alsoneed .learn{
+  color:#FFB877 !important; border-color:rgba(255,184,119,.55) !important;
+}
+body.home .alsoneed .callus:hover,
+body.home .alsoneed .learn:hover{
+  background:#E86A0C !important; border-color:#E86A0C !important; color:#FFFFFF !important;
+}
+
+body.home .seo-content{ background:#F1F5FB !important; }
+body.home .seo-content .prose h2,
+body.home .seo-content .prose h3{ color:#0C1E3C !important; }
+body.home .seo-content .prose p,
+body.home .seo-content .prose li{ color:#39506F !important; }
+
+/* ══ Подвал: ровная сетка 4 колонки, всё по одной линии ════════════════ */
+body.home footer.site .cols{
+  display:grid !important;
+  grid-template-columns:1.5fr 1fr 1fr 1.35fr !important;
+  gap:0 !important;
+  align-items:start !important;
+  padding:0 0 34px !important;
+}
+@media (min-width:900px){
+  body.home footer.site .cols > *{ padding-inline:32px !important; }
+  body.home footer.site .cols > *:first-child{ padding-left:0 !important; }
+  body.home footer.site .cols > *:last-child{ padding-right:0 !important; }
+}
+body.home footer.site .cols > *{ min-width:0 !important; }
+body.home footer.site .foot-logo{ margin:0 0 16px !important; }
+body.home footer.site .logo{ margin:0 0 12px !important; }
+body.home footer.site h4{ margin:0 0 16px !important; }
+body.home footer.site ul{ margin:0 !important; padding:0 !important; list-style:none !important; }
+body.home footer.site li{ margin:0 0 10px !important; }
+body.home footer.site li:last-child{ margin-bottom:0 !important; }
+body.home footer.site li a{ font-size:14.5px !important; line-height:1.5 !important; }
+body.home footer.site p{ font-size:14.5px !important; line-height:1.7 !important; margin:0 0 12px !important; }
+/* Контакты: строки с иконками выровнены по одной оси */
+body.home footer.site .cols > *:last-child p,
+body.home footer.site .cols > *:last-child a{
+  display:flex !important; align-items:flex-start !important; gap:10px !important;
+}
+body.home footer.site .cols > *:last-child svg{ flex:0 0 auto; margin-top:4px; stroke:#FF9A4D !important; }
+body.home footer.site a[href^="tel:"]{
+  display:flex !important; align-items:center !important;
+}
+/* Нижняя строка копирайта */
+body.home footer.site .foot-bottom,
+body.home footer.site .cols + *{
+  padding-top:22px !important;
+  display:flex !important; flex-wrap:wrap !important;
+  align-items:center !important; justify-content:space-between !important;
+  gap:12px !important;
+  font-size:13.5px !important; color:#93A9CA !important;
+}
+@media (max-width:900px){
+  body.home footer.site .cols{ grid-template-columns:1fr 1fr !important; gap:28px !important; }
+  body.home footer.site .cols > * + *{ border-left:0 !important; padding-left:0 !important; }
+}
+@media (max-width:560px){
+  body.home footer.site .cols{ grid-template-columns:1fr !important; }
+}
