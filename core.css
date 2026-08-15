@@ -4021,3 +4021,184 @@ body.home .seo-content .seo-body::after{ display:none !important; content:none !
 
 /* В подвале было две горизонтальных линии подряд — оставляем одну */
 body.home footer.site .cols{ border-bottom:0 !important; }
+
+/* Новый кадр первого экрана: красный фургон, грузчик, горы Денвера.
+   Кадр шире и светлее — белую вуаль слева делаем прозрачнее. */
+body.home .hero::before{
+  background-position:center 46% !important;
+  background-size:cover !important;
+  filter:saturate(1.04) brightness(1.01) !important;
+}
+body.home .hero::after{
+  background:linear-gradient(90deg,
+    rgba(255,255,255,.90) 0%,
+    rgba(255,255,255,.78) 24%,
+    rgba(255,255,255,.42) 44%,
+    rgba(255,255,255,.08) 62%,
+    rgba(255,255,255,0)   74%) !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   ТЁМНАЯ ТЕМА: мои правки главной делались под светлую и в тёмной
+   оставляли белый текст на светлом фоне. Задаём палитру явно.
+   ══════════════════════════════════════════════════════════════════════ */
+:root[data-theme="dark"] body.home{
+  --om-bg:#12141A; --om-bg2:#1A1D24; --om-line:rgba(255,255,255,.14);
+  --om-ink:#EAF0FA; --om-dim:#AEBBD0; --om-acc:#FF9A4D;
+}
+/* Секции, которые в светлой теме тёмно-синие — в тёмной делаем графитовыми */
+:root[data-theme="dark"] body.home .trustb,
+:root[data-theme="dark"] body.home .alsoneed,
+:root[data-theme="dark"] body.home #services .sec-head,
+:root[data-theme="dark"] body.home #services .steps,
+:root[data-theme="dark"] body.home .reviews,
+:root[data-theme="dark"] body.home .final,
+:root[data-theme="dark"] body.home .svcarea,
+:root[data-theme="dark"] body.home footer.site{
+  background:linear-gradient(160deg,#12141A 0%,#1A1D24 100%) !important;
+}
+/* Светлые секции — тоже тёмные, иначе белый текст пропадает */
+:root[data-theme="dark"] body.home .seo-content,
+:root[data-theme="dark"] body.home .gallery,
+:root[data-theme="dark"] body.home .stats,
+:root[data-theme="dark"] body.home .included,
+:root[data-theme="dark"] body.home .est{
+  background:#12141A !important;
+}
+/* Заголовки и текст */
+:root[data-theme="dark"] body.home h1,
+:root[data-theme="dark"] body.home h2,
+:root[data-theme="dark"] body.home h3,
+:root[data-theme="dark"] body.home h4,
+:root[data-theme="dark"] body.home .gl-1,
+:root[data-theme="dark"] body.home .seo-content .prose h2,
+:root[data-theme="dark"] body.home .seo-content .prose h3,
+:root[data-theme="dark"] body.home .seo-toggle{ color:#EAF0FA !important; }
+:root[data-theme="dark"] body.home p,
+:root[data-theme="dark"] body.home li,
+:root[data-theme="dark"] body.home .seo-content .prose p,
+:root[data-theme="dark"] body.home .seo-content .prose li,
+:root[data-theme="dark"] body.home .trustb__list li > span:not(.trustb__ic),
+:root[data-theme="dark"] body.home .trustb__about{ color:#AEBBD0 !important; }
+:root[data-theme="dark"] body.home .trustb__list b,
+:root[data-theme="dark"] body.home .rev b{ color:#EAF0FA !important; }
+/* Акценты: на тёмном берём светлый оранжевый */
+:root[data-theme="dark"] body.home .accent,
+:root[data-theme="dark"] body.home .eyebrow,
+:root[data-theme="dark"] body.home .gl-2,
+:root[data-theme="dark"] body.home .trustb__kicker,
+:root[data-theme="dark"] body.home .rev-kicker,
+:root[data-theme="dark"] body.home strong{ color:#FF9A4D !important; }
+/* Карточки */
+:root[data-theme="dark"] body.home .card,
+:root[data-theme="dark"] body.home .also-card,
+:root[data-theme="dark"] body.home .rev,
+:root[data-theme="dark"] body.home .incl li,
+:root[data-theme="dark"] body.home .covers li{
+  background:#1A1D24 !important;
+  border-color:rgba(255,255,255,.14) !important;
+  box-shadow:0 12px 30px rgba(0,0,0,.45) !important;
+}
+:root[data-theme="dark"] body.home .card h3,
+:root[data-theme="dark"] body.home .rev p{ color:#EAF0FA !important; }
+:root[data-theme="dark"] body.home .card p{ color:#AEBBD0 !important; }
+:root[data-theme="dark"] body.home .callus,
+:root[data-theme="dark"] body.home .learn{
+  color:#FF9A4D !important; border-color:rgba(255,154,77,.55) !important;
+}
+:root[data-theme="dark"] body.home .callus:hover,
+:root[data-theme="dark"] body.home .learn:hover{
+  background:#E86A0C !important; border-color:#E86A0C !important; color:#FFFFFF !important;
+}
+/* Плашки городов и мелкие ярлыки */
+:root[data-theme="dark"] body.home .chips span,
+:root[data-theme="dark"] body.home .chips a,
+:root[data-theme="dark"] body.home .chip{
+  background:rgba(255,255,255,.08) !important;
+  border-color:rgba(255,255,255,.20) !important;
+  color:#EAF0FA !important;
+}
+/* Полоса доверия на первом экране */
+:root[data-theme="dark"] body.home .hero .badges .badge,
+:root[data-theme="dark"] body.home .hero .badges .badge *{ color:#EAF0FA !important; }
+:root[data-theme="dark"] body.home .hero .badges .stars{ color:#FF9A4D !important; }
+/* Кнопка «30 SEC» и загрузка файлов */
+:root[data-theme="dark"] body.home .q30__badge span,
+:root[data-theme="dark"] body.home .est label,
+:root[data-theme="dark"] body.home .est span{ color:#EAF0FA !important; }
+/* Подвал */
+:root[data-theme="dark"] body.home footer.site li a{ color:#AEBBD0 !important; }
+:root[data-theme="dark"] body.home footer.site h4{ color:#FF9A4D !important; }
+
+/* Тёмная тема, второй проход — остатки светлых подложек и тёмных букв */
+:root[data-theme="dark"] body.home .topnote{
+  background:#1A1D24 !important; border-bottom-color:rgba(255,255,255,.12) !important;
+}
+:root[data-theme="dark"] body.home .topnote *{ color:#EAF0FA !important; }
+:root[data-theme="dark"] body.home .topnote a[href^="tel:"]{ color:#FF9A4D !important; }
+:root[data-theme="dark"] body.home .topbar{ background:#1A1D24 !important; }
+:root[data-theme="dark"] body.home .topbar *{ color:#EAF0FA !important; }
+:root[data-theme="dark"] body.home .topbar .om-hl,
+:root[data-theme="dark"] body.home .topbar a[href^="mailto:"]{ color:#FF9A4D !important; }
+:root[data-theme="dark"] body.home .topbar .sp{ color:#AEBBD0 !important; }
+
+/* Цифры фактов и всё, что осталось тёмно-синим на тёмном */
+:root[data-theme="dark"] body.home .stats .st b,
+:root[data-theme="dark"] body.home .areas__facts b,
+:root[data-theme="dark"] body.home .st-top ~ b{ color:#FF9A4D !important; }
+:root[data-theme="dark"] body.home .stats .st span,
+:root[data-theme="dark"] body.home .areas__facts span{ color:#AEBBD0 !important; }
+
+/* Кнопки в карточках: тёмно-синие буквы на графите не читались */
+:root[data-theme="dark"] body.home .card .callus,
+:root[data-theme="dark"] body.home .also-card .callus,
+:root[data-theme="dark"] body.home .card .learn,
+:root[data-theme="dark"] body.home a.callus,
+:root[data-theme="dark"] body.home a.learn{
+  color:#FF9A4D !important;
+  border:1px solid rgba(255,154,77,.55) !important;
+  background:transparent !important;
+}
+/* Ярлыки на полупрозрачной оранжевой подложке */
+:root[data-theme="dark"] body.home .rev-kicker,
+:root[data-theme="dark"] body.home .q30__badge,
+:root[data-theme="dark"] body.home .q30__badge span{
+  background:rgba(255,255,255,.10) !important;
+  border-color:rgba(255,255,255,.24) !important;
+  color:#FFC79A !important;
+}
+/* Плашки городов */
+:root[data-theme="dark"] body.home .chip,
+:root[data-theme="dark"] body.home .chips span,
+:root[data-theme="dark"] body.home .chips a{
+  background:#1F232B !important;
+  border-color:rgba(255,255,255,.22) !important;
+  color:#EAF0FA !important;
+}
+/* Блок «Related / Learn more» оставался светлым */
+:root[data-theme="dark"] body.home .related,
+:root[data-theme="dark"] body.home .related *{ background-color:transparent !important; }
+:root[data-theme="dark"] body.home .related{ background:#12141A !important; }
+:root[data-theme="dark"] body.home .related a,
+:root[data-theme="dark"] body.home a.learn-more{ color:#FF9A4D !important; }
+
+/* Тёмная тема, третий проход: кнопки Call us и блок Learn more */
+:root[data-theme="dark"] body.home .callus,
+:root[data-theme="dark"] body.home .callus *{
+  color:#FF9A4D !important;
+  border-color:rgba(255,154,77,.55) !important;
+  background:transparent !important;
+}
+:root[data-theme="dark"] body.home .callus:hover,
+:root[data-theme="dark"] body.home .callus:hover *{
+  background:#E86A0C !important; border-color:#E86A0C !important; color:#FFFFFF !important;
+}
+:root[data-theme="dark"] body.home section,
+:root[data-theme="dark"] body.home .wrap{ background-color:transparent; }
+:root[data-theme="dark"] body.home a[class*="learn"],
+:root[data-theme="dark"] body.home .links a{ color:#FF9A4D !important; }
+:root[data-theme="dark"] body.home [style*="background:#F2F4F7"],
+:root[data-theme="dark"] body.home [style*="background:#f2f4f7"]{ background:#12141A !important; }
+
+/* Кадр с фургоном: смысловой центр справа, поэтому держим правый край */
+body.home .hero::before{ background-position:62% center !important; }
