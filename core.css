@@ -2258,3 +2258,107 @@ body .q30{
   max-width:none !important;
 }
 @supports (width:100dvw){ body .q30{ width:100dvw !important; margin-inline:calc(50% - 50dvw) !important; } }
+
+/* Три пункта в блоке доверия — ровно в ряд */
+@media (min-width:760px){
+  body .trustb .trustb__list{ grid-template-columns:repeat(3,1fr) !important; }
+}
+
+/* ══ Значок «30 SEC» — крупнее ══════════════════════════════════════ */
+body .q30 .q30__badge{
+  padding:13px 26px 13px 20px !important;
+  gap:12px !important;
+  margin-bottom:22px !important;
+  border-width:1.5px !important;
+}
+body .q30 .q30__badge::before{
+  width:20px !important; height:20px !important; border-width:2.5px !important;
+}
+body .q30 .q30__badge b{ font-size:22px !important; }
+body .q30 .q30__badge span{ font-size:13px !important; letter-spacing:.18em !important; }
+
+/* ══ FAQ: ровный список, ничего не съезжает ═════════════════════════ */
+body #faq .faq{ display:block !important; max-width:860px; margin-inline:auto; }
+body #faq details{
+  display:block !important; width:100% !important;
+  border:1px solid #DCE7F5 !important; border-radius:12px !important;
+  background:#fff !important; margin:0 0 10px !important;
+  padding:0 !important; overflow:hidden;
+}
+body #faq details summary{
+  display:block !important; cursor:pointer;
+  padding:18px 46px 18px 20px !important;
+  font-size:17px !important; font-weight:700 !important; color:#0C1E3C !important;
+  position:relative; list-style:none;
+}
+body #faq details summary::-webkit-details-marker{ display:none; }
+body #faq details summary::after{
+  content:''; position:absolute; right:20px; top:50%;
+  width:9px; height:9px; border-right:2px solid #E86A0C; border-bottom:2px solid #E86A0C;
+  transform:translateY(-70%) rotate(45deg); transition:transform .2s ease;
+}
+body #faq details[open] summary::after{ transform:translateY(-30%) rotate(225deg); }
+body #faq details[open]{ border-color:#E86A0C !important; }
+body #faq details p{
+  margin:0 !important; padding:0 20px 20px !important;
+  font-size:15.5px !important; line-height:1.6 !important; color:#42557A !important;
+}
+
+/* ══ FAQ: одинаковые карточки, ничего не съезжает ═══════════════════ */
+body #faq > .wrap{ max-width:1200px !important; margin-inline:auto !important; }
+body #faq .faq{
+  display:flex !important; flex-direction:column !important;
+  gap:10px !important; max-width:840px !important; margin:26px auto 0 !important;
+  padding:0 !important;
+}
+body #faq .faq > details{
+  width:100% !important; margin:0 !important; float:none !important;
+  position:static !important; transform:none !important;
+  box-sizing:border-box !important;
+}
+body #faq .sec-head{ text-align:center !important; max-width:none !important; }
+
+/* ══ SEO-блок «Movers in Denver, CO» — тёмно-синий ══════════════════ */
+body .seo-content{
+  background:linear-gradient(160deg,#0C1E3C 0%,#16305A 100%) !important;
+  padding-block:52px !important;
+}
+body .seo-content h2,
+body .seo-content h3{ color:#FFFFFF !important; }
+body .seo-content p,
+body .seo-content li{ color:#C7D6EC !important; }
+body .seo-content strong,
+body .seo-content b{ color:#FFA24D !important; }
+body .seo-content a{ color:#FFA24D !important; }
+/* Затухание текста под кнопку — на синем, а не на белом */
+body .seo-content .seo-body::after{
+  background:linear-gradient(180deg,rgba(12,30,60,0) 0%,#12274B 88%) !important;
+}
+/* Кнопка «Read more» — контурная светлая */
+body .seo-toggle{
+  background:transparent !important;
+  color:#FFFFFF !important;
+  border:1.5px solid rgba(255,255,255,.55) !important;
+}
+body .seo-toggle:hover{
+  background:rgba(255,255,255,.10) !important;
+  border-color:#FFA24D !important; color:#FFA24D !important;
+}
+
+/* ══ Блок доверия: кнопки по центру под текстом ═════════════════════ */
+body .trustb .trustb__copy{ text-align:center !important; }
+body .trustb .trustb__copy h2::after{ margin-inline:auto !important; }
+body .trustb .trustb__list li{ text-align:left !important; }
+body .trustb .trustb__list .trustb__ic{ margin-inline:auto !important; }
+body .trustb .trustb__list li{ text-align:center !important; }
+body .trustb .trustb__actions{
+  justify-content:center !important;
+  margin-inline:auto !important;
+}
+
+/* Текст о бригаде в блоке доверия */
+.trustb__about{
+  color:#C7D6EC !important;
+  font-size:16px !important; line-height:1.65 !important;
+  max-width:60ch; margin:0 auto 24px !important;
+}
