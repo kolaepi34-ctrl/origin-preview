@@ -2574,3 +2574,9 @@ body .hero::after{
     rgba(255,255,255,.10) 60%,
     rgba(255,255,255,0)   72%) !important;
 }
+
+/* Первый экран: кадр с семьёй и клёном — держим центр, вуаль мягче */
+body .hero::before{ background-position:58% center !important; }
+
+/* Знак в шапке горизонтальный — не сжимаем его в квадрат */
+body .brand .logo-img{ width:66px !important; height:46px !important; object-fit:contain !important; }
