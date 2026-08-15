@@ -5188,3 +5188,12 @@ body.home .trustb .trustb__photo{
   gap:0 !important;
   height:calc(100% - 33px) !important;
 }
+
+/* Кнопки в блоке доверия возвращены */
+body.home .trustb .trustb__actions{ display:grid !important; }
+body.home .trustb .trustb__photo{
+  grid-template-rows:1fr auto !important;
+  gap:16px !important;
+}
+/* Заголовок формы — на 5 % меньше */
+body.home .hero form.quote h3{ font-size:clamp(27px,2.47vw,36px) !important; }
