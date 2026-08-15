@@ -5549,3 +5549,31 @@ body.home footer.site a[href^="tel:"]{
 @media (max-width:560px){
   body.home footer.site a[href^="tel:"]{ font-size:30px !important; }
 }
+
+/* ══ Верхняя полоса с фото и крупной надписью ══════════════════════════ */
+body.home .topband{
+  position:relative !important;
+  min-height:clamp(240px,32vw,420px) !important;
+  display:flex !important; align-items:center !important; justify-content:center !important;
+  overflow:hidden !important;
+  background:url('/assets/hero-live-0.jpg') center 42%/cover no-repeat !important;
+}
+body.home .topband::after{
+  content:''; position:absolute; inset:0;
+  background:linear-gradient(180deg, rgba(9,22,45,.55) 0%, rgba(9,22,45,.72) 100%);
+}
+body.home .topband__in{ position:relative; z-index:1; padding:0 20px; text-align:center; }
+body.home .topband__title{
+  color:#FFFFFF !important;
+  font-size:clamp(40px,8.6vw,124px) !important;
+  font-weight:900 !important;
+  line-height:.98 !important;
+  letter-spacing:-.035em !important;
+  margin:0 !important;
+  text-transform:uppercase !important;
+  text-shadow:0 4px 40px rgba(3,10,24,.5) !important;
+}
+body.home .topband__title span{ color:#E86A0C !important; }
+
+/* Контактная колонка подвала шире — телефон в 44 px не влезал в 255 px */
+body.home footer.site .cols{ grid-template-columns:1.35fr .9fr .9fr 1.5fr !important; }
