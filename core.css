@@ -5151,3 +5151,31 @@ body.home .stats .stats-cta svg{ stroke:#FFFFFF !important; }
   body.home .hero .wrap.grid{ grid-template-columns:minmax(0,1fr) minmax(0,1.16fr) !important; }
 }
 body.home .hero form.quote{ max-width:568px !important; margin-left:auto !important; }
+
+/* Кнопка звонка после перечня того, что входит в ставку */
+body.home .included .incl-cta{
+  display:flex !important;
+  justify-content:center !important;
+  margin:28px 0 4px !important;
+}
+body.home .included .incl-cta .callus{
+  display:inline-flex !important; align-items:center !important;
+  height:52px !important; padding:0 34px !important;
+  border:1.5px solid #0C1E3C !important; border-radius:999px !important;
+  color:#0C1E3C !important; background:transparent !important;
+  font-size:16px !important; font-weight:800 !important; letter-spacing:.04em !important;
+  text-transform:uppercase !important;
+}
+body.home .included .incl-cta .callus:hover{ background:#E86A0C !important; border-color:#E86A0C !important; color:#FFFFFF !important; }
+
+/* Надзаголовок первого экрана — тёмно-синим, как заголовок */
+body.home .hero .pitch .eyebrow{ color:#0C1E3C !important; }
+
+/* Логотип в шапке: ORIGIN белым, MOVERS оранжевым */
+body.home .brand .logo{ color:#FFFFFF !important; }
+body.home .brand .logo b{ color:#E86A0C !important; }
+
+/* Подпись под заголовком формы — по центру */
+body.home .hero form.quote .sub{ text-align:center !important; }
+body.home .hero form.quote h3{ text-align:center !important; }
+body.home .hero form.quote .q-eyebrow{ text-align:center !important; }
