@@ -3137,3 +3137,386 @@ body.home .topnote__in a[href^="tel:"]{
   border:0 !important;
   line-height:inherit !important;
 }
+
+/* Плашка значка в полосе фактов держала жёсткие 44×44 и значок липнул к верху.
+   Снимаем размеры совсем — высоту задаёт сам значок. */
+body.home .stats .st .st-top.st-top{
+  width:auto !important; height:auto !important;
+  min-width:0 !important; min-height:0 !important;
+  line-height:0 !important;
+  display:flex !important; align-items:center !important; justify-content:center !important;
+}
+body.home .stats .st .st-top.st-top > svg{
+  width:32px !important; height:32px !important;
+  display:block !important; margin:0 !important;
+}
+
+/* Плашка 44×44 — это вложенный span.st-ic, а не .st-top.
+   Именно из-за него значок висел в верху квадрата. */
+body.home .stats .st .st-ic{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  width:auto !important; height:auto !important;
+  min-width:0 !important; min-height:0 !important;
+  padding:0 !important; margin:0 !important;
+  background:none !important; border:0 !important;
+  border-radius:0 !important; box-shadow:none !important;
+  line-height:0 !important;
+}
+body.home .stats .st .st-ic > svg{
+  width:32px !important; height:32px !important;
+  display:block !important; margin:0 !important;
+  color:#E86A0C !important; stroke:#E86A0C !important;
+}
+
+/* Заголовок блока доверия — на 10% крупнее */
+body.home .trustb h2{ font-size:clamp(35px,5.1vw,62px) !important; }
+body.home .trustb h2 .accent{ color:#FFB877 !important; }
+
+/* Верхняя белая полоса: было бледно и мелко — делаем жирнее и с акцентом */
+body.home .topbar{ padding-block:9px !important; }
+body.home .topbar,
+body.home .topbar *{
+  font-size:14px !important;
+  font-weight:700 !important;
+  color:#14315C !important;
+}
+body.home .topbar a[href^="mailto:"]{ color:#C25508 !important; font-weight:800 !important; }
+body.home .topbar svg{ stroke:#E86A0C !important; color:#E86A0C !important; }
+body.home .topbar .sp{ color:#5A6B85 !important; font-weight:600 !important; }
+body.home .topbar .om-hl{ color:#C25508 !important; font-weight:800 !important; }
+
+/* Три плашки блока доверия: одинаковые отступы, ровная сетка, текст слева */
+body.home .trustb .trustb__list{
+  display:grid !important;
+  grid-template-columns:repeat(3,1fr) !important;
+  gap:18px !important;
+  margin:26px 0 22px !important;
+  padding:0 !important;
+  list-style:none !important;
+  align-items:stretch !important;
+}
+body.home .trustb .trustb__list li{
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:flex-start !important;
+  gap:8px !important;
+  padding:22px 20px !important;
+  height:100% !important;
+  box-sizing:border-box !important;
+  text-align:left !important;
+  background:rgba(255,255,255,.06) !important;
+  border-radius:14px !important;
+  box-shadow:0 10px 28px rgba(0,0,0,.28) !important;
+}
+body.home .trustb .trustb__list b{
+  font-size:17px !important; line-height:1.25 !important; color:#FFFFFF !important;
+  min-height:2.5em !important;            /* заголовки в 1 и 2 строки выравниваются */
+  display:flex !important; align-items:flex-end !important;
+}
+body.home .trustb .trustb__list li > span:not(.trustb__ic){
+  font-size:14.5px !important; line-height:1.6 !important; color:#C7D6EC !important; margin:0 !important;
+}
+body.home .trustb .trustb__ic{ margin:0 0 2px !important; }
+@media (max-width:900px){
+  body.home .trustb .trustb__list{ grid-template-columns:1fr !important; }
+  body.home .trustb .trustb__list b{ min-height:0 !important; }
+}
+
+/* Карточки услуг: одинаковая высота, текст и кнопки на одном уровне */
+body.home #services .cards{ align-items:stretch !important; }
+body.home #services .cards .card{
+  display:flex !important;
+  flex-direction:column !important;
+  gap:10px !important;
+  padding:26px 24px !important;
+  height:100% !important;
+  box-sizing:border-box !important;
+}
+body.home #services .cards .card h3{
+  margin:0 !important;
+  min-height:2.4em !important;
+  display:flex !important; align-items:flex-end !important;
+}
+body.home #services .cards .card p{
+  margin:0 !important;
+  flex:1 1 auto !important;           /* текст занимает свободное место */
+  font-size:15px !important; line-height:1.65 !important;
+}
+body.home #services .cards .card .callus,
+body.home #services .cards .card .learn{
+  margin-top:auto !important;          /* кнопка всегда прижата к низу */
+  align-self:flex-start !important;
+}
+@media (max-width:900px){
+  body.home #services .cards .card h3{ min-height:0 !important; }
+}
+
+/* Фото в блоке доверия было 313 px против 599 px текста — сверху и снизу пустота.
+   Тянем его на всю высоту левой колонки. */
+body.home .trustb .trustb__in{ align-items:stretch !important; }
+body.home .trustb .trustb__photo{
+  display:flex !important;
+  height:100% !important;
+  align-self:stretch !important;
+}
+body.home .trustb .trustb__photo img{
+  width:100% !important;
+  height:100% !important;
+  object-fit:cover !important;
+  border-radius:16px !important;
+}
+@media (max-width:900px){
+  body.home .trustb .trustb__photo img{ height:auto !important; max-height:340px !important; }
+}
+
+/* Кнопки блока доверия переехали под фото — выравниваем по центру колонки */
+body.home .trustb .trustb__photo{
+  flex-direction:column !important;
+  gap:16px !important;
+}
+body.home .trustb .trustb__photo img{ flex:1 1 auto !important; min-height:280px !important; }
+body.home .trustb .trustb__actions{
+  display:flex !important;
+  justify-content:center !important;
+  align-items:center !important;
+  gap:12px !important;
+  flex-wrap:wrap !important;
+  margin:0 !important;
+}
+
+/* Карточки услуг были 437 px из-за запаса под заголовок и лишних отступов */
+body.home #services .cards .card{
+  padding:20px 20px !important;
+  gap:8px !important;
+}
+body.home #services .cards .card h3{
+  min-height:0 !important;
+  align-items:flex-start !important;
+  font-size:clamp(19px,1.9vw,22px) !important;
+}
+body.home #services .cards .card p{ font-size:14.5px !important; line-height:1.55 !important; }
+body.home #services .cards .card .ic{ margin-bottom:2px !important; }
+body.home #services .cards .card .ic svg{ width:26px !important; height:26px !important; }
+body.home #services .cards .card .callus,
+body.home #services .cards .card .learn{ margin-top:12px !important; padding-block:9px !important; }
+
+/* Кнопки под фото должны заканчиваться на одном уровне с текстом слева.
+   Внизу колонки оставался запас — убираем его и делаем кнопки крупнее. */
+body.home .trustb .trustb__photo{
+  justify-content:space-between !important;
+  padding:0 !important;
+  margin:0 !important;
+}
+body.home .trustb .trustb__actions{ margin-bottom:0 !important; padding-bottom:0 !important; }
+body.home .trustb .trustb__btn,
+body.home .trustb .trustb__call{
+  padding:16px 22px !important;
+  font-size:16px !important;
+  flex:1 1 0 !important;
+  justify-content:center !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  gap:9px !important;
+}
+
+/* Блок «Get a free moving estimate»: оранжевые полосы сверху и снизу убраны */
+body.home .est{ border-top:0 !important; border-bottom:0 !important; }
+
+/* ══ Блок доверия: собран заново ═══════════════════════════════════════
+   Было: заголовок по центру над левыми карточками (ось «плавает»),
+   фото короче колонки, кнопки в отрыве от фото и с переносом слов. */
+body.home .trustb .trustb__in{
+  grid-template-columns:minmax(0,1.15fr) minmax(360px,.85fr) !important;
+  gap:40px !important;
+  align-items:stretch !important;
+}
+/* Левая колонка: всё по левому краю, одна ось */
+body.home .trustb .trustb__copy{
+  display:flex !important; flex-direction:column !important;
+  text-align:left !important;
+}
+body.home .trustb .trustb__kicker{ text-align:left !important; }
+body.home .trustb h2{
+  text-align:left !important;
+  font-size:clamp(30px,3.6vw,48px) !important;
+  margin:8px 0 14px !important;
+  max-width:16ch !important;
+}
+body.home .trustb h2::after{ margin-left:0 !important; margin-right:auto !important; }
+body.home .trustb .trustb__about{ text-align:left !important; max-width:62ch !important; }
+body.home .trustb .trustb__list{ margin-top:auto !important; }
+
+/* Правая колонка: фото тянется, кнопки под ним одной строкой */
+body.home .trustb .trustb__photo{
+  display:flex !important; flex-direction:column !important;
+  gap:14px !important; height:100% !important;
+}
+body.home .trustb .trustb__photo img{
+  flex:1 1 auto !important; width:100% !important; height:100% !important;
+  min-height:320px !important; object-fit:cover !important; border-radius:16px !important;
+}
+body.home .trustb .trustb__actions{
+  display:grid !important;
+  grid-template-columns:1fr auto !important;
+  gap:12px !important; margin:0 !important;
+}
+body.home .trustb .trustb__btn,
+body.home .trustb .trustb__call{
+  height:56px !important; padding:0 20px !important;
+  display:inline-flex !important; align-items:center !important; justify-content:center !important;
+  gap:9px !important; white-space:nowrap !important;
+  font-size:15px !important; flex:none !important;
+}
+@media (max-width:900px){
+  body.home .trustb .trustb__in{ grid-template-columns:1fr !important; }
+  body.home .trustb .trustb__actions{ grid-template-columns:1fr !important; }
+  body.home .trustb .trustb__btn,
+  body.home .trustb .trustb__call{ white-space:normal !important; }
+}
+
+/* Правая колонка: строка фото тянется, строка кнопок фиксирована.
+   Так между фото и кнопками нет провала, а низ кнопок совпадает
+   с низом карточек слева. */
+body.home .trustb .trustb__photo{
+  display:grid !important;
+  grid-template-rows:1fr auto !important;
+  gap:14px !important;
+  height:100% !important;
+  min-height:0 !important;
+}
+body.home .trustb .trustb__photo img{
+  width:100% !important; height:100% !important;
+  min-height:0 !important; max-height:none !important;
+  object-fit:cover !important;
+  align-self:stretch !important;
+}
+body.home .trustb .trustb__actions{
+  grid-template-columns:1fr auto !important;
+  align-self:end !important;
+}
+/* Левая колонка: карточки прижаты к низу, чтобы обе колонки кончались вместе */
+body.home .trustb .trustb__copy{ justify-content:flex-start !important; }
+body.home .trustb .trustb__list{ margin-bottom:0 !important; }
+
+/* Фото начинается на уровне заголовка, а не надзаголовка (сдвиг 33 px) */
+body.home .trustb .trustb__photo{ margin-top:33px !important; }
+
+/* Три плашки: одинаковая ширина и общий низ с кнопками справа */
+body.home .trustb .trustb__list{
+  grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+  align-items:stretch !important;
+}
+body.home .trustb .trustb__list li{
+  width:100% !important;
+  min-width:0 !important;
+  box-sizing:border-box !important;
+}
+@media (max-width:900px){
+  body.home .trustb .trustb__photo{ margin-top:0 !important; }
+}
+
+/* Вместо трёх плашек — обычный список в столбик: значок, заголовок, строка текста.
+   Квадратные карточки рядом с прямоугольным фото смотрелись разнобоем. */
+body.home .trustb .trustb__list{
+  display:grid !important;
+  grid-template-columns:1fr !important;
+  gap:22px !important;
+  margin:26px 0 0 !important;
+}
+body.home .trustb .trustb__list li{
+  display:grid !important;
+  grid-template-columns:34px 1fr !important;
+  grid-template-rows:auto auto !important;
+  column-gap:14px !important;
+  row-gap:4px !important;
+  background:none !important;
+  box-shadow:none !important;
+  border:0 !important;
+  border-left:2px solid rgba(232,106,12,.55) !important;
+  border-radius:0 !important;
+  padding:2px 0 2px 18px !important;
+  height:auto !important;
+}
+body.home .trustb .trustb__list .trustb__ic{
+  grid-row:1 / span 2 !important;
+  align-self:start !important;
+  margin:2px 0 0 !important;
+}
+body.home .trustb .trustb__list .trustb__ic svg{ width:26px !important; height:26px !important; }
+body.home .trustb .trustb__list b{
+  grid-column:2 !important;
+  min-height:0 !important;
+  display:block !important;
+  font-size:18px !important;
+}
+body.home .trustb .trustb__list li > span:not(.trustb__ic){
+  grid-column:2 !important;
+  font-size:15px !important; line-height:1.6 !important;
+}
+@media (max-width:900px){
+  body.home .trustb .trustb__list li{ padding-left:14px !important; }
+}
+
+/* Отступ переносим с колонки на само фото: картинка начинается на уровне
+   заголовка, а кнопки остаются вровень с последней строкой текста слева. */
+body.home .trustb .trustb__photo{ margin-top:0 !important; }
+body.home .trustb .trustb__photo img{ margin-top:33px !important; }
+
+/* Секция стала слишком высокой — ужимаем воздух и текст */
+body.home .trustb{ padding-block:44px !important; }
+body.home .trustb h2{ font-size:clamp(28px,3.1vw,40px) !important; margin:6px 0 10px !important; }
+body.home .trustb .trustb__about{
+  font-size:15px !important; line-height:1.6 !important; margin:0 0 4px !important;
+  max-width:58ch !important;
+}
+body.home .trustb .trustb__list{ gap:16px !important; margin-top:18px !important; }
+body.home .trustb .trustb__list b{ font-size:16.5px !important; }
+body.home .trustb .trustb__list li > span:not(.trustb__ic){ font-size:14.5px !important; line-height:1.55 !important; }
+body.home .trustb .trustb__btn,
+body.home .trustb .trustb__call{ height:50px !important; }
+
+/* ══ Блок доверия — окончательная сборка ═══════════════════════════════
+   Кнопки наезжали на фото: отступ стоял на самой картинке внутри сетки.
+   Теперь отступ у колонки, а её высота уменьшена ровно на этот отступ —
+   низ кнопок совпадает с низом текста, картинка не перекрывается. */
+body.home .trustb h2{ font-size:clamp(32px,3.9vw,46px) !important; margin:8px 0 12px !important; }
+
+body.home .trustb .trustb__photo{
+  display:grid !important;
+  grid-template-rows:1fr auto !important;
+  gap:16px !important;
+  margin-top:33px !important;
+  height:calc(100% - 33px) !important;
+  align-self:start !important;
+  overflow:visible !important;
+}
+body.home .trustb .trustb__photo img{
+  margin:0 !important;
+  width:100% !important; height:100% !important;
+  min-height:260px !important;
+  object-fit:cover !important;
+  border-radius:16px !important;
+  grid-row:1 !important;
+}
+body.home .trustb .trustb__actions{
+  grid-row:2 !important;
+  position:static !important;
+  align-self:end !important;
+}
+
+/* Пульсирующая подсветка на главной кнопке блока доверия */
+@keyframes omPulse{
+  0%   { box-shadow:0 0 0 0 rgba(232,106,12,.55), 0 8px 22px rgba(0,0,0,.28) }
+  70%  { box-shadow:0 0 0 16px rgba(232,106,12,0), 0 8px 22px rgba(0,0,0,.28) }
+  100% { box-shadow:0 0 0 0 rgba(232,106,12,0),   0 8px 22px rgba(0,0,0,.28) }
+}
+body.home .trustb .trustb__btn{
+  animation:omPulse 2.4s ease-out infinite;
+  will-change:box-shadow;
+}
+body.home .trustb .trustb__btn:hover{ animation-play-state:paused; }
+@media (prefers-reduced-motion:reduce){
+  body.home .trustb .trustb__btn{ animation:none !important; }
+}
