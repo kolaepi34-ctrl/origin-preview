@@ -5385,3 +5385,82 @@ body.home .hero h1{
   margin-bottom:16px !important;
 }
 body.home .hero .hero-facts{ font-size:15.5px !important; max-width:40ch !important; }
+
+/* ══════════════════════════════════════════════════════════════════════
+   ПОДВАЛ — ПЕРЕСОБРАН
+   Было: четыре колонки разной высоты, разделители, огромный телефон,
+   логотип и текстовая надпись подряд, пустые пункты в списке услуг.
+   ══════════════════════════════════════════════════════════════════════ */
+body.home footer.site{
+  background:#0C1E3C !important;
+  padding:52px 0 0 !important;
+}
+body.home footer.site .cols{
+  display:grid !important;
+  grid-template-columns:1.6fr 1fr 1fr 1.2fr !important;
+  gap:40px !important;
+  padding:0 0 36px !important;
+  border-bottom:1px solid rgba(255,255,255,.12) !important;
+  align-items:start !important;
+}
+body.home footer.site .cols > *{ padding:0 !important; border:0 !important; min-width:0 !important; }
+
+/* Первая колонка: знак, название, описание */
+body.home footer.site .foot-logo{ width:76px !important; height:52px !important; margin:0 0 12px !important; }
+body.home footer.site .logo{
+  font-size:22px !important; font-weight:900 !important; letter-spacing:.01em !important;
+  color:#FFFFFF !important; margin:0 0 10px !important;
+}
+body.home footer.site .logo b{ color:#E86A0C !important; }
+body.home footer.site p{
+  color:#AFC1DC !important; font-size:14.5px !important; line-height:1.7 !important;
+  margin:0 !important; max-width:36ch !important;
+}
+
+/* Заголовки колонок */
+body.home footer.site h4{
+  color:#FFFFFF !important;
+  font-size:12.5px !important; letter-spacing:.2em !important; text-transform:uppercase !important;
+  font-weight:800 !important; margin:0 0 16px !important;
+  padding:0 0 10px !important;
+  border-bottom:2px solid #E86A0C !important;
+  display:inline-block !important;
+}
+body.home footer.site ul{ margin:0 !important; padding:0 !important; list-style:none !important; }
+body.home footer.site li{ margin:0 0 11px !important; }
+body.home footer.site li:last-child{ margin-bottom:0 !important; }
+body.home footer.site li a{
+  color:#C7D6EC !important; font-size:14.5px !important; text-decoration:none !important;
+}
+body.home footer.site li a:hover{ color:#E86A0C !important; }
+
+/* Контакты: телефон крупный, но не гигантский; строки по одной оси */
+body.home footer.site .contact > div,
+body.home footer.site .contact p{
+  display:flex !important; align-items:flex-start !important; gap:10px !important;
+  color:#C7D6EC !important; font-size:14.5px !important; margin:0 0 12px !important;
+}
+body.home footer.site .contact svg{ stroke:#E86A0C !important; margin-top:3px; flex:0 0 auto; }
+body.home footer.site a[href^="tel:"]{
+  font-size:26px !important; font-weight:900 !important; color:#FFFFFF !important;
+  letter-spacing:-.01em !important; text-decoration:none !important;
+  display:inline-block !important; margin:0 0 6px !important;
+}
+body.home footer.site a[href^="tel:"]:hover{ color:#E86A0C !important; }
+body.home footer.site a[href^="mailto:"]{ color:#C7D6EC !important; text-decoration:none !important; }
+body.home footer.site a[href^="mailto:"]:hover{ color:#E86A0C !important; }
+
+/* Нижняя строка */
+body.home footer.site .wrap > *:last-child,
+body.home footer.site .foot-bottom{
+  display:flex !important; flex-wrap:wrap !important; gap:10px !important;
+  align-items:center !important; justify-content:space-between !important;
+  padding:20px 0 26px !important;
+  color:#8DA2C2 !important; font-size:13px !important;
+}
+@media (max-width:960px){
+  body.home footer.site .cols{ grid-template-columns:1fr 1fr !important; gap:32px !important; }
+}
+@media (max-width:560px){
+  body.home footer.site .cols{ grid-template-columns:1fr !important; }
+}
