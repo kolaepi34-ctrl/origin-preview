@@ -4226,3 +4226,192 @@ body.home .hero::after{
     rgba(255,255,255,.04) 64%,
     rgba(255,255,255,0)   76%) !important;
 }
+
+/* ══════════════════════════════════════════════════════════════════════
+   ПЕРВЫЙ ЭКРАН — ЕДИНАЯ ПАЛИТРА С ФОРМОЙ
+   Раньше: тёплое фото под белой вуалью + тёмно-синий текст. Фото жило
+   отдельной жизнью от тёмно-синей формы справа — экран распадался надвое.
+   Теперь: кадр затонирован в фирменный тёмно-синий, текст белый, оранжевым
+   только акцент. Фото, текст и форма — один материал.
+   ══════════════════════════════════════════════════════════════════════ */
+body.home .hero::before{
+  filter:saturate(.82) brightness(.62) contrast(1.06) !important;
+  background-position:64% center !important;
+}
+body.home .hero::after{
+  background:linear-gradient(90deg,
+    rgba(9,22,45,.95) 0%,
+    rgba(9,22,45,.90) 28%,
+    rgba(10,25,50,.72) 48%,
+    rgba(12,30,60,.42) 66%,
+    rgba(12,30,60,.28) 100%) !important;
+}
+body.home .hero h1{ color:#FFFFFF !important; text-shadow:0 2px 24px rgba(6,16,34,.55) !important; }
+body.home .hero h1 .accent{ color:#FF9A4D !important; }
+body.home .hero .pitch .eyebrow{ color:#FFB877 !important; }
+body.home .hero .pitch .lead{
+  color:#D6E2F3 !important;
+  text-shadow:0 1px 18px rgba(6,16,34,.6) !important;
+  text-align:left !important;
+}
+body.home .hero .badges .badge,
+body.home .hero .badges .badge *{ color:#EAF0FA !important; }
+body.home .hero .badges .stars{ color:#FFB877 !important; }
+/* Вторая кнопка — белым контуром, чтобы читалась на тёмном */
+body.home .hero .pitch .btn-white,
+body.home .hero .pitch a:not([href^="tel:"]){
+  background:transparent !important;
+  border:2px solid rgba(255,255,255,.75) !important;
+  color:#FFFFFF !important;
+}
+body.home .hero .pitch a:not([href^="tel:"]):hover{
+  background:#FFFFFF !important; color:#0C1E3C !important;
+}
+body.home .hero .pitch a[href^="tel:"]{
+  background:#E86A0C !important; border-color:#E86A0C !important; color:#FFFFFF !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   ЕДИНАЯ ПАЛИТРА — ОДИН ОРАНЖЕВЫЙ, ОДИН СИНИЙ
+   Накопилось пять оттенков оранжевого (#E86A0C, #FF9A4D, #FFB877, #FFA24D,
+   #C25508) и четыре синего (#0C1E3C, #16305A, #25406B, #14315C).
+   Сводим к паре: оранжевый #E86A0C и синий #0C1E3C.
+   Плюс два служебных тона для читаемости: светлый текст на синем #C7D6EC
+   и приглушённый на белом #5A6B85 — без них текст сливается.
+   ══════════════════════════════════════════════════════════════════════ */
+body.home{
+  --om-orange:#E86A0C;
+  --om-navy:#0C1E3C;
+  --om-dim-on-navy:#C7D6EC;
+  --om-dim-on-white:#5A6B85;
+}
+
+/* Оранжевый — один на весь сайт */
+body.home .accent,
+body.home .eyebrow,
+body.home .gl-2,
+body.home .trustb__kicker,
+body.home .rev-kicker,
+body.home .q30__kicker,
+body.home .stars,
+body.home .rev-stars,
+body.home .areas__facts b,
+body.home .stats .st b,
+body.home .om-hl,
+body.home .links a,
+body.home a.learn,
+body.home .learn,
+body.home .svcmap__open,
+body.home footer.site h4,
+body.home .topbar a[href^="mailto:"],
+body.home .topnote a[href^="tel:"],
+body.home .seo-content .prose strong{
+  color:var(--om-orange) !important;
+}
+body.home .step__n,
+body.home .badge-dot,
+body.home .hero .pitch a[href^="tel:"],
+body.home .final .btn-white{
+  background:var(--om-orange) !important;
+  border-color:var(--om-orange) !important;
+  color:#FFFFFF !important;
+}
+body.home .callus{ color:var(--om-orange) !important; border-color:var(--om-orange) !important; }
+body.home .callus:hover{ background:var(--om-orange) !important; color:#FFFFFF !important; }
+body.home .trustb__list li{ border-left-color:var(--om-orange) !important; }
+body.home .areas__facts li{ border-top-color:var(--om-orange) !important; }
+body.home h2::after,
+body.home .group-label::after{ background:var(--om-orange) !important; }
+
+/* Синий — один на весь сайт, без градиентов */
+body.home .trustb,
+body.home .alsoneed,
+body.home .reviews,
+body.home .final,
+body.home .svcarea,
+body.home #services .sec-head,
+body.home #services .steps,
+body.home footer.site,
+body.home .q30__in{
+  background:var(--om-navy) !important;
+}
+body.home h1, body.home h2, body.home h3, body.home h4,
+body.home .gl-1,
+body.home .seo-content .prose h2,
+body.home .seo-content .prose h3,
+body.home .card h3{ color:var(--om-navy) !important; }
+/* На синем фоне заголовки белые */
+body.home .trustb h2, body.home .trustb h3, body.home .trustb b,
+body.home .alsoneed h2, body.home .alsoneed h3,
+body.home .reviews h2, body.home .reviews h3,
+body.home .final h2,
+body.home .svcarea h2,
+body.home #services .sec-head h2,
+body.home #services .steps b,
+body.home footer.site .logo,
+body.home .q30__title,
+body.home .hero h1{ color:#FFFFFF !important; }
+body.home .hero h1 .accent,
+body.home .trustb h2 .accent,
+body.home .svcarea h2 .accent,
+body.home .reviews h2 .accent,
+body.home #services .sec-head h2 .accent{ color:var(--om-orange) !important; }
+/* Приглушённый текст: ровно два тона */
+body.home .trustb p, body.home .trustb__list span:not(.trustb__ic),
+body.home .alsoneed p, body.home .reviews .rev p, body.home .final p,
+body.home .svcarea p, body.home #services .steps span:not(.step__n),
+body.home #services .sec-head p, body.home footer.site p,
+body.home footer.site li a, body.home .q30__note, body.home .areas p{
+  color:var(--om-dim-on-navy) !important;
+}
+body.home .card p, body.home .seo-content .prose p,
+body.home .seo-content .prose li, body.home .stats .st span,
+body.home .topbar .sp{ color:var(--om-dim-on-white) !important; }
+
+/* Остатки светлых оранжевых и промежуточных синих — сводим к паре цветов */
+body.home .svcarea .eyebrow,
+body.home .svcarea h2 .accent,
+body.home .areas .eyebrow,
+body.home .areas h2 .accent,
+body.home .areas__facts b,
+body.home .trustb h2 .accent,
+body.home .trustb__kicker,
+body.home .reviews .rev .stars,
+body.home .reviews .rev-stars,
+body.home .rev-kicker,
+body.home .q30__kicker,
+body.home .q30__badge,
+body.home .q30__badge span,
+body.home .alsoneed .eyebrow,
+body.home #services .sec-head .eyebrow,
+body.home footer.site h4,
+body.home footer.site a[href^="tel:"]:hover,
+body.home .svcmap__open,
+body.home .hero .badges .stars,
+body.home .hero .pitch .eyebrow,
+:root[data-theme="dark"] body.home .accent,
+:root[data-theme="dark"] body.home .eyebrow,
+:root[data-theme="dark"] body.home .gl-2,
+:root[data-theme="dark"] body.home .callus,
+:root[data-theme="dark"] body.home .learn,
+:root[data-theme="dark"] body.home .links a,
+:root[data-theme="dark"] body.home footer.site h4{
+  color:#E86A0C !important;
+}
+body.home .q30__badge,
+body.home .rev-kicker{
+  background:rgba(232,106,12,.14) !important;
+  border-color:rgba(232,106,12,.45) !important;
+}
+/* Промежуточные синие в тексте и рамках */
+body.home .covers .ic,
+body.home .incl li .ic,
+body.home .topbar,
+body.home .topbar *,
+body.home .topnote,
+body.home .topnote *{ color:#0C1E3C !important; }
+body.home .topbar a[href^="mailto:"],
+body.home .topnote a[href^="tel:"],
+body.home .topbar .om-hl{ color:#E86A0C !important; }
+body.home .est__box,
+body.home .q30 .q30__in form.q30__form{ border-color:rgba(255,255,255,.45) !important; }
