@@ -2362,3 +2362,201 @@ body .trustb .trustb__actions{
   font-size:16px !important; line-height:1.65 !important;
   max-width:60ch; margin:0 auto 24px !important;
 }
+
+/* ══ Галерея работ: фото во всю ширину, без обрезки карточек ════════ */
+body .gallery .wrap{ max-width:1200px !important; }
+body .gallery .gshots, body .gallery [class*=grid]{
+  display:grid !important;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr)) !important;
+  gap:14px !important;
+}
+body .gallery .gshot{ width:100% !important; margin:0 !important; }
+body .gallery .gshot img{
+  width:100% !important; height:auto !important;
+  aspect-ratio:4/3 !important; object-fit:cover !important;
+  border-radius:12px !important; display:block !important;
+}
+
+/* ══ Сетка услуг: ровные колонки, карточки не расползаются ══════════ */
+body #services .cards{
+  display:grid !important;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr)) !important;
+  gap:16px !important;
+  align-items:stretch !important;
+  justify-content:stretch !important;
+  max-width:1200px !important;
+  margin-inline:auto !important;
+}
+body #services .cards > .card{
+  width:auto !important; max-width:none !important; flex:none !important;
+  margin:0 !important; box-sizing:border-box !important;
+}
+@media (max-width:700px){
+  body #services .cards{ grid-template-columns:1fr !important; }
+}
+
+/* ══ Галерея работ: реальный контейнер .gallery-row ═════════════════ */
+body .gallery .gallery-row{
+  display:grid !important;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr)) !important;
+  gap:14px !important;
+  overflow:visible !important;
+  width:100% !important;
+  margin-top:22px !important;
+}
+body .gallery .gallery-row > *{
+  width:auto !important; min-width:0 !important; max-width:none !important;
+  flex:none !important; margin:0 !important;
+}
+body .gallery .gallery-row img{
+  width:100% !important; height:auto !important;
+  aspect-ratio:4/3 !important; object-fit:cover !important;
+  border-radius:12px !important; display:block !important;
+  border:1px solid #DCE7F5;
+}
+body .gallery .gallery-row .cap,
+body .gallery .gallery-row figcaption{
+  display:block; margin-top:8px; font-size:13.5px; color:#5A6B85;
+}
+@media (max-width:600px){
+  body .gallery .gallery-row{ grid-template-columns:1fr 1fr !important; gap:10px !important; }
+}
+
+/* ══ Ярлыки групп: по центру, крупно, двухцветно ════════════════════ */
+body .group-label{
+  display:block !important;
+  text-align:center !important;
+  font-family:var(--display,inherit);
+  font-size:clamp(24px,3vw,32px) !important;
+  font-weight:800 !important;
+  letter-spacing:-.01em !important;
+  text-transform:none !important;
+  margin:52px 0 8px !important;
+  padding:0 !important;
+  background:none !important; border:0 !important;
+}
+body .group-label .gl-1{ color:#0C1E3C; }
+body .group-label .gl-2{ color:#E86A0C; }
+/* Линия под ярлыком */
+body .group-label::after{
+  content:''; display:block; width:52px; height:3px; border-radius:2px;
+  background:#E86A0C; margin:14px auto 26px;
+}
+
+/* ══ Галерея: 5 фото в один ряд, ничего не съезжает ═════════════════ */
+@media (min-width:1000px){
+  body .gallery .gallery-row{
+    grid-template-columns:repeat(5,1fr) !important;
+    gap:12px !important;
+  }
+}
+@media (min-width:700px) and (max-width:999px){
+  body .gallery .gallery-row{ grid-template-columns:repeat(3,1fr) !important; }
+}
+@media (max-width:699px){
+  body .gallery .gallery-row{ grid-template-columns:1fr 1fr !important; }
+}
+body .gallery .gallery-row > *{ min-width:0 !important; }
+
+/* ══ Галерея: подпись поверх фото, без серой полосы под ним ═════════ */
+body .gallery .gshot{
+  position:relative !important;
+  overflow:hidden !important;
+  border-radius:12px !important;
+  line-height:0 !important;
+}
+body .gallery .gshot img{
+  border:0 !important; border-radius:12px !important;
+  display:block !important; width:100% !important;
+  aspect-ratio:4/3 !important; object-fit:cover !important;
+}
+body .gallery .gshot .cap{
+  position:absolute !important; left:0; right:0; bottom:0;
+  margin:0 !important; padding:22px 12px 10px !important;
+  background:linear-gradient(180deg,rgba(12,30,60,0) 0%,rgba(12,30,60,.82) 100%) !important;
+  color:#FFFFFF !important;
+  font-size:13px !important; line-height:1.3 !important; font-weight:600 !important;
+  text-align:left !important;
+  display:block !important;
+}
+
+/* ══ Верхняя полоса .topbar — белая, тёмные буквы, акценты оранжевым ══ */
+body .topbar{
+  background:#FFFFFF !important;
+  background-image:none !important;
+  border-bottom:1px solid #E1E9F5 !important;
+  color:#14315C !important;
+}
+body .topbar .wrap{ background:transparent !important; }
+body .topbar,
+body .topbar *,
+body .topbar span,
+body .topbar a{
+  color:#14315C !important;
+}
+/* Телефон — оранжевый и жирный, он главный */
+body .topbar a[href^="tel:"]{
+  color:#C25508 !important; font-weight:800 !important;
+}
+body .topbar a[href^="tel:"]:hover{ color:#E86A0C !important; }
+/* Почта — тёмно-синяя, подчёркивание при наведении */
+body .topbar a[href^="mailto:"]{ color:#14315C !important; }
+body .topbar a[href^="mailto:"]:hover{ color:#C25508 !important; }
+/* Иконки — оранжевые */
+body .topbar svg{ stroke:#E86A0C !important; color:#E86A0C !important; }
+/* Правая часть про часы — приглушённая */
+body .topbar .wrap > :last-child{ color:#5A6B85 !important; }
+
+/* ══ Блок оценки: оранжевая полоса и сверху, и снизу ════════════════ */
+body .est{
+  border-top:4px solid #E86A0C !important;
+  border-bottom:4px solid #E86A0C !important;
+}
+
+/* ══ Галерея: белый фон, двухцветный заголовок ══════════════════════ */
+body .gallery{
+  background:#FFFFFF !important;
+  background-image:none !important;
+  padding-block:48px !important;
+}
+body .gallery .wrap{ background:transparent !important; }
+body .gallery .head{
+  display:block !important; text-align:center !important;
+  margin-bottom:6px !important;
+}
+body .gallery .eyebrow{
+  display:block; color:#E86A0C !important;
+  font-size:11.5px; letter-spacing:.18em; text-transform:uppercase; font-weight:800;
+  margin-bottom:8px;
+}
+body .gallery h2{
+  font-size:clamp(26px,3.2vw,34px) !important; margin:0 !important;
+}
+body .gallery h2 .gl-1{ color:#0C1E3C !important; }
+body .gallery h2 .gl-2{ color:#E86A0C !important; }
+body .gallery h2::after{
+  content:''; display:block; width:52px; height:3px; border-radius:2px;
+  background:#E86A0C; margin:14px auto 0;
+}
+/* Никаких серых подложек у фото */
+body .gallery .gshot{ background:transparent !important; box-shadow:none !important; }
+
+/* ── Подписи под фото: без плашки, синим и оранжевым ─────────────── */
+body .gallery .gshot{ line-height:normal !important; overflow:visible !important; }
+body .gallery .gshot img{ display:block; width:100%; border-radius:12px; }
+body .gallery .gshot .cap{
+  position:static !important;
+  background:none !important;
+  background-image:none !important;
+  padding:10px 2px 0 !important;
+  display:block !important;
+  color:#0C1E3C !important;
+  font-size:13.5px !important; font-weight:600 !important;
+  text-shadow:none !important;
+}
+body .gallery .gshot .cap b{ color:#E86A0C !important; font-weight:800 !important; }
+
+/* Галерея: меньше воздуха сверху и снизу */
+body .gallery{ padding-top:22px !important; padding-bottom:22px !important; }
+body .gallery .head{ margin-bottom:14px !important; }
+body .gallery h2::after{ margin:10px auto 0 !important; }
