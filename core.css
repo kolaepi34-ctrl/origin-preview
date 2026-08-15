@@ -5658,3 +5658,17 @@ body.home .final a[href^="tel:"]{
 }
 body.home .final .phone:hover,
 body.home .final a[href^="tel:"]:hover{ color:#E86A0C !important; }
+
+/* Плашки городов: при наведении оранжевые */
+body.home .areas .chips span:hover,
+body.home .areas .chips a:hover,
+body.home .areas .chip:hover{
+  background:#E86A0C !important;
+  border-color:#E86A0C !important;
+  color:#FFFFFF !important;
+  cursor:default;
+  transition:background .16s, border-color .16s, color .16s;
+}
+body.home .areas .chips span,
+body.home .areas .chips a,
+body.home .areas .chip{ transition:background .16s, border-color .16s, color .16s; }
