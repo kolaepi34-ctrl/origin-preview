@@ -5250,3 +5250,20 @@ body.home .hero h1 .accent{ color:#E86A0C !important; }
 /* Кнопка в полосе фактов: воздух сверху и снизу одинаковый */
 body.home .stats .stats-cta{ margin:22px auto 22px !important; }
 body.home .stats{ padding-bottom:26px !important; }
+
+/* «Explore more»: ссылки едут лентой влево, как отзывы и галерея */
+body.home .related .links{
+  display:flex !important;
+  flex-wrap:nowrap !important;
+  width:max-content !important;
+  gap:10px !important;
+  animation:exploreflow 42s linear infinite;
+}
+body.home .related .links-marquee{ overflow:hidden !important; width:100% !important; }
+body.home .related .links-marquee:hover .links{ animation-play-state:paused; }
+body.home .related .links a{ white-space:nowrap !important; }
+@keyframes exploreflow{ from{ transform:translateX(0) } to{ transform:translateX(-50%) } }
+@media (prefers-reduced-motion:reduce){
+  body.home .related .links{ animation:none !important; }
+  body.home .related .links-marquee{ overflow-x:auto !important; }
+}
