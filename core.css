@@ -5828,3 +5828,22 @@ body.home .areas .chip{ transition:background .16s, border-color .16s, color .16
 :root[data-theme="dark"] body.home .topband{
   background:url('/assets/hero-live-0.jpg') center 42%/cover no-repeat !important;
 }
+
+/* Кнопки Call us в тёмной теме: правило палитры перекрашивало их в синий,
+   а карточка тоже синяя. Ставим оранжевый последним словом. */
+:root[data-theme="dark"] body.home a.callus,
+:root[data-theme="dark"] body.home a.callus:link,
+:root[data-theme="dark"] body.home a.callus:visited,
+:root[data-theme="dark"] body.home #services a.callus,
+:root[data-theme="dark"] body.home .cards a.callus{
+  color:#FFA24D !important;
+  border:1.5px solid rgba(255,162,77,.65) !important;
+  background:transparent !important;
+}
+:root[data-theme="dark"] body.home a.callus:hover{
+  background:#E86A0C !important; border-color:#E86A0C !important; color:#FFFFFF !important;
+}
+
+/* Explore more: без подчёркивания */
+body.home .related .links a{ border-bottom:0 !important; text-decoration:none !important; }
+body.home .related .links a:hover{ color:#E86A0C !important; text-decoration:none !important; }
