@@ -5251,19 +5251,33 @@ body.home .hero h1 .accent{ color:#E86A0C !important; }
 body.home .stats .stats-cta{ margin:22px auto 22px !important; }
 body.home .stats{ padding-bottom:26px !important; }
 
-/* «Explore more»: ссылки едут лентой влево, как отзывы и галерея */
+
+}
+
+/* Кнопки, которые просили убрать */
+body.home .stats .stats-cta{ display:none !important; }
+body.home .included .incl-cta{ display:none !important; }
+
+/* Explore more: заголовки светлее синим, значки ярко-оранжевые, без ленты */
 body.home .related .links{
-  display:flex !important;
-  flex-wrap:nowrap !important;
-  width:max-content !important;
-  gap:10px !important;
-  animation:exploreflow 42s linear infinite;
+  display:flex !important; flex-wrap:wrap !important; width:auto !important;
+  animation:none !important; gap:10px !important;
 }
-body.home .related .links-marquee{ overflow:hidden !important; width:100% !important; }
-body.home .related .links-marquee:hover .links{ animation-play-state:paused; }
-body.home .related .links a{ white-space:nowrap !important; }
-@keyframes exploreflow{ from{ transform:translateX(0) } to{ transform:translateX(-50%) } }
-@media (prefers-reduced-motion:reduce){
-  body.home .related .links{ animation:none !important; }
-  body.home .related .links-marquee{ overflow-x:auto !important; }
+body.home .related .links-marquee{ overflow:visible !important; }
+body.home .related{ color:#1B3A66 !important; }
+body.home .related .eyebrow{ color:#E86A0C !important; }
+body.home .related b,
+body.home .related strong,
+body.home .related h2,
+body.home .related h3{ color:#1B3A66 !important; }
+body.home .related svg{ color:#E86A0C !important; stroke:#E86A0C !important; }
+
+/* Значки в карточках услуг — без подложки */
+body.home #services .cards .card .ic{
+  background:none !important;
+  border:0 !important;
+  border-radius:0 !important;
+  width:auto !important; height:auto !important;
+  padding:0 !important;
 }
+body.home #services .cards .card .ic svg{ width:30px !important; height:30px !important; }
