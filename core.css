@@ -5088,3 +5088,25 @@ body.home .areas .chips a{
   border:1px solid rgba(255,255,255,.20) !important;
   color:#FFFFFF !important;
 }
+
+/* Свёрнутый SEO-текст обрезался посреди строки — были видны верхушки букв.
+   Клампим по числу строк, а не по высоте в пикселях. */
+body.home .seo-content .seo-body{
+  max-height:none !important;
+  overflow:hidden !important;
+}
+body.home .seo-content:not(.is-open) .seo-body .prose{
+  display:-webkit-box !important;
+  -webkit-line-clamp:8 !important;
+  -webkit-box-orient:vertical !important;
+  overflow:hidden !important;
+}
+body.home .seo-content.is-open .seo-body .prose{
+  display:block !important;
+  -webkit-line-clamp:none !important;
+  overflow:visible !important;
+}
+
+/* Текст и форма первого экрана начинаются на одном уровне */
+body.home .hero .wrap.grid{ align-items:start !important; }
+body.home .hero .pitch{ padding-top:6px !important; }
