@@ -3520,3 +3520,13 @@ body.home .trustb .trustb__btn:hover{ animation-play-state:paused; }
 @media (prefers-reduced-motion:reduce){
   body.home .trustb .trustb__btn{ animation:none !important; }
 }
+
+/* Кнопка под отзывами — красная с белым текстом, как главная в форме */
+body.home .reviews .rev-cta__btn{
+  background:#D62828 !important;
+  border-color:#D62828 !important;
+  color:#FFFFFF !important;
+}
+body.home .reviews .rev-cta__btn:hover{
+  background:#B01F1F !important; border-color:#B01F1F !important; color:#FFFFFF !important;
+}
