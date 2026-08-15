@@ -5126,3 +5126,22 @@ body.home .hero .pitch .btns,
 body.home .hero .pitch > div:has(> a[href^="tel:"]){ display:none !important; }
 body.home .hero .pitch h1{ margin-bottom:0 !important; }
 body.home .hero .pitch{ align-self:center !important; }
+
+/* Кнопка звонка в полосе фактов — крупно и по центру под четырьмя квадратами */
+body.home .stats .stats-cta{
+  display:flex !important;
+  justify-content:center !important;
+  margin:26px auto 4px !important;
+}
+body.home .stats .stats-cta a{
+  display:inline-flex !important; align-items:center !important; gap:11px !important;
+  background:#E86A0C !important; border:0 !important; color:#FFFFFF !important;
+  font-size:22px !important; font-weight:800 !important; letter-spacing:-.01em !important;
+  height:66px !important; padding:0 38px !important; border-radius:12px !important;
+  box-shadow:0 12px 30px rgba(232,106,12,.32) !important;
+}
+body.home .stats .stats-cta a:hover{ background:#C25508 !important; }
+body.home .stats .stats-cta svg{ stroke:#FFFFFF !important; }
+@media (max-width:560px){
+  body.home .stats .stats-cta a{ font-size:18px !important; height:58px !important; padding:0 22px !important; }
+}
