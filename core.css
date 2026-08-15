@@ -4439,3 +4439,108 @@ body.home .seo-content .prose h3{
   font-size:clamp(22px,2.4vw,30px) !important;
   letter-spacing:-.015em !important;
 }
+
+/* ══════════════════════════════════════════════════════════════════════
+   ФОРМА ПЕРВОГО ЭКРАНА
+   После тонировки фото в синий тёмная форма слилась с фоном — карточка
+   перестала читаться как отдельный объект. Делаем её светлой: белая
+   панель на синем экране, тёмно-синий текст, красная кнопка отправки.
+   ══════════════════════════════════════════════════════════════════════ */
+body.home .hero .quote{
+  background:#FFFFFF !important;
+  border:1px solid rgba(12,30,60,.10) !important;
+  border-radius:18px !important;
+  box-shadow:0 30px 70px rgba(6,16,34,.45) !important;
+  padding:28px 26px 24px !important;
+}
+body.home .hero .quote .eyebrow,
+body.home .hero .quote [class*="kicker"]{
+  color:#E86A0C !important; letter-spacing:.18em !important; font-size:11.5px !important;
+}
+body.home .hero .quote h3{
+  color:#0C1E3C !important;
+  font-size:clamp(26px,2.3vw,34px) !important;
+  margin:8px 0 6px !important;
+}
+body.home .hero .quote > p,
+body.home .hero .quote .sub{ color:#5A6B85 !important; font-size:14.5px !important; }
+body.home .hero .quote label{
+  color:#0C1E3C !important; font-weight:700 !important; font-size:13px !important;
+}
+body.home .hero .quote input,
+body.home .hero .quote select,
+body.home .hero .quote textarea{
+  background:#F4F7FC !important;
+  border:1.5px solid #DCE5F2 !important;
+  color:#0C1E3C !important;
+  border-radius:10px !important;
+}
+body.home .hero .quote input::placeholder,
+body.home .hero .quote textarea::placeholder{ color:#93A3BC !important; }
+body.home .hero .quote input:focus,
+body.home .hero .quote select:focus,
+body.home .hero .quote textarea:focus{
+  border-color:#E86A0C !important;
+  box-shadow:0 0 0 3px rgba(232,106,12,.16) !important;
+  outline:none !important;
+}
+/* Кнопки под формой: отправка красная, звонок и смс — синим контуром */
+body.home .hero .quote button[type="submit"],
+body.home .hero .quote .btn-send{
+  background:#D62828 !important; border-color:#D62828 !important; color:#FFFFFF !important;
+  font-weight:800 !important;
+}
+body.home .hero .quote button[type="submit"]:hover{ background:#B01F1F !important; }
+body.home .hero .quote a:not([type]),
+body.home .hero .quote .btn-ghost{
+  background:#FFFFFF !important;
+  border:1.5px solid #0C1E3C !important;
+  color:#0C1E3C !important;
+}
+body.home .hero .quote a:not([type]):hover{ background:#0C1E3C !important; color:#FFFFFF !important; }
+body.home .hero .quote small,
+body.home .hero .quote .note{ color:#7C8CA6 !important; }
+
+/* Ярлыки групп услуг — оформлены как остальные заголовки секций */
+body.home .group-label{
+  text-align:center !important;
+  margin:56px auto 10px !important;
+}
+body.home .group-label .gl-1{ color:#0C1E3C !important; }
+body.home .group-label .gl-2{ color:#E86A0C !important; }
+body.home .group-label::after{
+  content:''; display:block; width:56px; height:3px; border-radius:2px;
+  background:#E86A0C; margin:16px auto 30px;
+}
+
+/* Заголовки групп услуг — ровно тот же вид, что у остальных секций */
+body.home #services .group-head{
+  text-align:center !important;
+  max-width:1180px !important;
+  margin:56px auto 26px !important;
+  padding:0 !important;
+  background:none !important;
+  width:auto !important;
+}
+body.home #services .group-head .eyebrow{
+  display:block !important; color:#E86A0C !important;
+  font-size:12.5px !important; letter-spacing:.22em !important;
+  text-transform:uppercase !important; font-weight:800 !important; margin-bottom:10px !important;
+}
+body.home #services .group-head h2{
+  font-size:clamp(32px,4.6vw,56px) !important;
+  font-weight:900 !important; line-height:1.05 !important; letter-spacing:-.025em !important;
+  margin:0 auto !important;
+}
+body.home #services .group-head h2 .gl-1{ color:#0C1E3C !important; }
+body.home #services .group-head h2 .gl-2{ color:#E86A0C !important; }
+body.home #services .group-head h2::after{
+  content:''; display:block; width:56px; height:3px; border-radius:2px;
+  background:#E86A0C; margin:16px auto 0;
+}
+
+/* Карточки упирались в тёмную полосу «30 секунд» — она полноширинная и шла
+   сразу за сеткой. Возвращаем воздух между рядом карточек и следующим блоком. */
+body.home #services .cards{ margin-bottom:44px !important; }
+body.home #services .q30{ margin-top:16px !important; }
+body.home #services{ padding-bottom:40px !important; }
