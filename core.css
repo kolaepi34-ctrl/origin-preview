@@ -5110,3 +5110,10 @@ body.home .seo-content.is-open .seo-body .prose{
 /* Текст и форма первого экрана начинаются на одном уровне */
 body.home .hero .wrap.grid{ align-items:start !important; }
 body.home .hero .pitch{ padding-top:6px !important; }
+
+/* Первый экран: абзац под заголовком убран — остаются надзаголовок,
+   заголовок и кнопка звонка. Тот же текст полностью повторяется ниже,
+   в SEO-блоке, поэтому смысл не теряется. */
+body.home .hero .pitch .lead{ display:none !important; }
+body.home .hero .pitch{ padding-top:10px !important; }
+body.home .hero .pitch h1{ margin-bottom:26px !important; }
