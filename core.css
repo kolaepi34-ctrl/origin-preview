@@ -3991,3 +3991,17 @@ body.home footer.site .cols + *{
 @media (max-width:560px){
   body.home footer.site .cols{ grid-template-columns:1fr !important; }
 }
+
+/* Карточка «Not sure what you need?»: тень оранжевая и шире самой карточки */
+body.home #services .card.dark{
+  box-shadow:0 10px 26px rgba(12,30,60,.20) !important;
+  border-radius:14px !important;
+}
+body.home #services .card.dark:hover{
+  box-shadow:0 14px 34px rgba(12,30,60,.28) !important;
+}
+/* Воздух под секцией услуг был лишним */
+body.home #services{ padding-bottom:18px !important; }
+
+/* Заголовок «Get a free moving estimate» — на 10% меньше */
+body.home .est h2{ font-size:clamp(29px,4vw,49px) !important; }
