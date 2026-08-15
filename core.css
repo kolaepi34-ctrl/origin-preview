@@ -5464,3 +5464,28 @@ body.home footer.site .foot-bottom{
 @media (max-width:560px){
   body.home footer.site .cols{ grid-template-columns:1fr !important; }
 }
+
+/* ══ Возврат прежнего первого экрана ═══════════════════════════════════
+   Светлое фото без общего затемнения, тёмно-синий заголовок,
+   белая дымка слева, синяя форма справа. ══════════════════════════════ */
+body.home .hero::before{
+  filter:saturate(1.04) brightness(1.0) contrast(1.0) !important;
+  background-position:66% center !important;
+}
+body.home .hero::after{
+  background:linear-gradient(90deg,
+    rgba(255,255,255,.94) 0%,
+    rgba(255,255,255,.86) 26%,
+    rgba(255,255,255,.55) 44%,
+    rgba(255,255,255,.18) 60%,
+    rgba(255,255,255,0)   74%) !important;
+}
+body.home .hero h1{
+  color:#1B3A66 !important;
+  text-shadow:none !important;
+  font-size:clamp(40px,5.4vw,66px) !important;
+  max-width:14ch !important;
+}
+body.home .hero h1 .accent{ color:#E86A0C !important; }
+body.home .hero .pitch .eyebrow{ color:#0C1E3C !important; }
+body.home .hero .hero-facts{ display:none !important; }
