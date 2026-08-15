@@ -4202,3 +4202,27 @@ body.home .hero::after{
 
 /* Кадр с фургоном: смысловой центр справа, поэтому держим правый край */
 body.home .hero::before{ background-position:62% center !important; }
+
+/* Кадр вечерний и плотный — вуаль слева ещё легче, чтобы фото дышало */
+body.home .hero::before{ background-position:66% center !important; filter:saturate(1.02) !important; }
+body.home .hero::after{
+  background:linear-gradient(90deg,
+    rgba(255,255,255,.92) 0%,
+    rgba(255,255,255,.80) 26%,
+    rgba(255,255,255,.40) 46%,
+    rgba(255,255,255,.06) 64%,
+    rgba(255,255,255,0)   76%) !important;
+}
+
+/* Кадр чуть темнее — фото глубже, тёмно-синий текст держится увереннее */
+body.home .hero::before{
+  filter:saturate(1.02) brightness(.86) contrast(1.04) !important;
+}
+body.home .hero::after{
+  background:linear-gradient(90deg,
+    rgba(255,255,255,.90) 0%,
+    rgba(255,255,255,.76) 26%,
+    rgba(255,255,255,.34) 46%,
+    rgba(255,255,255,.04) 64%,
+    rgba(255,255,255,0)   76%) !important;
+}
