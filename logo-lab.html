@@ -3,87 +3,101 @@
 <style>
   :root{ --navy:#0C1E3C; --orange:#E86A0C; --line:#E1E9F5 }
   *{box-sizing:border-box}
-  body{margin:0;font:15px/1.5 system-ui,Segoe UI,Arial;color:var(--navy);background:#F6F9FD}
-  h1{font-size:22px;margin:26px 32px 4px}
-  .sub{margin:0 32px 22px;color:#5A6B85;font-size:14px}
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:18px;padding:0 32px 40px}
+  body{margin:0;font:15px/1.55 system-ui,Segoe UI,Arial;color:var(--navy);background:#F6F9FD}
+  h1{font-size:23px;margin:26px 32px 4px}
+  .sub{margin:0 32px 22px;color:#5A6B85;font-size:14px;max-width:900px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(400px,1fr));gap:18px;padding:0 32px 40px}
   .card{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
   .num{background:var(--navy);color:#fff;font-weight:800;font-size:12px;letter-spacing:.14em;
        text-transform:uppercase;padding:9px 14px}
   .num b{color:var(--orange)}
-  .stage{padding:26px 20px;display:flex;align-items:center;justify-content:center;min-height:120px}
+  .stage{padding:26px 20px;display:flex;align-items:center;justify-content:center;min-height:130px;gap:14px}
   .dark{background:var(--navy)}
   .tiny{background:#fff;border-top:1px solid var(--line);padding:12px 20px;display:flex;
-        align-items:center;gap:18px}
+        align-items:center;gap:20px}
   .note{padding:12px 16px;border-top:1px solid var(--line);color:#5A6B85;font-size:13px}
   svg{display:block}
 </style></head><body>
 
-<h1>Origin Movers — варианты логотипа</h1>
-<p class="sub">Каждый показан на белом, на тёмно-синем и в мелком размере (иконка приложения / фавикон / борт машины).</p>
+<h1>Origin Movers — логотип: машина, коробка и название</h1>
+<p class="sub">Каждый вариант показан на белом, на тёмно-синем и в мелком размере — так он будет
+выглядеть на вкладке браузера, в аватарке Google-профиля и на борту машины.</p>
 <div class="grid" id="grid"></div>
 
 <script>
-/* Общие цвета */
 const N='#0C1E3C', O='#E86A0C', W='#FFFFFF';
 
-/* ── 1. Коробка-«точка отправления» (текущий знак, доработан) ───────── */
-const mark1 = c => `<svg viewBox="0 0 64 64" width="{S}" height="{S}">
+/* ── 1. Фургон в профиль, на борту коробка ─────────────────────────── */
+const m1 = (c,a) => `<svg viewBox="0 0 92 64" width="{S}" height="{H}">
+  <g fill="none" stroke="${c}" stroke-width="3.4" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M4 14h48v32H4z"/>
+    <path d="M52 24h14l10 11v11H52z"/>
+    <path d="M4 46h72"/>
+  </g>
+  <circle cx="22" cy="50" r="7" fill="none" stroke="${c}" stroke-width="3.4"/>
+  <circle cx="64" cy="50" r="7" fill="none" stroke="${c}" stroke-width="3.4"/>
+  <g fill="none" stroke="${a}" stroke-width="3" stroke-linejoin="round">
+    <path d="M28 20 16 25v11l12 5 12-5V25Z"/><path d="M16 25l12 5 12-5"/><path d="M28 30v11"/>
+  </g></svg>`;
+
+/* ── 2. Коробка едет: коробка + колёса + линии скорости ────────────── */
+const m2 = (c,a) => `<svg viewBox="0 0 92 64" width="{S}" height="{H}">
   <g fill="none" stroke="${c}" stroke-width="3.6" stroke-linejoin="round" stroke-linecap="round">
-    <path d="M32 12 14 21v22l18 9 18-9V21Z"/><path d="M14 21l18 9 18-9"/><path d="M32 30v22"/>
-  </g><circle cx="32" cy="21" r="3.4" fill="${c==='${N}'?O:O}"/></svg>`;
+    <path d="M56 10 32 21v20l24 11 24-11V21Z"/><path d="M32 21l24 11 24-11"/><path d="M56 32v20"/>
+  </g>
+  <g stroke="${a}" stroke-width="4" stroke-linecap="round">
+    <path d="M4 20h18"/><path d="M0 32h14"/><path d="M6 44h16"/>
+  </g></svg>`;
 
-/* ── 2. Булавка на карте, внутри — коробка ──────────────────────────── */
-const mark2 = c => `<svg viewBox="0 0 64 64" width="{S}" height="{S}">
-  <path d="M32 6c-9.4 0-17 7.4-17 16.6C15 35 32 58 32 58s17-23 17-35.4C49 13.4 41.4 6 32 6Z"
-        fill="none" stroke="${c}" stroke-width="3.6"/>
-  <path d="M32 14 22 19v10l10 5 10-5V19Z" fill="none" stroke="${O}" stroke-width="3"
-        stroke-linejoin="round"/><path d="M22 19l10 5 10-5" fill="none" stroke="${O}" stroke-width="3"/></svg>`;
+/* ── 3. Фургон спереди-сбоку в круге (печать) ──────────────────────── */
+const m3 = (c,a) => `<svg viewBox="0 0 64 64" width="{H}" height="{H}">
+  <circle cx="32" cy="32" r="29" fill="none" stroke="${c}" stroke-width="3"/>
+  <g fill="none" stroke="${c}" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M13 22h26v20H13z"/><path d="M39 29h8l6 7v6H39z"/>
+  </g>
+  <circle cx="22" cy="45" r="4.6" fill="none" stroke="${c}" stroke-width="3"/>
+  <circle cx="45" cy="45" r="4.6" fill="none" stroke="${c}" stroke-width="3"/>
+  <g fill="none" stroke="${a}" stroke-width="2.6" stroke-linejoin="round">
+    <path d="M26 26l-8 3.5v7l8 3.5 8-3.5v-7Z"/><path d="M18 29.5l8 3.5 8-3.5"/>
+  </g></svg>`;
 
-/* ── 3. Монограмма O — кольцо с разрывом-дорогой и стрелкой ─────────── */
-const mark3 = c => `<svg viewBox="0 0 64 64" width="{S}" height="{S}">
-  <path d="M46 14A24 24 0 1 0 52 32" fill="none" stroke="${c}" stroke-width="6" stroke-linecap="round"/>
-  <path d="M40 8l12 6-12 6" fill="none" stroke="${O}" stroke-width="6"
-        stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="32" cy="32" r="6" fill="${O}"/></svg>`;
+/* ── 4. Фургон + коробка едут по дуге-маршруту ─────────────────────── */
+const m4 = (c,a) => `<svg viewBox="0 0 92 64" width="{S}" height="{H}">
+  <path d="M2 56C22 56 30 48 46 48s26 8 44 8" fill="none" stroke="${a}"
+        stroke-width="3.6" stroke-linecap="round" opacity=".55"/>
+  <g fill="none" stroke="${c}" stroke-width="3.4" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M10 12h42v26H10z"/><path d="M52 21h12l9 10v7H52z"/><path d="M10 38h63"/>
+  </g>
+  <circle cx="26" cy="41" r="5.6" fill="none" stroke="${c}" stroke-width="3.4"/>
+  <circle cx="61" cy="41" r="5.6" fill="none" stroke="${c}" stroke-width="3.4"/>
+  <g fill="none" stroke="${a}" stroke-width="2.8" stroke-linejoin="round">
+    <path d="M31 17l-9 4v8l9 4 9-4v-8Z"/><path d="M22 21l9 4 9-4"/><path d="M31 25v8"/>
+  </g></svg>`;
 
-/* ── 4. Плашка: коробка в скруглённом квадрате ──────────────────────── */
-const mark4 = c => `<svg viewBox="0 0 64 64" width="{S}" height="{S}">
-  <rect width="64" height="64" rx="15" fill="${c==='#FFFFFF'?W:N}"/>
-  <g fill="none" stroke="${O}" stroke-width="3.6" stroke-linejoin="round" stroke-linecap="round">
-    <path d="M32 14 16 22v20l16 8 16-8V22Z"/><path d="M16 22l16 8 16-8"/><path d="M32 30v20"/>
-  </g><circle cx="32" cy="22" r="3.2" fill="${c==='#FFFFFF'?N:W}"/></svg>`;
-
-/* ── Надписи ────────────────────────────────────────────────────────── */
-const word = (c1,c2,size=1) => `
-  <span style="font:900 ${28*size}px/1 Arial Black,Arial;letter-spacing:.02em;color:${c1}">ORIGIN<span
+const word = (c1,c2,s=1) => `<div style="line-height:1">
+  <span style="font:900 ${30*s}px/1 Arial Black,Arial;letter-spacing:.02em;color:${c1}">ORIGIN<span
     style="color:${c2}">.</span></span>
-  <span style="display:block;font:700 ${11*size}px/1.4 Arial;letter-spacing:.34em;color:${c2}">MOVERS</span>`;
-
-const wordStack = (c1,c2,size=1) => `<div style="margin-left:12px">${word(c1,c2,size)}</div>`;
+  <div style="font:700 ${11.5*s}px/1.5 Arial;letter-spacing:.36em;color:${c2}">MOVERS</div></div>`;
 
 const V = [
- {n:'Вариант 1 · Коробка «точка отправления»', m:mark1,
-  note:'Развитие того знака, что стоит на сайте сейчас. Коробка в изометрии = откуда начинается переезд. Оранжевая точка — «origin», отправная точка на карте.'},
- {n:'Вариант 2 · Булавка на карте', m:mark2,
-  note:'Читается как «локальный перевозчик»: булавка Google-карт, внутри коробка. Хорошо ложится на фото и на борт машины, узнаётся с 20 метров.'},
- {n:'Вариант 3 · Монограмма O с маршрутом', m:mark3,
-  note:'Буква O из названия, разорванная стрелкой-маршрутом. Самый «фирменный» — работает без слов, но менее прямолинейный.'},
- {n:'Вариант 4 · Плашка (для соцсетей)', m:mark4,
-  note:'Тот же знак в квадрате со скруглением. Нужен для аватарки в Google-профиле, Facebook и Instagram — там круг/квадрат, а не длинная надпись.'}
+ {n:'Фургон, на борту коробка', m:m1, w:104, h:72,
+  note:'Самый прямой: машина + коробка на её борту. Ни у кого не возникнет вопроса, чем занимается компания. Хорошо смотрится на визитке и на самой машине.'},
+  note:'Коробка и линии скорости — «вещи уже едут». Знак крупный и простой, читается на вкладке браузера в 16 px, где мелкие колёса слиплись бы в кашу.'},
+ {n:'Фургон в круге (печать)', m:m3, w:76, h:76,
+  note:'Круглая версия — ровно то, что нужно для аватарки Google-профиля, Facebook и Instagram: там кадр круглый, длинный горизонтальный знак обрежется.'},
+ {n:'Фургон на маршруте', m:m4, w:104, h:72,
+  note:'Машина с коробкой едет по дуге-дороге. Оранжевая линия связывает знак с фирменным цветом и добавляет движения — самый «живой» из четырёх.'}
 ];
 
 document.getElementById('grid').innerHTML = V.map((v,i)=>{
-  const light = v.m(N).replaceAll('{S}',56);
-  const dark  = v.m(i===3?'#FFFFFF':W).replaceAll('{S}',56);
-  const small = v.m(N).replaceAll('{S}',26);
-  const smal2 = v.m(N).replaceAll('{S}',18);
+  const S = s => v.m(N,O).replaceAll('{S}',v.w*s).replaceAll('{H}',v.h*s);
+  const D = s => v.m(W,O).replaceAll('{S}',v.w*s).replaceAll('{H}',v.h*s);
   return `<div class="card">
-    <div class="num">Вариант <b>${i+1}</b></div>
-    <div class="stage">${light}${wordStack(N,O)}</div>
-    <div class="stage dark">${dark}${wordStack(W,O)}</div>
-    <div class="tiny">${small}${smal2}
-      <span style="color:#5A6B85;font-size:12px">мелкий размер: 26 px и 18 px</span></div>
+    <div class="num">Вариант <b>${i+1}</b> · ${v.n}</div>
+    <div class="stage">${S(1)}${word(N,O)}</div>
+    <div class="stage dark">${D(1)}${word(W,O)}</div>
+    <div class="tiny">${S(.38)}${S(.26)}
+      <span style="color:#5A6B85;font-size:12px">мелкий размер — вкладка браузера и аватарка</span></div>
     <div class="note">${v.note}</div>
   </div>`;
 }).join('');
