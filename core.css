@@ -5672,3 +5672,159 @@ body.home .areas .chip:hover{
 body.home .areas .chips span,
 body.home .areas .chips a,
 body.home .areas .chip{ transition:background .16s, border-color .16s, color .16s; }
+
+/* ══════════════════════════════════════════════════════════════════════
+   ТЁМНАЯ ТЕМА — ПОЛНЫЙ ПРОХОД
+   Основа не чёрная, а тёмно-синяя: фон #0B1524, поверхности #10203A.
+   Правила светлой темы (белые карточки, белые секции) здесь перекрыты,
+   иначе светлый текст оставался на белом фоне и пропадал.
+   ══════════════════════════════════════════════════════════════════════ */
+:root[data-theme="dark"] body.home,
+:root[data-theme="dark"] body.home .hero,
+:root[data-theme="dark"] body.home .final,
+:root[data-theme="dark"] body.home .seo-content,
+:root[data-theme="dark"] body.home .related,
+:root[data-theme="dark"] body.home .stats,
+:root[data-theme="dark"] body.home .included,
+:root[data-theme="dark"] body.home .gallery,
+:root[data-theme="dark"] body.home .est,
+:root[data-theme="dark"] body.home #services{
+  background:#0B1524 !important;
+  background-image:none !important;
+}
+/* Карточки и панели */
+:root[data-theme="dark"] body.home .card,
+:root[data-theme="dark"] body.home #services .cards .card,
+:root[data-theme="dark"] body.home .also-card,
+:root[data-theme="dark"] body.home .rev,
+:root[data-theme="dark"] body.home .incl li,
+:root[data-theme="dark"] body.home .covers li,
+:root[data-theme="dark"] body.home .trustb__list li,
+:root[data-theme="dark"] body.home .step{
+  background:#10203A !important;
+  border-color:rgba(255,255,255,.14) !important;
+  box-shadow:0 12px 30px rgba(0,0,0,.45) !important;
+}
+:root[data-theme="dark"] body.home #services .cards .card.dark{ background:#16294a !important; }
+/* Текст: белый и приглушённый синевато-серый, чёрного нет нигде */
+:root[data-theme="dark"] body.home h1,
+:root[data-theme="dark"] body.home h2,
+:root[data-theme="dark"] body.home h3,
+:root[data-theme="dark"] body.home h4,
+:root[data-theme="dark"] body.home .gl-1,
+:root[data-theme="dark"] body.home .card h3,
+:root[data-theme="dark"] body.home .seo-content .prose h2,
+:root[data-theme="dark"] body.home .seo-content .prose h3,
+:root[data-theme="dark"] body.home .final .phone,
+:root[data-theme="dark"] body.home .final a[href^="tel:"],
+:root[data-theme="dark"] body.home footer.site .logo{ color:#E8EEF8 !important; }
+:root[data-theme="dark"] body.home p,
+:root[data-theme="dark"] body.home li,
+:root[data-theme="dark"] body.home span,
+:root[data-theme="dark"] body.home .card p,
+:root[data-theme="dark"] body.home .seo-content .prose p,
+:root[data-theme="dark"] body.home .seo-content .prose li,
+:root[data-theme="dark"] body.home .stats .st span,
+:root[data-theme="dark"] body.home .topbar .sp{ color:#AFC1DC !important; }
+:root[data-theme="dark"] body.home .accent,
+:root[data-theme="dark"] body.home .gl-2,
+:root[data-theme="dark"] body.home .eyebrow,
+:root[data-theme="dark"] body.home .stats .st b,
+:root[data-theme="dark"] body.home .om-hl{ color:#E86A0C !important; }
+/* Кнопки */
+:root[data-theme="dark"] body.home .seo-content .seo-toggle,
+:root[data-theme="dark"] body.home .seo-content button{
+  background:transparent !important; border-color:#E8EEF8 !important; color:#E8EEF8 !important;
+}
+:root[data-theme="dark"] body.home .seo-content .seo-toggle:hover{ background:#E8EEF8 !important; color:#0B1524 !important; }
+:root[data-theme="dark"] body.home .final .btn-lg:not(.btn-white){
+  background:transparent !important; border-color:#E8EEF8 !important; color:#E8EEF8 !important;
+}
+:root[data-theme="dark"] body.home .hero .pitch a.btn-ghost{
+  background:transparent !important; border-color:#E8EEF8 !important; color:#E8EEF8 !important;
+}
+/* Ссылки «Learn more» и подобные */
+:root[data-theme="dark"] body.home a[class*="learn"],
+:root[data-theme="dark"] body.home .links a,
+:root[data-theme="dark"] body.home .related .links a{ color:#E86A0C !important; border-bottom-color:rgba(232,106,12,.5) !important; }
+/* Верхние полосы и подвал */
+:root[data-theme="dark"] body.home .topbar,
+:root[data-theme="dark"] body.home .topnote{ background:#10203A !important; border-color:rgba(255,255,255,.12) !important; }
+:root[data-theme="dark"] body.home .topbar *,
+:root[data-theme="dark"] body.home .topnote *{ color:#E8EEF8 !important; }
+:root[data-theme="dark"] body.home .topbar a[href^="mailto:"],
+:root[data-theme="dark"] body.home .topnote a[href^="tel:"]{ color:#E86A0C !important; }
+:root[data-theme="dark"] body.home footer.site{ background:#0B1524 !important; }
+:root[data-theme="dark"] body.home footer.site li a{ color:#AFC1DC !important; }
+
+/* Тёмная тема: все секции без исключения на тёмно-синем фоне.
+   Раньше перечислялись поимённо и часть оставалась белой. */
+:root[data-theme="dark"] body.home section,
+:root[data-theme="dark"] body.home header.site,
+:root[data-theme="dark"] body.home footer.site,
+:root[data-theme="dark"] body.home .topbar,
+:root[data-theme="dark"] body.home .topnote,
+:root[data-theme="dark"] body.home .stats,
+:root[data-theme="dark"] body.home .related,
+:root[data-theme="dark"] body.home .seo-content,
+:root[data-theme="dark"] body.home .seo-body,
+:root[data-theme="dark"] body.home .topband{
+  background-color:#0B1524 !important;
+}
+:root[data-theme="dark"] body.home header.site,
+:root[data-theme="dark"] body.home .topbar,
+:root[data-theme="dark"] body.home .topnote{ background-color:#10203A !important; }
+:root[data-theme="dark"] body.home header.site a,
+:root[data-theme="dark"] body.home header.site .sub,
+:root[data-theme="dark"] body.home nav a{ color:#E8EEF8 !important; }
+:root[data-theme="dark"] body.home .areas,
+:root[data-theme="dark"] body.home .trustb,
+:root[data-theme="dark"] body.home .alsoneed,
+:root[data-theme="dark"] body.home .reviews,
+:root[data-theme="dark"] body.home .svcarea,
+:root[data-theme="dark"] body.home .q30__in,
+:root[data-theme="dark"] body.home #services .sec-head,
+:root[data-theme="dark"] body.home #services .steps{
+  background-color:#10203A !important; background-image:none !important;
+}
+/* Оранжевый на тёмном берём светлее — на #0B1524 он даёт 4.8 против 2.9 */
+:root[data-theme="dark"] body.home .eyebrow,
+:root[data-theme="dark"] body.home .accent,
+:root[data-theme="dark"] body.home .gl-2,
+:root[data-theme="dark"] body.home .gbp,
+:root[data-theme="dark"] body.home strong,
+:root[data-theme="dark"] body.home .stats .st b{ color:#FFA24D !important; }
+:root[data-theme="dark"] body.home .chips span,
+:root[data-theme="dark"] body.home .chips a,
+:root[data-theme="dark"] body.home .chip{
+  background:#16294a !important; border-color:rgba(255,255,255,.22) !important; color:#E8EEF8 !important;
+}
+
+/* Остатки тёмной темы: тёмно-синие буквы на тёмно-синем фоне */
+:root[data-theme="dark"] body.home .gl-1,
+:root[data-theme="dark"] body.home #services .group-head h2 .gl-1,
+:root[data-theme="dark"] body.home .group-label .gl-1{ color:#FFFFFF !important; }
+:root[data-theme="dark"] body.home .callus,
+:root[data-theme="dark"] body.home .callus *,
+:root[data-theme="dark"] body.home #services .cards .card .callus{
+  color:#FFA24D !important;
+  border-color:rgba(255,162,77,.6) !important;
+  background:transparent !important;
+}
+:root[data-theme="dark"] body.home .callus:hover{
+  background:#E86A0C !important; border-color:#E86A0C !important; color:#FFFFFF !important;
+}
+:root[data-theme="dark"] body.home .hero .pitch .lead,
+:root[data-theme="dark"] body.home .lead{ color:#AFC1DC !important; }
+
+/* В тёмной теме у гео-блока пропадало фото — общее правило гасило картинку.
+   Возвращаем снимок Денвера и в тёмной теме, с более плотной заливкой. */
+:root[data-theme="dark"] body.home .areas{
+  background:
+    linear-gradient(180deg, rgba(8,17,30,.90) 0%, rgba(8,17,30,.82) 45%, rgba(8,17,30,.94) 100%),
+    url('/assets/denver-bg.jpg') center 40%/cover no-repeat !important;
+  background-color:#0B1524 !important;
+}
+:root[data-theme="dark"] body.home .topband{
+  background:url('/assets/hero-live-0.jpg') center 42%/cover no-repeat !important;
+}
