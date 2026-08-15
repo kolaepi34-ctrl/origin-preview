@@ -5284,3 +5284,7 @@ body.home #services .cards .card .ic svg{ width:30px !important; height:30px !im
 
 /* Значки в карточках услуг убраны совсем */
 body.home #services .cards .card .ic{ display:none !important; }
+
+/* Кнопку звонка в полосе фактов убираем независимо от того, в каком
+   контейнере она оказалась после переноса */
+body.home .stats-cta{ display:none !important; }
