@@ -5145,3 +5145,9 @@ body.home .stats .stats-cta svg{ stroke:#FFFFFF !important; }
 @media (max-width:560px){
   body.home .stats .stats-cta a{ font-size:18px !important; height:58px !important; padding:0 22px !important; }
 }
+
+/* Форма первого экрана — на 5 % уже */
+@media (min-width:1000px){
+  body.home .hero .wrap.grid{ grid-template-columns:minmax(0,1fr) minmax(0,1.16fr) !important; }
+}
+body.home .hero form.quote{ max-width:568px !important; margin-left:auto !important; }
