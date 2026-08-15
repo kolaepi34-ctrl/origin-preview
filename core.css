@@ -4588,3 +4588,111 @@ body.home .stats .st strong{
 }
 body.home .stats .st span:not(.st-top):not(.st-ic){ color:#5A6B85 !important; }
 body.home .stats .st svg{ color:#E86A0C !important; stroke:#E86A0C !important; }
+
+/* ══════════════════════════════════════════════════════════════════════
+   ФОРМА ПЕРВОГО ЭКРАНА — шире и короче
+   Было: узкая колонка 500 px и 676 px высоты, девять полей в столбик.
+   Стало: панель шире экрана-соседа, поля попарно в ряд, «Notes» убрано
+   с первого экрана — его спрашиваем на звонке, а не до отправки.
+   ══════════════════════════════════════════════════════════════════════ */
+@media (min-width:1000px){
+  body.home .hero .wrap.grid{
+    grid-template-columns:minmax(0,1fr) minmax(0,1.18fr) !important;
+    gap:44px !important;
+  }
+}
+body.home .hero .quote{ padding:26px 26px 22px !important; }
+body.home .hero .quote form{
+  display:grid !important;
+  grid-template-columns:1fr 1fr !important;
+  gap:12px 14px !important;
+}
+/* Имя — во всю ширину, остальное парами */
+body.home .hero .quote form > label:nth-of-type(1){ grid-column:1 / -1 !important; }
+body.home .hero .quote form label{ margin:0 !important; }
+body.home .hero .quote input,
+body.home .hero .quote select{ height:46px !important; margin-top:5px !important; }
+/* Заметки убираем с первого экрана — форма становится короче на треть */
+body.home .hero .quote textarea,
+body.home .hero .quote label:has(textarea){ display:none !important; }
+/* Кнопки в один ряд под полями */
+body.home .hero .quote .actions,
+body.home .hero .quote form > div:last-of-type{
+  grid-column:1 / -1 !important;
+  display:grid !important;
+  grid-template-columns:1.4fr 1fr 1fr !important;
+  gap:10px !important;
+}
+body.home .hero .quote button[type="submit"],
+body.home .hero .quote form a{
+  height:48px !important; display:inline-flex !important;
+  align-items:center !important; justify-content:center !important; gap:8px !important;
+}
+body.home .hero .quote small,
+body.home .hero .quote .note{ grid-column:1 / -1 !important; font-size:12px !important; margin-top:2px !important; }
+@media (max-width:640px){
+  body.home .hero .quote form{ grid-template-columns:1fr !important; }
+  body.home .hero .quote form > label{ grid-column:1 / -1 !important; }
+  body.home .hero .quote .actions,
+  body.home .hero .quote form > div:last-of-type{ grid-template-columns:1fr !important; }
+}
+
+/* Белые линии-обрамления секций убираем */
+body.home section{ border-top:0 !important; border-bottom:0 !important; }
+body.home .est,
+body.home .q30__in,
+body.home .stats{ border:0 !important; }
+
+/* ══ Форма первого экрана: реальная структура — form.quote > .field / .row2 ══ */
+@media (min-width:1000px){
+  body.home .hero .wrap.grid{ grid-template-columns:minmax(0,1fr) minmax(0,1.2fr) !important; }
+}
+body.home .hero form.quote{
+  width:100% !important; max-width:none !important;
+  padding:24px 24px 20px !important;
+}
+body.home .hero form.quote .field{ margin:0 0 12px !important; }
+body.home .hero form.quote .row2{
+  display:grid !important; grid-template-columns:1fr 1fr !important; gap:12px 14px !important;
+  margin:0 0 12px !important;
+}
+body.home .hero form.quote .row2 .field{ margin:0 !important; }
+body.home .hero form.quote label{ font-size:12.5px !important; font-weight:700 !important; color:#0C1E3C !important; }
+body.home .hero form.quote input,
+body.home .hero form.quote select{ height:46px !important; margin-top:5px !important; }
+/* Поле заметок с первого экрана убираем — форма короче на треть */
+body.home .hero form.quote .field:has(textarea){ display:none !important; }
+body.home .hero form.quote h3{ margin:6px 0 4px !important; }
+body.home .hero form.quote .sub{ margin:0 0 14px !important; }
+
+/* ══ Карточки услуг: спокойное оформление без полос и тяжёлых теней ══════ */
+body.home #services .cards .card{
+  background:#FFFFFF !important;
+  border:1px solid #E4EBF5 !important;
+  border-left:1px solid #E4EBF5 !important;
+  border-radius:14px !important;
+  box-shadow:none !important;
+  transition:border-color .18s, box-shadow .18s, transform .18s !important;
+}
+body.home #services .cards .card:hover{
+  border-color:#C9D8EC !important;
+  box-shadow:0 10px 26px rgba(12,30,60,.10) !important;
+  transform:none !important;
+}
+body.home #services .cards .card .ic{
+  background:rgba(232,106,12,.10) !important;
+  border-radius:10px !important;
+  width:44px !important; height:44px !important;
+  display:inline-flex !important; align-items:center !important; justify-content:center !important;
+}
+body.home #services .cards .card .ic svg{ color:#E86A0C !important; stroke:#E86A0C !important; }
+body.home #services .cards .card .tag{
+  background:transparent !important; border:0 !important; padding:0 !important;
+  color:#E86A0C !important; font-size:11.5px !important; letter-spacing:.14em !important;
+  text-transform:uppercase !important; font-weight:800 !important;
+}
+body.home #services .cards .card .callus{
+  border:1.5px solid #0C1E3C !important; color:#0C1E3C !important; background:transparent !important;
+  border-radius:999px !important;
+}
+body.home #services .cards .card .callus:hover{ background:#0C1E3C !important; color:#FFFFFF !important; }
