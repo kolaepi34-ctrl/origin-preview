@@ -4544,3 +4544,47 @@ body.home #services .group-head h2::after{
 body.home #services .cards{ margin-bottom:44px !important; }
 body.home #services .q30{ margin-top:16px !important; }
 body.home #services{ padding-bottom:40px !important; }
+
+/* ══ Карточка «Not sure what you need?» ════════════════════════════════
+   Была оранжевой заливкой, а правило палитры красит заголовки в синий —
+   тёмный текст на оранжевом не читался. Делаем карточку синей: белый
+   заголовок, светлый текст, оранжевая кнопка. ══════════════════════════ */
+body.home #services .card.dark{
+  background:#0C1E3C !important;
+  background-image:none !important;
+  border:1px solid rgba(255,255,255,.14) !important;
+  box-shadow:0 14px 34px rgba(12,30,60,.28) !important;
+}
+body.home #services .card.dark h3{ color:#FFFFFF !important; }
+body.home #services .card.dark p{ color:#C7D6EC !important; }
+body.home #services .card.dark .ic{
+  background:rgba(255,255,255,.10) !important;
+  border-radius:12px !important;
+}
+body.home #services .card.dark .ic svg{ color:#E86A0C !important; stroke:#E86A0C !important; }
+body.home #services .card.dark .callus{
+  background:#E86A0C !important;
+  border-color:#E86A0C !important;
+  color:#FFFFFF !important;
+  font-weight:800 !important;
+}
+body.home #services .card.dark .callus:hover{ background:#C25508 !important; border-color:#C25508 !important; }
+
+/* Полоса фактов под первым экраном: без разделительных линий,
+   заголовки синим, значки оранжевым */
+body.home .stats .st{
+  border:0 !important;
+  border-left:0 !important;
+  border-right:0 !important;
+  box-shadow:none !important;
+  padding:22px 18px !important;
+}
+body.home .stats .wrap{ border:0 !important; }
+body.home .stats .st b,
+body.home .stats .st strong{
+  color:#0C1E3C !important;
+  font-size:19px !important;
+  font-weight:800 !important;
+}
+body.home .stats .st span:not(.st-top):not(.st-ic){ color:#5A6B85 !important; }
+body.home .stats .st svg{ color:#E86A0C !important; stroke:#E86A0C !important; }
