@@ -5197,3 +5197,18 @@ body.home .trustb .trustb__photo{
 }
 /* Заголовок формы — на 5 % меньше */
 body.home .hero form.quote h3{ font-size:clamp(27px,2.47vw,36px) !important; }
+
+/* Фон Денвера в гео-блоке возвращён — но с плотной подложкой, чтобы текст
+   оставался читаемым (из-за неё же его и убирали). */
+body.home .areas{
+  background:
+    linear-gradient(180deg, rgba(9,22,45,.88) 0%, rgba(9,22,45,.78) 45%, rgba(9,22,45,.92) 100%),
+    url('/assets/denver-bg.jpg') center 40%/cover no-repeat !important;
+}
+body.home .areas h2,
+body.home .areas h2 .gl-1{ color:#FFFFFF !important; text-shadow:0 2px 20px rgba(3,10,24,.8) !important; }
+body.home .areas p{ color:#E3EBF7 !important; text-shadow:0 1px 14px rgba(3,10,24,.9) !important; }
+body.home .areas .areas__facts{
+  background:rgba(6,16,34,.78) !important;
+  border:1px solid rgba(255,255,255,.16) !important;
+}
