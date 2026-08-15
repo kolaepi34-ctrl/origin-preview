@@ -5326,3 +5326,14 @@ body.home .related .eyebrow{
   color:#E86A0C !important; font-size:12.5px !important;
   letter-spacing:.22em !important; text-transform:uppercase !important; font-weight:800 !important;
 }
+
+/* Финальный блок: без диагональных линий на фоне, текст равномерно */
+body.home .final{
+  background:#0C1E3C !important;
+  background-image:none !important;
+}
+body.home .final::before,
+body.home .final::after{ content:none !important; display:none !important; }
+body.home .final .wrap{ max-width:820px !important; margin-inline:auto !important; }
+body.home .final h2{ margin:0 auto 12px !important; }
+body.home .final p{ max-width:60ch !important; margin:0 auto 22px !important; }
