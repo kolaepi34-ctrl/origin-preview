@@ -4962,3 +4962,129 @@ body.home .stats{
   background:#F4F7FC !important;
   background-image:none !important;
 }
+
+/* ══════════════════════════════════════════════════════════════════════
+   «Get a free moving estimate»
+   Заголовок и подписи в панели были тёмно-синими на тёмно-синей подложке —
+   правило единой палитры красит все h2/h3 в синий, а фон панели тоже синий.
+   Плюс кадр с телефоном был сильно увеличен и рука уходила за край.
+   ══════════════════════════════════════════════════════════════════════ */
+body.home .est{ padding-top:40px !important; padding-bottom:52px !important; }
+/* Кадр мельче и сдвинут вправо — рука с телефоном попадает в свободную часть */
+body.home .est,
+body.home .est__in{
+  background-size:auto 118% !important;
+  background-position:right 6% center !important;
+  background-repeat:no-repeat !important;
+}
+/* Панель шире и чуть плотнее, чтобы текст читался поверх фото */
+body.home .est .est__copy{
+  width:min(560px,100%) !important;
+  max-width:560px !important;
+  background:rgba(12,30,60,.94) !important;
+  border:1px solid rgba(255,255,255,.14) !important;
+  border-radius:16px !important;
+  padding:26px 26px 24px !important;
+  box-shadow:0 24px 60px rgba(3,10,24,.45) !important;
+}
+/* Текст в панели — светлый */
+body.home .est .est__kicker{ color:#E86A0C !important; }
+body.home .est .est__title,
+body.home .est h2,
+body.home .est h3{ color:#FFFFFF !important; }
+body.home .est .est__lead,
+body.home .est .est__hint,
+body.home .est p,
+body.home .est label,
+body.home .est span:not(.est__kicker){ color:#C7D6EC !important; }
+body.home .est .est__upload{
+  background:rgba(255,255,255,.08) !important;
+  border:1.5px dashed rgba(255,255,255,.40) !important;
+  color:#FFFFFF !important;
+}
+body.home .est .est__upload span,
+body.home .est .est__upload svg{ color:#FFFFFF !important; stroke:#FFFFFF !important; }
+body.home .est input[type="tel"],
+body.home .est input[type="text"]{
+  background:rgba(255,255,255,.08) !important;
+  border:1.5px solid rgba(255,255,255,.22) !important;
+  color:#FFFFFF !important;
+}
+body.home .est input::placeholder{ color:#8DA2C2 !important; }
+body.home .est button{
+  background:#E86A0C !important; border-color:#E86A0C !important; color:#FFFFFF !important;
+}
+body.home .est button:hover{ background:#C25508 !important; border-color:#C25508 !important; }
+@media (max-width:900px){
+  body.home .est{ background-size:cover !important; }
+  body.home .est .est__copy{ max-width:100% !important; }
+}
+
+/* Первый экран: осталась одна кнопка — центрируем её по колонке текста,
+   заголовок крупнее на 30 %, форма ближе к тексту и без линии под шапкой */
+body.home .hero .pitch .cta,
+body.home .hero .pitch .btns,
+body.home .hero .pitch > div:has(> a[href^="tel:"]){
+  display:flex !important;
+  justify-content:center !important;
+  margin:22px 0 !important;
+}
+body.home .hero .pitch a[href^="tel:"]{
+  min-width:min(420px,100%) !important;
+  justify-content:center !important;
+  font-size:19px !important;
+  height:60px !important;
+  display:inline-flex !important; align-items:center !important; gap:10px !important;
+}
+body.home .hero h1{ font-size:clamp(46px,6.4vw,82px) !important; }
+body.home .hero .badges{ justify-content:center !important; }
+body.home .hero .pitch .lead{ text-align:left !important; }
+
+/* Форма левее и без разделительной линии под заголовком */
+@media (min-width:1000px){
+  body.home .hero .wrap.grid{ grid-template-columns:minmax(0,1fr) minmax(0,1.24fr) !important; gap:32px !important; }
+}
+body.home .hero form.quote .sub{ border-bottom:0 !important; }
+body.home .hero form.quote .q-eyebrow,
+body.home .hero form.quote h3,
+body.home .hero form.quote .sub{ border-bottom:0 !important; }
+body.home .hero form.quote h3{ font-size:clamp(28px,2.6vw,38px) !important; }
+
+/* Гео-блок: текст тонул в фотографии города — возвращаем плотную подложку */
+body.home .areas{
+  background:
+    linear-gradient(180deg, rgba(9,22,45,.93) 0%, rgba(9,22,45,.84) 45%, rgba(9,22,45,.95) 100%),
+    url('/assets/denver-bg.jpg') center 40%/cover no-repeat !important;
+}
+body.home .areas h2,
+body.home .areas h2 .gl-1{ color:#FFFFFF !important; text-shadow:0 2px 18px rgba(3,10,24,.8) !important; }
+body.home .areas h2 .accent,
+body.home .areas .eyebrow{ color:#E86A0C !important; }
+body.home .areas .areas__copy > p,
+body.home .areas p{ color:#E3EBF7 !important; text-shadow:0 1px 14px rgba(3,10,24,.85) !important; }
+body.home .areas .areas__facts{ background:rgba(6,16,34,.72) !important; }
+body.home .areas .areas__facts b{ color:#E86A0C !important; }
+body.home .areas .areas__facts span{ color:#E3EBF7 !important; }
+
+/* Гео-блок: фотография города спорила с текстом и перегружала секцию.
+   Оставляем ровный фирменный синий — как у остальных тёмных блоков. */
+body.home .areas{
+  background:#0C1E3C !important;
+  background-image:none !important;
+  padding-block:52px !important;
+}
+body.home .areas h2,
+body.home .areas h2 .gl-1,
+body.home .areas .areas__copy h2{ color:#FFFFFF !important; text-shadow:none !important; }
+body.home .areas p,
+body.home .areas .areas__copy > p{ color:#C7D6EC !important; text-shadow:none !important; }
+body.home .areas .areas__facts{
+  background:rgba(255,255,255,.06) !important;
+  border:1px solid rgba(255,255,255,.14) !important;
+}
+body.home .areas .chips span,
+body.home .areas .chips a{
+  background:rgba(255,255,255,.08) !important;
+  border:1px solid rgba(255,255,255,.20) !important;
+  color:#FFFFFF !important;
+}
