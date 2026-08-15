@@ -5337,3 +5337,51 @@ body.home .final::after{ content:none !important; display:none !important; }
 body.home .final .wrap{ max-width:820px !important; margin-inline:auto !important; }
 body.home .final h2{ margin:0 auto 12px !important; }
 body.home .final p{ max-width:60ch !important; margin:0 auto 22px !important; }
+
+/* ══════════════════════════════════════════════════════════════════════
+   ПЕРВЫЙ ЭКРАН — ЧИСТАЯ СБОРКА
+   Слева: надзаголовок, крупный заголовок, одна строка фактов.
+   Справа: форма. Затемнение ровное по всей ширине, чтобы фото не спорило
+   ни с текстом, ни с формой. Всё умещается в один экран.
+   ══════════════════════════════════════════════════════════════════════ */
+body.home .hero{ padding-block:46px !important; }
+body.home .hero::before{ filter:saturate(1.02) brightness(.72) !important; background-position:60% center !important; }
+body.home .hero::after{
+  background:linear-gradient(90deg,
+    rgba(9,22,45,.86) 0%,
+    rgba(9,22,45,.72) 46%,
+    rgba(9,22,45,.55) 70%,
+    rgba(9,22,45,.48) 100%) !important;
+}
+body.home .hero .wrap.grid{ align-items:center !important; }
+body.home .hero .pitch{ padding-top:0 !important; }
+body.home .hero .pitch .eyebrow{
+  color:#FFB877 !important;
+  font-size:13px !important; letter-spacing:.2em !important;
+  display:block !important; margin-bottom:14px !important;
+}
+body.home .hero h1{
+  color:#FFFFFF !important;
+  font-size:clamp(40px,5.2vw,68px) !important;
+  line-height:1.03 !important;
+  letter-spacing:-.03em !important;
+  margin:0 0 18px !important;
+  max-width:15ch !important;
+  text-shadow:0 2px 26px rgba(3,10,24,.55) !important;
+}
+body.home .hero h1 .accent{ color:#E86A0C !important; }
+body.home .hero .hero-facts{
+  display:block !important;
+  color:#D6E2F3 !important;
+  font-size:16px !important; line-height:1.6 !important;
+  margin:0 !important; max-width:44ch !important;
+  text-shadow:0 1px 16px rgba(3,10,24,.7) !important;
+}
+
+/* Заголовок в три строки вместо четырёх — экран собирается плотнее */
+body.home .hero h1{
+  font-size:clamp(38px,4.6vw,60px) !important;
+  max-width:13ch !important;
+  margin-bottom:16px !important;
+}
+body.home .hero .hero-facts{ font-size:15.5px !important; max-width:40ch !important; }
