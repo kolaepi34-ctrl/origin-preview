@@ -5847,3 +5847,37 @@ body.home .areas .chip{ transition:background .16s, border-color .16s, color .16
 /* Explore more: без подчёркивания */
 body.home .related .links a{ border-bottom:0 !important; text-decoration:none !important; }
 body.home .related .links a:hover{ color:#E86A0C !important; text-decoration:none !important; }
+
+/* Call us в тёмной теме: перебиваем правило светлой темы той же длины селектора */
+:root[data-theme="dark"] body.home #services .cards .card a.callus,
+:root[data-theme="dark"] body.home #services .cards .card .callus,
+:root[data-theme="dark"] body.home .alsoneed .card .callus{
+  color:#FFA24D !important;
+  border:1.5px solid rgba(255,162,77,.65) !important;
+  background:transparent !important;
+}
+:root[data-theme="dark"] body.home #services .cards .card a.callus:hover{
+  background:#E86A0C !important; border-color:#E86A0C !important; color:#FFFFFF !important;
+}
+
+/* ══ Финальный блок: кнопки в один ряд, одинаковый шрифт ═══════════════ */
+body.home .final .wrap{
+  display:flex !important; flex-direction:column !important; align-items:center !important;
+}
+body.home .final .btns,
+body.home .final .actions,
+body.home .final .wrap > div:has(> a){
+  display:flex !important; justify-content:center !important; align-items:center !important;
+  gap:14px !important; flex-wrap:wrap !important; margin:6px 0 0 !important;
+}
+body.home .final a.btn,
+body.home .final .btn-lg,
+body.home .final .btn-white{
+  height:56px !important; padding:0 30px !important;
+  display:inline-flex !important; align-items:center !important; justify-content:center !important;
+  gap:9px !important;
+  font-family:inherit !important;
+  font-size:17px !important; font-weight:800 !important; letter-spacing:.01em !important;
+  border-radius:10px !important; text-transform:none !important;
+}
+body.home .final p{ font-size:17px !important; }
