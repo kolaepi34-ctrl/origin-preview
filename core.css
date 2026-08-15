@@ -5281,3 +5281,6 @@ body.home #services .cards .card .ic{
   padding:0 !important;
 }
 body.home #services .cards .card .ic svg{ width:30px !important; height:30px !important; }
+
+/* Значки в карточках услуг убраны совсем */
+body.home #services .cards .card .ic{ display:none !important; }
