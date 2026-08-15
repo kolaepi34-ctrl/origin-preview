@@ -5212,3 +5212,41 @@ body.home .areas .areas__facts{
   background:rgba(6,16,34,.78) !important;
   border:1px solid rgba(255,255,255,.16) !important;
 }
+
+/* Кнопка «Read more» стала белой на белом фоне SEO-блока — красим по-фирменному */
+body.home .seo-content .seo-toggle,
+body.home .seo-content button{
+  color:#0C1E3C !important;
+  background:#FFFFFF !important;
+  border:1.5px solid #0C1E3C !important;
+  border-radius:999px !important;
+  font-weight:800 !important;
+  padding:0 26px !important;
+  height:48px !important;
+  margin:18px auto 0 !important;
+}
+body.home .seo-content .seo-toggle:hover,
+body.home .seo-content button:hover{ background:#0C1E3C !important; color:#FFFFFF !important; }
+
+/* Гео-блок: плашку с тремя фактами убираем, оставляем чистый текст */
+body.home .areas .areas__facts{
+  background:none !important;
+  border:0 !important;
+  border-radius:0 !important;
+  backdrop-filter:none !important;
+  gap:24px !important;
+  margin-top:22px !important;
+}
+body.home .areas .areas__facts li{
+  border:0 !important;
+  border-top:3px solid #E86A0C !important;
+  padding:14px 10px 0 !important;
+}
+
+/* Заголовок первого экрана чуть светлее */
+body.home .hero h1{ color:#1B3A66 !important; }
+body.home .hero h1 .accent{ color:#E86A0C !important; }
+
+/* Кнопка в полосе фактов: воздух сверху и снизу одинаковый */
+body.home .stats .stats-cta{ margin:22px auto 22px !important; }
+body.home .stats{ padding-bottom:26px !important; }
