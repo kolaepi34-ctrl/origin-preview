@@ -5489,3 +5489,38 @@ body.home .hero h1{
 body.home .hero h1 .accent{ color:#E86A0C !important; }
 body.home .hero .pitch .eyebrow{ color:#0C1E3C !important; }
 body.home .hero .hero-facts{ display:none !important; }
+
+/* Возврат первого экрана к виду со снимка: абзац, две кнопки, поле заметок */
+body.home .hero .pitch .lead{
+  display:block !important;
+  color:#39506F !important;
+  text-align:justify !important;
+  max-width:46ch !important;
+  margin:16px 0 24px !important;
+}
+body.home .hero .pitch a[href^="tel:"],
+body.home .hero .pitch .cta,
+body.home .hero .pitch .btns,
+body.home .hero .pitch > div:has(> a[href^="tel:"]){ display:inline-flex !important; }
+body.home .hero .pitch > div:has(> a[href^="tel:"]){
+  display:flex !important; justify-content:flex-start !important; gap:14px !important;
+  flex-wrap:wrap !important; margin:0 !important;
+}
+body.home .hero .pitch a[href^="tel:"]{
+  min-width:0 !important; height:56px !important; padding:0 26px !important; font-size:17px !important;
+  background:#E86A0C !important; border-color:#E86A0C !important; color:#FFFFFF !important;
+}
+body.home .hero .pitch a.btn-ghost{
+  height:56px !important; padding:0 26px !important; font-size:17px !important;
+  background:#FFFFFF !important; border:2px solid #FFFFFF !important; color:#0C1E3C !important;
+  display:inline-flex !important; align-items:center !important;
+}
+body.home .hero .pitch a.btn-ghost:hover{ background:#0C1E3C !important; border-color:#0C1E3C !important; color:#FFFFFF !important; }
+/* Поле заметок в форме возвращаем */
+body.home .hero form.quote .field:has(textarea){ display:flex !important; }
+body.home .hero form.quote textarea{
+  background:rgba(255,255,255,.07) !important;
+  border:1.5px solid rgba(255,255,255,.20) !important;
+  color:#FFFFFF !important; border-radius:9px !important; min-height:76px !important;
+}
+body.home .hero form.quote textarea::placeholder{ color:#8DA2C2 !important; }
