@@ -5288,3 +5288,41 @@ body.home #services .cards .card .ic{ display:none !important; }
 /* Кнопку звонка в полосе фактов убираем независимо от того, в каком
    контейнере она оказалась после переноса */
 body.home .stats-cta{ display:none !important; }
+
+/* ══ «Explore more»: вместо овалов-пилюль — два ряда обычных ссылок ═════ */
+body.home .related{
+  background:#F4F7FC !important;
+  padding-block:34px !important;
+}
+body.home .related .links{
+  display:block !important;
+  max-width:1000px !important;
+  margin:14px auto 0 !important;
+  text-align:center !important;
+  line-height:2.2 !important;
+  color:#5A6B85 !important;
+  font-size:15px !important;
+}
+body.home .related .links a{
+  display:inline !important;
+  background:none !important;
+  border:0 !important;
+  border-radius:0 !important;
+  padding:0 !important;
+  margin:0 6px !important;
+  color:#1B3A66 !important;
+  font-weight:700 !important;
+  text-decoration:none !important;
+  border-bottom:1px solid rgba(27,58,102,.28) !important;
+}
+body.home .related .links a:hover{
+  color:#E86A0C !important;
+  border-bottom-color:#E86A0C !important;
+}
+/* «Services:» и «Areas:» — подписи-разделители */
+body.home .related .links{ letter-spacing:.01em !important; }
+body.home .related .eyebrow{
+  display:block !important; text-align:center !important;
+  color:#E86A0C !important; font-size:12.5px !important;
+  letter-spacing:.22em !important; text-transform:uppercase !important; font-weight:800 !important;
+}
