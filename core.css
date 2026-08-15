@@ -5577,3 +5577,30 @@ body.home .topband__title span{ color:#E86A0C !important; }
 
 /* Контактная колонка подвала шире — телефон в 44 px не влезал в 255 px */
 body.home footer.site .cols{ grid-template-columns:1.35fr .9fr .9fr 1.5fr !important; }
+
+/* ══ Блок с формой: фото убрано, ровный синий фон ══════════════════════
+   Фотография теперь живёт в верхней полосе над формой, дублировать её
+   за самой формой незачем. ══════════════════════════════════════════════ */
+body.home .hero{
+  background:#0C1E3C !important;
+  padding-block:44px !important;
+}
+body.home .hero::before,
+body.home .hero::after{ content:none !important; display:none !important; background:none !important; }
+body.home .hero h1{ color:#FFFFFF !important; text-shadow:none !important; }
+body.home .hero h1 .accent{ color:#E86A0C !important; }
+body.home .hero .pitch .eyebrow{ color:#FFB877 !important; }
+body.home .hero .pitch .lead{ color:#C7D6EC !important; }
+body.home .hero .pitch a.btn-ghost{
+  background:transparent !important; border:2px solid rgba(255,255,255,.6) !important; color:#FFFFFF !important;
+}
+body.home .hero .pitch a.btn-ghost:hover{ background:#FFFFFF !important; color:#0C1E3C !important; border-color:#FFFFFF !important; }
+/* Форма на синем — светлее фона, чтобы читалась как карточка */
+body.home .hero form.quote{
+  background:#12294B !important;
+  border:1px solid rgba(255,255,255,.16) !important;
+  box-shadow:0 26px 60px rgba(3,10,24,.5) !important;
+}
+body.home .hero form.quote .q-eyebrow,
+body.home .hero form.quote h3,
+body.home .hero form.quote .sub{ background:#0C1E3C !important; }
