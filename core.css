@@ -5604,3 +5604,26 @@ body.home .hero form.quote{
 body.home .hero form.quote .q-eyebrow,
 body.home .hero form.quote h3,
 body.home .hero form.quote .sub{ background:#0C1E3C !important; }
+
+/* ══ Блок с формой: белый фон вместо синего ════════════════════════════ */
+body.home .hero{ background:#FFFFFF !important; }
+body.home .hero h1{ color:#0C1E3C !important; }
+body.home .hero h1 .accent{ color:#E86A0C !important; }
+body.home .hero .pitch .eyebrow{ color:#E86A0C !important; }
+body.home .hero .pitch .lead{ color:#39506F !important; }
+body.home .hero .pitch a[href^="tel:"]{
+  background:#E86A0C !important; border-color:#E86A0C !important; color:#FFFFFF !important;
+}
+body.home .hero .pitch a.btn-ghost{
+  background:#FFFFFF !important; border:2px solid #0C1E3C !important; color:#0C1E3C !important;
+}
+body.home .hero .pitch a.btn-ghost:hover{ background:#0C1E3C !important; color:#FFFFFF !important; }
+/* Форма остаётся синей карточкой — на белом она читается как главный объект */
+body.home .hero form.quote{
+  background:#0C1E3C !important;
+  border:1px solid rgba(12,30,60,.14) !important;
+  box-shadow:0 26px 60px rgba(12,30,60,.28) !important;
+}
+body.home .hero form.quote .q-eyebrow,
+body.home .hero form.quote h3,
+body.home .hero form.quote .sub{ background:#12294B !important; }
