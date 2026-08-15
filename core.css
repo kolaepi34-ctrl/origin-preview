@@ -3050,3 +3050,79 @@ body.home #services .steps{
 @media (max-width:1260px){
   body.home #services .steps{ padding-inline:32px !important; }
 }
+
+/* Заголовок этапов стоял слева: max-width сработал, а авто-поля — нет */
+body.home #services .sec-head > h2,
+body.home #services .sec-head > p,
+body.home #services .sec-head > .eyebrow{
+  margin-left:auto !important;
+  margin-right:auto !important;
+  display:block !important;
+  text-align:center !important;
+}
+
+/* Пять звёзд под заголовком отзывов */
+body.home .reviews .rev-stars{
+  text-align:center !important;
+  color:#FFB877 !important;
+  font-size:34px !important;
+  letter-spacing:.14em !important;
+  line-height:1 !important;
+  margin:14px 0 6px !important;
+}
+
+/* Полоса под шапкой: белая с тёмным текстом вместо оранжевой */
+body.home .topnote{
+  background:#FFFFFF !important;
+  border-bottom:1px solid #E1E9F5 !important;
+  color:#14315C !important;
+}
+body.home .topnote *{ color:#14315C !important; }
+body.home .topnote a[href^="tel:"]{ color:#C25508 !important; font-weight:800 !important; }
+body.home .topnote .dot,
+body.home .topnote span:first-child{ color:#E86A0C !important; }
+
+/* Значки сидели в верху своих плашек и выглядели несимметрично.
+   Плашку убираем совсем — остаётся сам значок, крупнее и по центру. */
+body.home .stats .st .st-top,
+body.home .trustb .trustb__item .ic,
+body.home .trustb .trustb__item > span:first-child{
+  background:none !important;
+  border:0 !important;
+  border-radius:0 !important;
+  box-shadow:none !important;
+  width:auto !important;
+  height:auto !important;
+  padding:0 !important;
+  margin:0 auto 10px !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+}
+body.home .stats .st .st-top svg,
+body.home .trustb .trustb__item svg{
+  width:30px !important; height:30px !important;
+  margin:0 !important;
+  color:#E86A0C !important; stroke:#E86A0C !important;
+}
+
+/* Полоса под шапкой: текст и телефон в одну строку по центру */
+body.home .topnote__in{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:14px !important;
+  flex-wrap:nowrap !important;
+  padding-block:12px !important;
+}
+body.home .topnote__in p{
+  margin:0 !important;
+  white-space:nowrap !important;
+  font-size:15px !important;
+  font-weight:600 !important;
+}
+body.home .topnote__in a[href^="tel:"]{ white-space:nowrap !important; text-decoration:none !important; }
+@media (max-width:760px){
+  body.home .topnote__in{ flex-wrap:wrap !important; }
+  body.home .topnote__in p{ white-space:normal !important; text-align:center !important; }
+}
