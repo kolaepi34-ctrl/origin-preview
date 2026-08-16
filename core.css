@@ -7232,3 +7232,13 @@ html body.home .trustb .trustb__btn:hover{ background:#C25508 !important; }
   }
   html body.home.home.home.home .topband{ padding-block:44px !important; }
 }
+
+/* Подзаголовок под «Four steps, no surprises» — на 15% мельче
+   (15 px → 12.75 px), чтобы не спорил с заголовком блока. */
+@media (max-width:820px){
+  html body.home.home.home.home section#services > .wrap > .sec-head p,
+  html body.home.home.home.home .sec-head p{
+    font-size:12.75px !important; line-height:1.55 !important;
+    max-width:36ch !important; margin-inline:auto !important;
+  }
+}
