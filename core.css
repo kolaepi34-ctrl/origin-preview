@@ -7320,3 +7320,20 @@ html body.home .related .gbp{ display:block !important; text-align:center !impor
     min-height:34px !important; align-items:center !important; font-size:13.5px !important;
   }
 }
+
+/* Нижняя строка подвала: копирайт, «Privacy · Terms · About» и
+   «Denver · Aurora · Front Range, CO» — по центру на телефоне. */
+@media (max-width:820px){
+  html body.home.home.home.home footer.site .foot-bottom,
+  html body.home.home.home.home footer.site .legal,
+  html body.home.home.home.home footer.site .copy,
+  html body.home.home.home.home footer.site .wrap > *:last-child,
+  html body.home.home.home.home footer.site .wrap > p,
+  html body.home.home.home.home footer.site .wrap > div:not(.cols){
+    text-align:center !important; justify-content:center !important;
+    margin-inline:auto !important;
+  }
+  html body.home.home.home.home footer.site .wrap > *:last-child a{
+    display:inline !important; min-height:0 !important;
+  }
+}
