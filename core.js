@@ -275,8 +275,8 @@
     function fit(){
       var box = sp.parentElement.clientWidth;
       if (!box) return;
-      sp.style.whiteSpace = одно ? 'nowrap' : 'normal';
-      sp.style.fontSize = '';
+      sp.style.setProperty('white-space', одно ? 'nowrap' : 'normal', 'important');
+      sp.style.removeProperty('font-size');
       var size = parseFloat(getComputedStyle(sp).fontSize);
       var guard = 0;
       while (guard < 60){
@@ -285,7 +285,7 @@
         if (!шире && (одно ? строк <= 1 : строк <= 2)) break;
         size -= 2;
         if (size < 22) break;
-        sp.style.fontSize = size + 'px';
+        sp.style.setProperty('font-size', size + 'px', 'important');
         guard++;
       }
     }
