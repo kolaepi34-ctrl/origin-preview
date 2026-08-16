@@ -7402,3 +7402,11 @@ html body.home .svcmap__frame{
   border:0 !important; pointer-events:none !important;   /* карта как картинка, случайно не утащишь */
   filter:saturate(.92) contrast(1.02) !important;
 }
+
+/* На телефоне SEO-блок «Movers in Denver, CO» скрыт целиком вместе с кнопкой.
+   Текст остаётся в разметке страницы — он нужен поисковику; на экране его нет. */
+@media (max-width:820px){
+  html body.home.home.home.home .seo-content,
+  html body.home.home.home.home .seo-body,
+  html body.home.home.home.home .prose__more{ display:none !important; }
+}
