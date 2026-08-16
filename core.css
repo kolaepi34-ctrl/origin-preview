@@ -6855,3 +6855,20 @@ html body.home .chatbubble.is-hidden{
 @media (max-width:820px){
   html body.home .chatbubble{ width:40px !important; height:40px !important; right:10px !important; }
 }
+
+/* Плашка о куки на телефоне больше не закреплена поверх экрана:
+   это не меню, ей незачем занимать место. Она просто лежит в конце
+   страницы — кто долистает, тот и увидит. */
+@media (max-width:820px){
+  html body.home .cookie,
+  html body.home .cookie.is-hidden{
+    position:static !important; opacity:1 !important; transform:none !important;
+    pointer-events:auto !important;
+    left:auto !important; right:auto !important; bottom:auto !important;
+    width:auto !important; max-width:none !important;
+    margin:0 !important; border-radius:0 !important;
+    padding:10px 14px !important; font-size:11px !important;
+    justify-content:center !important; text-align:center !important;
+    z-index:auto !important;
+  }
+}
