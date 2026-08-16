@@ -6872,3 +6872,9 @@ html body.home .chatbubble.is-hidden{
     z-index:auto !important;
   }
 }
+
+/* Под блоком «Three things you will not have to worry about» оставалась
+   серая полоса-тень — убираем и на телефоне, и на большом экране. */
+html body.home .trustb{ box-shadow:none !important; border-bottom:0 !important; }
+html body.home .trustb::after{ content:none !important; }
+html body.home .trustb + *{ border-top:0 !important; box-shadow:none !important; }

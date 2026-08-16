@@ -125,6 +125,17 @@
    срывался из-за подгрузки картинок. Считаем позицию сами и дважды поправляем. */
 (function(){
   function boot(){
+    function animateTo(y){
+      var start = window.scrollY, dist = y - start, t0 = null;
+      function step(t){
+        if (t0 === null) t0 = t;
+        var p = Math.min(1, (t - t0) / 420);
+        var e = p < .5 ? 2*p*p : -1 + (4 - 2*p) * p;      /* плавный вход и выход */
+        window.scrollTo(0, Math.round(start + dist * e));
+        if (p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
     function headOffset(){
       var h = document.querySelector('header.site');
       return (h ? h.getBoundingClientRect().height : 0) + 10;
@@ -144,11 +155,11 @@
       if (!target) return;
       e.preventDefault();
       if (id === '#top' || a.classList.contains('chatbubble')){
-        window.scrollTo({ top:0, behavior:'smooth' });
+        animateTo(0);
         return;
       }
       var distance = Math.abs(target.getBoundingClientRect().top);
-      goTo(target, distance < 3000);          /* далеко — сразу, иначе скролл срывается */
+      goTo(target, false);          /* далеко — сразу, иначе скролл срывается */
       setTimeout(function(){ goTo(target, false) }, distance < 3000 ? 800 : 120);
       setTimeout(function(){ goTo(target, false) }, 1400);
       setTimeout(function(){ goTo(target, false) }, 2400);
