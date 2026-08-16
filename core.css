@@ -7052,3 +7052,50 @@ html body.home .trustb + *{ border-top:0 !important; box-shadow:none !important;
     font-size:inherit !important; line-height:inherit !important;
   }
 }
+
+/* ══ Телефон: добиваем блоки, где правила проигрывали по «весу» ══════ */
+@media (max-width:820px){
+  /* 1. Блок доверия: иконка НАД текстом и по центру пункта */
+  html body.home.home.home.home .trustb ul li,
+  html body.home.home.home.home .trustb ol li{
+    display:flex !important; flex-direction:column !important;
+    align-items:center !important; justify-content:flex-start !important;
+    text-align:center !important; gap:6px !important;
+    grid-template-columns:none !important;
+  }
+  html body.home.home.home.home .trustb li .trustb__ic{
+    order:-1 !important; margin:0 0 6px 0 !important;
+    width:40px !important; height:40px !important; flex:0 0 auto !important;
+  }
+  html body.home.home.home.home .trustb li b,
+  html body.home.home.home.home .trustb li > span:not(.trustb__ic){
+    width:100% !important; text-align:center !important;
+  }
+
+  /* 2. «What the hourly rate already covers»: плашки одной ширины */
+  html body.home.home.home.home .included ul,
+  html body.home.home.home.home .incl ul{
+    display:grid !important; grid-template-columns:1fr !important; gap:10px !important;
+    padding:0 !important; margin-inline:auto !important; width:100% !important;
+  }
+  html body.home.home.home.home .included li,
+  html body.home.home.home.home .incl li{
+    width:100% !important; max-width:100% !important; margin:0 !important;
+    box-sizing:border-box !important; border-radius:12px !important;
+    min-height:56px !important; align-items:center !important;
+  }
+
+  /* 3. Карточки услуг: текст по центру, заголовок карточки крупнее */
+  html body.home.home.home.home .cards .card,
+  html body.home.home.home.home .card{
+    text-align:center !important;
+  }
+  html body.home.home.home.home .card :is(h3, p, .badge, .kicker, span, b){
+    text-align:center !important; margin-inline:auto !important;
+  }
+  html body.home.home.home.home .card h3{
+    font-size:22px !important; line-height:1.2 !important;
+  }
+  html body.home.home.home.home .card .learn,
+  html body.home.home.home.home .card .callus{ margin-inline:auto !important; }
+}
