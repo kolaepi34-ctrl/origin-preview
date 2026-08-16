@@ -5940,3 +5940,34 @@ body.home footer.site#contact{ scroll-margin-top:110px !important; }
    меню закреплено, и лишняя строка только съедает первый экран. */
 body.home .topnote{ display:none !important; }
 body.home .topbar{ margin-top:87px !important; }
+
+/* ══ Блок «About Origin Movers» ════════════════════════════════════════ */
+body.home .about{ background:#FFFFFF !important; padding-block:52px !important; }
+body.home .about .about__lead{
+  max-width:70ch !important; margin:0 auto 30px !important; text-align:center !important;
+  font-size:18px !important; line-height:1.7 !important; color:#39506F !important;
+}
+body.home .about .about__grid{
+  display:grid !important;
+  grid-template-columns:repeat(3,1fr) !important;
+  gap:22px !important;
+  max-width:1120px !important; margin:0 auto !important;
+}
+body.home .about .about__item{
+  border-top:3px solid #E86A0C !important;
+  padding:16px 4px 0 !important;
+  display:flex !important; flex-direction:column !important; gap:7px !important;
+}
+body.home .about .about__item b{ color:#0C1E3C !important; font-size:17px !important; font-weight:800 !important; }
+body.home .about .about__item span{ color:#5A6B85 !important; font-size:15px !important; line-height:1.6 !important; }
+body.home .about .about__note{
+  max-width:70ch !important; margin:30px auto 0 !important; text-align:center !important;
+  color:#5A6B85 !important; font-size:16px !important;
+}
+:root[data-theme="dark"] body.home .about{ background:#0B1524 !important; }
+:root[data-theme="dark"] body.home .about .about__lead,
+:root[data-theme="dark"] body.home .about .about__note,
+:root[data-theme="dark"] body.home .about .about__item span{ color:#AFC1DC !important; }
+:root[data-theme="dark"] body.home .about .about__item b{ color:#E8EEF8 !important; }
+@media (max-width:900px){ body.home .about .about__grid{ grid-template-columns:1fr 1fr !important; } }
+@media (max-width:560px){ body.home .about .about__grid{ grid-template-columns:1fr !important; } }
