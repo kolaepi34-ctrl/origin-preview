@@ -45,6 +45,12 @@ window.dataLayer = window.dataLayer || [];
     btn.addEventListener('click', function(){
       var open = p.classList.toggle('prose--open');
       p.classList.toggle('prose--clamped', !open);
+      if (open){ p.style.setProperty('max-height','none','important');
+        p.style.setProperty('overflow','visible','important');
+        p.style.setProperty('-webkit-mask-image','none','important');
+        p.style.setProperty('mask-image','none','important');
+      } else { p.style.removeProperty('max-height'); p.style.removeProperty('overflow');
+        p.style.removeProperty('-webkit-mask-image'); p.style.removeProperty('mask-image'); }
       btn.textContent = open ? 'Hide the text' : 'Read more about moving in Denver';
       btn.setAttribute('aria-expanded', open ? 'true' : 'false');
       if (!open) p.scrollIntoView({block:'start', behavior:'smooth'});
@@ -295,3 +301,4 @@ window.dataLayer = window.dataLayer || [];
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
   else boot();
 })();
+(function(){function b(){var c=document.getElementById("cookie");if(!c)return;var k=c.querySelector("button");if(k)k.addEventListener("click",function(){document.body.classList.add("cookies-ok");c.style.setProperty("display","none","important")});try{if(localStorage.getItem("ck"))document.body.classList.add("cookies-ok")}catch(e){}}if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",b);else b()})();
