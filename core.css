@@ -6075,3 +6075,25 @@ body.home .field label{ cursor:pointer; }
     overflow:hidden !important; max-width:100% !important;
   }
 }
+
+/* Осталось 515 px против экрана 375: широкие блоки внутри секций.
+   Жёстко ограничиваем ширину контента на телефоне. */
+@media (max-width:820px){
+  html, body{ overflow-x:hidden !important; }
+  body.home .wrap,
+  body.home section > div,
+  body.home .cards,
+  body.home .rev-grid,
+  body.home .trustb__in,
+  body.home .areas__grid,
+  body.home .about__grid,
+  body.home footer.site .cols{
+    max-width:100% !important; box-sizing:border-box !important;
+  }
+  body.home .cards{ grid-template-columns:1fr !important; }
+  body.home .q30__form{ grid-template-columns:1fr !important; }
+  body.home .steps{ grid-template-columns:1fr !important; }
+  body.home .hero .wrap.grid{ grid-template-columns:1fr !important; }
+  body.home .hero form.quote{ max-width:100% !important; margin:0 !important; }
+  body.home .hero form.quote .row2{ grid-template-columns:1fr !important; }
+}
