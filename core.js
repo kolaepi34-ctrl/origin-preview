@@ -8,11 +8,11 @@
   function trackCall(){}
   // scroll to the quote form and focus the first field
   function scrollToQuote(){
-    var f=document.getElementById('quote-form');
-    if(f){ f.scrollIntoView({behavior:'smooth',block:'center'});
-      var n=f.querySelector('input[name="name"]');
-      if(n){ setTimeout(function(){ n.focus({preventScroll:true}); },450); }
-    }
+    var f=document.getElementById('quote-form'); if(!f) return false;
+    var h=document.querySelector('header.site');
+    var off=(h?h.getBoundingClientRect().height:0)+10;
+    var y=f.getBoundingClientRect().top+(window.pageYOffset||0)-off;
+    window.scrollTo({top:Math.max(0,y), behavior:'auto'});
     return false;
   }
   // Click a city chip -> prefill the form and set the city in the form title, then scroll
