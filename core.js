@@ -262,3 +262,27 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
   else boot();
 })();
+
+/* Названия городов из двух слов («Commerce City», «Highlands Ranch») не влезали
+   в строку на телефоне. Подгоняем кегль под ширину полосы. */
+(function(){
+  function boot(){
+    var sp = document.querySelector('.topband__title span');
+    if (!sp) return;
+    function fit(){
+      var box = sp.parentElement.getBoundingClientRect().width;
+      if (!box) return;
+      sp.style.fontSize = '';
+      var size = parseFloat(getComputedStyle(sp).fontSize);
+      var guard = 0;
+      while (sp.scrollWidth > box - 4 && size > 22 && guard < 40){
+        size -= 2; sp.style.fontSize = size + 'px'; guard++;
+      }
+    }
+    fit();
+    window.addEventListener('resize', fit, { passive:true });
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
+  else boot();
+})();
