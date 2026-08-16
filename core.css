@@ -6562,3 +6562,21 @@ html{ scroll-behavior:auto !important; }
   }
   body.home .prose h2{ font-size:21px !important; }
 }
+
+/* Телефон: нижняя граница читаемости и размер зон нажатия.
+   Мелкими остаются только «капслочные» подписи-eyebrow — это приём вёрстки,
+   а не основной текст. */
+@media (max-width:820px){
+  body.home p, body.home li, body.home td, body.home span:not(.eyebrow):not(.caret):not(.accent),
+  body.home small, body.home label, body.home figcaption, body.home .note{
+    font-size:clamp(13px, 4vw, 15px) !important;
+  }
+  body.home a:not(.chip):not(.skiplink):not(.accent),
+  body.home button:not(.caret){
+    min-height:40px !important;
+    display:inline-flex !important; align-items:center !important;
+  }
+  body.home .prose a, body.home p a, body.home li a{
+    min-height:0 !important; display:inline !important;
+  }
+}
