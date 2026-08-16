@@ -5895,3 +5895,7 @@ body.home .final .wrap > div:has(> a){ align-items:center !important; }
 body.home .final a.btn,
 body.home .final .btn-lg,
 body.home .final .btn-white{ align-self:center !important; margin:0 !important; }
+
+/* Прокрутка к подвалу по ссылке CONTACT — с запасом под липкую шапку */
+body.home footer.site#contact{ scroll-margin-top:96px; }
+html{ scroll-behavior:smooth; }
