@@ -5971,3 +5971,36 @@ body.home .about .about__note{
 :root[data-theme="dark"] body.home .about .about__item b{ color:#E8EEF8 !important; }
 @media (max-width:900px){ body.home .about .about__grid{ grid-template-columns:1fr 1fr !important; } }
 @media (max-width:560px){ body.home .about .about__grid{ grid-template-columns:1fr !important; } }
+
+/* Светлая линия под закреплённым меню — это его нижняя граница #D3DEEE.
+   На тёмных блоках она читалась как白 полоса. Убираем. */
+body.home header.site{
+  border-bottom:0 !important;
+  box-shadow:0 8px 24px rgba(3,10,24,.35) !important;
+}
+:root[data-theme="dark"] body.home header.site{
+  border-bottom:0 !important;
+  box-shadow:0 8px 24px rgba(0,0,0,.55) !important;
+}
+
+/* Гео-блок на городских страницах: название города первой строкой,
+   пояснение второй, обе строго по центру */
+body.home .areas h2.areas-h2{
+  display:block !important;
+  text-align:center !important;
+  margin-inline:auto !important;
+  white-space:normal !important;
+  max-width:none !important;
+}
+body.home .areas h2.areas-h2 .areas-city{
+  display:block !important;
+  color:#FFFFFF !important;
+}
+body.home .areas h2.areas-h2 .areas-sub{
+  display:block !important;
+  color:#E86A0C !important;
+  font-size:.62em !important;
+  margin-top:6px !important;
+  letter-spacing:-.01em !important;
+}
+:root[data-theme="dark"] body.home .areas h2.areas-h2 .areas-sub{ color:#FFA24D !important; }
