@@ -48,7 +48,7 @@
   function init(){
     if (window.innerWidth > 820) return;
     var p = document.querySelector('.prose');
-    if (!p || p.dataset.collapsible) return;
+    if (!p || p.dataset.collapsible || document.querySelector('.prose__more')) return;
     p.dataset.collapsible = '1';
     p.classList.add('prose--clamped');
     var btn = document.createElement('button');
