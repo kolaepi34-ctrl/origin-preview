@@ -496,7 +496,7 @@ header > div > nav > ul, header nav > ul:first-child{
 }
 .included li{ text-align:left; }
 
-/* Меню — свой вид, не как у Airus: подчёркивание вместо заливки */
+/* Меню — своё оформление: подчёркивание вместо заливки */
 header nav a, header [class*=menu] > a{
   position:relative; background:transparent !important;
   padding:10px 4px !important; margin:0 12px; border-radius:0 !important;
