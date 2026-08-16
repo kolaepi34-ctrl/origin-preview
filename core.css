@@ -7434,3 +7434,19 @@ html body.home .svcmap__box iframe{
   }
   html body.home.home.home.home .alsoneed .card .callus{ margin-top:auto !important; }
 }
+
+/* «You might also need»: четыре карточки — значит сетка 2×2, а не 3+1.
+   Раньше последняя карточка стояла в ряду одна и блок выглядел кривым. */
+@media (min-width:821px){
+  html body.home .alsoneed .cards{
+    display:grid !important;
+    grid-template-columns:repeat(2, minmax(0, 1fr)) !important;
+    gap:18px !important; align-items:stretch !important;
+  }
+  html body.home .alsoneed .card{ width:100% !important; height:auto !important; }
+}
+@media (min-width:560px) and (max-width:820px){
+  html body.home.home.home.home .alsoneed .cards{
+    grid-template-columns:repeat(2, minmax(0, 1fr)) !important;
+  }
+}
