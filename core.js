@@ -42,3 +42,30 @@
     if(btn){ btn.disabled=true; btn.textContent="Sending…"; }
     return true;
   }
+
+/* Длинный SEO-текст на телефоне: сворачиваем до трёх строк, читать по кнопке.
+   Раньше, начав читать, закрыть его было нельзя — приходилось листать до конца. */
+(function(){
+  function init(){
+    if (window.innerWidth > 820) return;
+    var p = document.querySelector('.prose');
+    if (!p || p.dataset.collapsible) return;
+    p.dataset.collapsible = '1';
+    p.classList.add('prose--clamped');
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'prose__more';
+    btn.textContent = 'Read more';
+    btn.setAttribute('aria-expanded', 'false');
+    p.after(btn);
+    btn.addEventListener('click', function(){
+      var open = p.classList.toggle('prose--open');
+      p.classList.toggle('prose--clamped', !open);
+      btn.textContent = open ? 'Hide' : 'Read more';
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if (!open) p.scrollIntoView({block:'start', behavior:'smooth'});
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
