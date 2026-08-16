@@ -278,16 +278,17 @@
     function fit(){
       var box = sp.parentElement.clientWidth;
       if (!box) return;
-      sp.style.setProperty('white-space', одно ? 'nowrap' : 'normal', 'important');
+      sp.style.setProperty('white-space', (одно && !svc) ? 'nowrap' : 'normal', 'important');
       sp.style.removeProperty('font-size');
       var size = parseFloat(getComputedStyle(sp).fontSize);
       var guard = 0;
       while (guard < 60){
         var шире = sp.scrollWidth > box;
         var строк = Math.round(sp.getBoundingClientRect().height / (size * 0.98));
-        if (!шире && (одно ? строк <= 1 : строк <= 2)) break;
+        var предел = svc ? 2 : (одно ? 1 : 2);
+        if (!шире && строк <= предел) break;
         size -= 2;
-        if (size < 22) break;
+        if (size < (svc ? 30 : 22)) break;
         sp.style.setProperty('font-size', size + 'px', 'important');
         guard++;
       }
