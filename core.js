@@ -3,8 +3,6 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'AW-16920751041');
-  // call-from-website tracking (swaps & counts calls)
-  gtag('config', 'AW-16920751041/4qy3CMr96rsaEMHXuIQ_', { 'phone_conversion_number': '206-717-7177' });
   // fire call conversion when a phone link is clicked
   function trackCall(){ gtag('event','conversion',{'send_to':'AW-16920751041/4qy3CMr96rsaEMHXuIQ_'}); }
   // scroll to the quote form and focus the first field
