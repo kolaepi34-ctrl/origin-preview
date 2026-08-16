@@ -6828,3 +6828,18 @@ html body.home.nobar .callbar{ display:none !important; }
   }
   html body.home .topband{ padding-block:34px !important; }
 }
+
+/* Название города на фото. Его сбивало общее правило про размер текста
+   (span получал 15 px) — задаём явно и крупно, «MOVING IN» строкой выше. */
+@media (max-width:820px){
+  html body.home .topband .topband__in .topband__title{
+    font-size:22px !important; letter-spacing:.18em !important; line-height:1.1 !important;
+  }
+  html body.home .topband .topband__in .topband__title span{
+    display:block !important;
+    font-size:clamp(46px, 13vw, 64px) !important;
+    letter-spacing:-.03em !important; line-height:1 !important;
+    margin-top:6px !important;
+  }
+  html body.home .topband{ padding-block:38px !important; }
+}
