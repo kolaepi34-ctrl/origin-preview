@@ -6571,11 +6571,12 @@ html{ scroll-behavior:auto !important; }
   body.home small, body.home label, body.home figcaption, body.home .note{
     font-size:clamp(13px, 4vw, 15px) !important;
   }
-  body.home a:not(.chip):not(.skiplink):not(.accent),
-  body.home button:not(.caret){
+  body.home a:not(.chip):not(.skiplink):not(.accent):not(header.site .cta a),
+  body.home button:not(.caret):not(header.site .cta button){
     min-height:40px !important;
-    display:inline-flex !important; align-items:center !important;
   }
+  body.home header.site .cta > *{ display:none !important; }
+  body.home header.site .cta .hamburger{ display:inline-flex !important; }
   body.home .prose a, body.home p a, body.home li a{
     min-height:0 !important; display:inline !important;
   }
