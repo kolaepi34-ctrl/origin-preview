@@ -136,7 +136,7 @@
         <div class="field"><label>Email</label><input type="email" name="email" placeholder="you@example.com"></div>
       </div>
       <div class="row2">
-        <div class="field"><label>Move date</label><input type="date" name="date"></div>
+        <div class="field"><label>Move date</label><input type="text" name="date" placeholder="MM/DD/YYYY" onfocus="this.type=&quot;date&quot;;this.showPicker&amp;&amp;this.showPicker()" onblur="if(!this.value)this.type=&quot;text&quot;"></div>
         <div class="field"><label>Service</label>
           <select name="service">
             <option value="">Select moving service</option>

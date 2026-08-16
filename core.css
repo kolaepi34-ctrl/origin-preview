@@ -5899,3 +5899,14 @@ body.home .final .btn-white{ align-self:center !important; margin:0 !important; 
 /* Прокрутка к подвалу по ссылке CONTACT — с запасом под липкую шапку */
 body.home footer.site#contact{ scroll-margin-top:96px; }
 html{ scroll-behavior:smooth; }
+
+/* Шапка не исчезает при прокрутке */
+body.home header.site{
+  position:sticky !important;
+  top:0 !important;
+  z-index:60 !important;
+  box-shadow:0 6px 24px rgba(3,10,24,.28);
+}
+body.home .topbar{ position:relative !important; z-index:61 !important; }
+/* Якорям нужен запас, чтобы шапка не накрывала заголовок секции */
+body.home section[id]{ scroll-margin-top:100px !important; }
