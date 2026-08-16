@@ -263,25 +263,37 @@
   else boot();
 })();
 
-/* Названия городов из двух слов («Commerce City», «Highlands Ranch») не влезали
-   в строку на телефоне. Подгоняем кегль под ширину полосы. */
+/* Название города на фото. Одно слово («Westminster», «Centennial») должно
+   помещаться в одну строку — переносить его по буквам нельзя. Два слова
+   («Commerce City») переносим по пробелу. Кегль подгоняем под ширину полосы. */
 (function(){
   function boot(){
     var sp = document.querySelector('.topband__title span');
     if (!sp) return;
+    var одно = sp.textContent.trim().split(/\s+/).length === 1;
+
     function fit(){
       var box = sp.parentElement.clientWidth;
       if (!box) return;
+      sp.style.whiteSpace = одно ? 'nowrap' : 'normal';
       sp.style.fontSize = '';
       var size = parseFloat(getComputedStyle(sp).fontSize);
       var guard = 0;
-      while ((sp.scrollWidth > box - 4 || sp.getBoundingClientRect().height > size * 2.2) && size > 26 && guard < 40){
-        size -= 2; sp.style.fontSize = size + 'px'; guard++;
+      while (guard < 60){
+        var шире = sp.scrollWidth > box;
+        var строк = Math.round(sp.getBoundingClientRect().height / (size * 0.98));
+        if (!шире && (одно ? строк <= 1 : строк <= 2)) break;
+        size -= 2;
+        if (size < 22) break;
+        sp.style.fontSize = size + 'px';
+        guard++;
       }
     }
+
     fit();
     window.addEventListener('resize', fit, { passive:true });
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+    window.addEventListener('load', fit);
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
   else boot();
