@@ -1,15 +1,27 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Origin Movers">
-  <title>Origin Movers</title>
-  <!-- Квадратная версия того же знака: аватарка Google-профиля, соцсетей, фавикон. -->
-  <rect width="64" height="64" rx="14" fill="#0C1E3C"/>
-  <path d="M8 47c9 0 12-4 24-4s15 4 24 4" fill="none" stroke="#E86A0C"
-        stroke-width="2.6" stroke-linecap="round" opacity=".6"/>
-  <g fill="none" stroke="#FFFFFF" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="round">
-    <path d="M12 17h27v18H12z"/><path d="M39 23h8l6 7v5H39z"/><path d="M12 35h41"/>
-  </g>
-  <circle cx="22" cy="38" r="3.8" fill="none" stroke="#FFFFFF" stroke-width="2.8"/>
-  <circle cx="45" cy="38" r="3.8" fill="none" stroke="#FFFFFF" stroke-width="2.8"/>
-  <g fill="none" stroke="#E86A0C" stroke-width="2.4" stroke-linejoin="round">
-    <path d="M25 21l-6 2.6v5.4l6 2.6 6-2.6v-5.4Z"/><path d="M19 23.6l6 2.6 6-2.6"/>
+<!--
+  Знак Origin Movers без текста — для иконки вкладки, приложения, аватара
+  и любых мест меньше 48 px, где подробный локап читаться не будет.
+  Тот же щит, что и в основном логотипе: дорога уходит вдаль, над ней крыша.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 300" width="280" height="300"
+     role="img" aria-label="Origin Movers">
+  <defs>
+    <linearGradient id="mkNavy" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1B3766"/><stop offset="1" stop-color="#0A1930"/>
+    </linearGradient>
+    <linearGradient id="mkOr" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFA24D"/><stop offset="1" stop-color="#E86A0C"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(20,16)">
+    <path d="M120 0 l120 42 v96c0 66-50 110-120 142C50 248 0 204 0 138V42z" fill="url(#mkNavy)"/>
+    <path d="M120 0 l120 42 v96c0 66-50 110-120 142C50 248 0 204 0 138V42z"
+          fill="none" stroke="#E86A0C" stroke-width="7"/>
+    <path d="M120 22 l100 35v81c0 55-42 92-100 119C62 230 20 193 20 138V57z"
+          fill="none" stroke="#FFFFFF" stroke-width="3" opacity=".3"/>
+    <path d="M62 214 L104 118h32l42 96z" fill="#FFFFFF" opacity=".95"/>
+    <path d="M120 128 v78" stroke="#0A1930" stroke-width="9" stroke-dasharray="16 14"/>
+    <path d="M74 104 L120 62l46 42" fill="none" stroke="url(#mkOr)" stroke-width="18"
+          stroke-linecap="round" stroke-linejoin="round"/>
   </g>
 </svg>
