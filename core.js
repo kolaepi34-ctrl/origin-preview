@@ -147,6 +147,7 @@
       goTo(target, distance < 3000);          /* далеко — сразу, иначе скролл срывается */
       setTimeout(function(){ goTo(target, false) }, distance < 3000 ? 800 : 120);
       setTimeout(function(){ goTo(target, false) }, 1400);
+      setTimeout(function(){ goTo(target, false) }, 2400);
       if (history.replaceState) history.replaceState(null, '', id);
     });
   }
