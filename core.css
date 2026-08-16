@@ -7358,3 +7358,13 @@ html body.home .topband__title--svc span{
     margin-top:0 !important;
   }
 }
+
+/* Заголовок услуги на фото — вдвое крупнее (32 → 44 px на телефоне).
+   Дальше его подгоняет скрипт, если строка не помещается. */
+@media (max-width:820px){
+  html body.home.home.home.home .topband .topband__in .topband__title--svc,
+  html body.home.home.home.home .topband .topband__in .topband__title--svc span{
+    font-size:44px !important; line-height:1.02 !important;
+  }
+  html body.home.home.home.home .topband{ padding-block:40px !important; }
+}
