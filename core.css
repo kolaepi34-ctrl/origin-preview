@@ -6221,3 +6221,25 @@ body.home header.site .dropmenu a:hover{
   background:rgba(232,106,12,.16) !important;
   color:#E86A0C !important;
 }
+
+/* Отступы подсветки не должны раздвигать меню: компенсируем отрицательным полем,
+   иначе ширина nav растёт на 168 px и бренд уезжает с центра. */
+body.home header.site nav.main > a,
+body.home header.site .navdrop > a{
+  padding:10px 11px !important;
+  margin-inline:-11px !important;
+}
+/* Тёмная тема: названия городов на первом экране были серыми */
+:root[data-theme="dark"] body.home .chip,
+:root[data-theme="dark"] body.home .areas .chip,
+:root[data-theme="dark"] body.home .topband .chip,
+:root[data-theme="dark"] body.home .hero .chip{
+  color:#FFA24D !important;
+  border-color:rgba(255,162,77,.45) !important;
+}
+:root[data-theme="dark"] body.home .chip:hover{
+  background:#FFA24D !important; color:#0B1524 !important;
+}
+:root[data-theme="dark"] body.home .chip--current{
+  background:#FFA24D !important; color:#0B1524 !important; border-color:#FFA24D !important;
+}
