@@ -6606,3 +6606,18 @@ html{ scroll-behavior:auto !important; }
     font-size:13px !important;
   }
 }
+
+/* Последние два семейства заголовков: у них селекторы с id и с тремя классами,
+   поэтому общие правила проигрывали. Перебиваем точечно. */
+@media (max-width:820px){
+  html body.home section#services .wrap .sec-head h2,
+  html body.home section#services .wrap .group-head h2{
+    font-size:25px !important; line-height:1.16 !important;
+  }
+  html body.home .seo-body .wrap .prose h2,
+  html body.home .seo-content .wrap .prose h2,
+  html body.home .seo-content .prose h2,
+  html body.home div.prose h2{
+    font-size:21px !important; line-height:1.2 !important;
+  }
+}
