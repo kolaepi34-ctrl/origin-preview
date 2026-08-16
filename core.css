@@ -6670,3 +6670,32 @@ html{ scroll-behavior:auto !important; }
     font-size:14px !important; letter-spacing:.01em !important; padding:0 8px !important;
   }
 }
+
+/* Плашка о куки: одна строка, узкая. Текст в разметке сокращён до
+   «Cookies for analytics.» — длинный не помещался рядом с кнопкой. */
+@media (max-width:820px){
+  html body.home .cookie{
+    max-width:none !important; width:auto !important;
+    left:8px !important; right:8px !important;
+    justify-content:center !important; padding:5px 10px !important;
+    font-size:10px !important;
+  }
+  html body.home .cookie button{ height:24px !important; min-height:24px !important; font-size:10px !important; }
+  html body.home .cookie a{ font-size:10px !important; }
+
+  /* Подзаголовок первого экрана был выключен «по ширине» — на узком экране
+     это рвёт строки. Ставим по центру. */
+  html body.home .hero .pitch .lead,
+  html body.home .hero .pitch p.lead{
+    text-align:center !important; margin:12px auto 18px !important; max-width:34ch !important;
+  }
+
+  /* Контакты в подвале: телефон, почта и строка о зоне работы — по центру */
+  html body.home footer.site .contact{ text-align:center !important; }
+  html body.home footer.site .contact h4{ margin-bottom:8px !important; }
+  html body.home footer.site .contact > div{
+    display:flex !important; align-items:center !important; justify-content:center !important;
+    gap:7px !important; margin:0 0 6px !important;
+  }
+  html body.home footer.site .contact > div:last-child{ margin-top:2px !important; }
+}
