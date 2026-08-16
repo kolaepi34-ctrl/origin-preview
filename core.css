@@ -7008,3 +7008,39 @@ html body.home .trustb + *{ border-top:0 !important; box-shadow:none !important;
   html body.home.home .included li::before,
   html body.home.home .incl li::before{ flex:0 0 auto !important; }
 }
+
+/* ══ ГЛАВНАЯ ПРИЧИНА мелких заголовков на телефоне ═══════════════════
+   Моё общее правило про читаемый минимум задавало размер ВСЕМ span,
+   а «Specialty moves» и «Everyday moving services» набраны из двух span
+   (.gl-1 и .gl-2) внутри h2 — они получали 15 px вместо 25 px.
+   Внутри заголовков размер всегда наследуется от самого заголовка. */
+@media (max-width:820px){
+  html body.home.home.home :is(h1,h2,h3,h4) span,
+  html body.home.home.home :is(h1,h2,h3,h4) b,
+  html body.home.home.home :is(h1,h2,h3,h4) i,
+  html body.home.home.home :is(h1,h2,h3,h4) em{
+    font-size:inherit !important; line-height:inherit !important;
+  }
+
+  /* Надзаголовок блока доверия стоял слева */
+  html body.home.home.home .trustb .trustb__kicker,
+  html body.home.home.home .trustb__kicker{
+    text-align:center !important; display:block !important;
+    width:100% !important; margin-inline:auto !important;
+  }
+
+  /* Пункты блока доверия: иконка над текстом, всё по центру.
+     Раньше это была сетка «34 px иконка + текст», иконка липла влево. */
+  html body.home.home.home .trustb li{
+    display:grid !important; grid-template-columns:1fr !important;
+    justify-items:center !important; text-align:center !important; gap:6px !important;
+  }
+  html body.home.home.home .trustb li .trustb__ic{
+    margin:0 auto 4px !important; width:38px !important; height:38px !important;
+    display:flex !important; align-items:center !important; justify-content:center !important;
+  }
+  html body.home.home.home .trustb li b,
+  html body.home.home.home .trustb li > span{
+    width:100% !important; text-align:center !important;
+  }
+}
