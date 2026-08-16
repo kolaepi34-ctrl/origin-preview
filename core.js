@@ -121,26 +121,34 @@
   else boot();
 })();
 
-/* Кнопки «Get a quote» и другие ссылки-якоря: браузерный переход попадал мимо —
-   закреплённая шапка перекрывала цель, а на телефоне прокрутка вообще не срабатывала.
-   Прокручиваем сами, с поправкой на высоту шапки. */
+/* Кнопки-якоря («Get a quote», пункты подвала). Родной переход по якорю попадал
+   мимо: закреплённая шапка закрывала цель, а на длинных прокрутках плавный скролл
+   срывался из-за подгрузки картинок. Считаем позицию сами и дважды поправляем. */
 (function(){
   function boot(){
+    function headOffset(){
+      var h = document.querySelector('header.site');
+      return (h ? h.getBoundingClientRect().height : 0) + 10;
+    }
+    function goTo(target, smooth){
+      var y = target.getBoundingClientRect().top
+            + (window.pageYOffset || document.documentElement.scrollTop)
+            - headOffset();
+      window.scrollTo({ top: Math.max(0, y), behavior: smooth ? 'smooth' : 'auto' });
+    }
     document.addEventListener('click', function(e){
       var a = e.target.closest('a[href^="#"]');
-      if (!a || a.closest('.navdrop > a')) return;
+      if (!a) return;
       var id = a.getAttribute('href');
       if (!id || id.length < 2) return;
       var target = document.querySelector(id);
       if (!target) return;
       e.preventDefault();
-      var head = document.querySelector('header.site');
-      var offset = (head ? head.getBoundingClientRect().height : 0) + 10;
-      var y = target.getBoundingClientRect().top + (window.pageYOffset || document.documentElement.scrollTop) - offset;
-      window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+      var distance = Math.abs(target.getBoundingClientRect().top);
+      goTo(target, distance < 3000);          /* далеко — сразу, иначе скролл срывается */
+      setTimeout(function(){ goTo(target, false) }, distance < 3000 ? 800 : 120);
+      setTimeout(function(){ goTo(target, false) }, 1400);
       if (history.replaceState) history.replaceState(null, '', id);
-      var field = target.querySelector('input, select, textarea');
-      if (field) setTimeout(function(){ try { field.focus({preventScroll:true}) } catch(_){} }, 420);
     });
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
