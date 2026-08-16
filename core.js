@@ -2,7 +2,7 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  // Счётчик Google Ads отключён: аккаунт AW-16920751041 принадлежит другой
+  // Счётчик Google Ads отключён: прежний идентификатор принадлежал другой
   // компании, а подмена номера показывала клиентам чужой телефон.
   // Свой идентификатор Origin Movers подставить сюда, когда заведут аккаунт.
   function trackCall(){}
@@ -31,8 +31,6 @@
     var dark=d.getAttribute('data-theme')==='dark';
     d.setAttribute('data-theme', dark?'light':'dark');
   }
-  // Send the lead to the SAME wedoo24 inbox the main airusmovers.com form uses,
-  // then fire the Colorado Ads conversion and go to the thank-you page.
   
   async function submitQuote(e){
     // Форма отправляется обычным POST на почту компании (FormSubmit),
