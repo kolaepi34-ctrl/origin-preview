@@ -230,3 +230,20 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
   else boot();
 })();
+
+/* Кнопка «наверх» висела поверх текста с самого начала и мешала листать.
+   Показываем её только когда действительно есть куда возвращаться. */
+(function(){
+  function boot(){
+    var btn = document.querySelector('.chatbubble');
+    if (!btn) return;
+    function upd(){
+      var надо = window.scrollY > 1000;
+      btn.classList.toggle('is-hidden', !надо);
+    }
+    window.addEventListener('scroll', upd, { passive:true });
+    upd();
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
+  else boot();
+})();
