@@ -7099,3 +7099,29 @@ html body.home .trustb + *{ border-top:0 !important; box-shadow:none !important;
   html body.home.home.home.home .card .learn,
   html body.home.home.home.home .card .callus{ margin-inline:auto !important; }
 }
+
+/* ══ Две оставшиеся зацепки ══════════════════════════════════════════
+   1) У иконки блока доверия стояло align-self:start — она прижималась
+      к левому краю, хотя пункт уже был колонкой.
+   2) Тексты карточек услуг задаются селекторами с id #services,
+      поэтому правила без id не выигрывали. */
+@media (max-width:820px){
+  html body.home .trustb li .trustb__ic{
+    align-self:center !important; margin:0 auto 6px auto !important;
+  }
+
+  html body.home section#services .cards .card,
+  html body.home section#services .card,
+  html body.home section#services .card :is(h3, p, span, b, .badge, .kicker, .learn, .callus){
+    text-align:center !important;
+  }
+  html body.home section#services .card :is(p, span, b){
+    margin-inline:auto !important;
+  }
+  html body.home section#services .card h3{
+    font-size:22px !important; line-height:1.2 !important;
+  }
+  html body.home section#services .card :is(.learn, .callus){
+    display:inline-flex !important; margin-inline:auto !important;
+  }
+}
