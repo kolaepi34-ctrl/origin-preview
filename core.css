@@ -6146,3 +6146,24 @@ body.home .cookie{ z-index:110 !important; }
   }
   body.home header.site nav.main.open a{ padding:12px 4px !important; border-bottom:1px solid rgba(255,255,255,.10) !important; }
 }
+
+/* Блок «What the hourly rate already covers» в тёмной теме:
+   пункты списка оставались светлыми на светлом фоне карточки */
+:root[data-theme="dark"] body.home .included,
+:root[data-theme="dark"] body.home #included{
+  background:#0B1524 !important; background-image:none !important;
+}
+:root[data-theme="dark"] body.home .included li,
+:root[data-theme="dark"] body.home .incl li,
+:root[data-theme="dark"] body.home .covers li{
+  background:#10203A !important;
+  border-color:rgba(255,255,255,.14) !important;
+  color:#E8EEF8 !important;
+}
+:root[data-theme="dark"] body.home .included li *,
+:root[data-theme="dark"] body.home .incl li *,
+:root[data-theme="dark"] body.home .covers li *{ color:#E8EEF8 !important; }
+:root[data-theme="dark"] body.home .included li b,
+:root[data-theme="dark"] body.home .incl li b,
+:root[data-theme="dark"] body.home .included .ic,
+:root[data-theme="dark"] body.home .incl .ic{ color:#FFA24D !important; }
