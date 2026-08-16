@@ -143,6 +143,10 @@
       var target = document.querySelector(id);
       if (!target) return;
       e.preventDefault();
+      if (id === '#top' || a.classList.contains('chatbubble')){
+        window.scrollTo({ top:0, behavior:'smooth' });
+        return;
+      }
       var distance = Math.abs(target.getBoundingClientRect().top);
       goTo(target, distance < 3000);          /* далеко — сразу, иначе скролл срывается */
       setTimeout(function(){ goTo(target, false) }, distance < 3000 ? 800 : 120);
