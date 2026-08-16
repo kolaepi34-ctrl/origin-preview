@@ -6773,3 +6773,9 @@ html{ scroll-behavior:auto !important; }
 /* Крестик выставлял display:none в атрибуте style, но правило с !important
    его перебивало и полоса не пряталась. Прячем по классу на body. */
 html body.home.nobar .callbar{ display:none !important; }
+
+/* Отступ под закреплённую шапку раньше давала белая полоса контактов (87 px).
+   Мы её скрыли — теперь полоса с фото уезжала под шапку. Компенсируем. */
+@media (max-width:820px){
+  html body.home .topband{ margin-top:76px !important; }
+}
