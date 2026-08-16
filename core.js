@@ -1,12 +1,7 @@
-
-  window.dataLayer = window.dataLayer || [];
+window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  // Счётчик Google Ads отключён: прежний идентификатор принадлежал другой
-  // компании, а подмена номера показывала клиентам чужой телефон.
-  // Свой идентификатор Origin Movers подставить сюда, когда заведут аккаунт.
   function trackCall(){}
-  // scroll to the quote form and focus the first field
   function scrollToQuote(){
     var f=document.getElementById('quote-form'); if(!f) return false;
     var h=document.querySelector('header.site');
@@ -15,7 +10,6 @@
     window.scrollTo({top:Math.max(0,y), behavior:'instant'});
     return false;
   }
-  // Click a city chip -> prefill the form and set the city in the form title, then scroll
   function pickCity(city){
     var f=document.getElementById('quote-form'); if(!f) return false;
     var from=f.querySelector('input[name="from"]'); if(from) from.value=city+', CO';
@@ -23,9 +17,7 @@
     scrollToQuote();
     return false;
   }
-  // Mobile menu toggle
   function toggleMenu(){ var n=document.querySelector('nav.main'); if(n) n.classList.toggle('open'); }
-  // Dark / light theme toggle (like the main site's moon button)
   function toggleTheme(){
     var d=document.documentElement;
     var dark=d.getAttribute('data-theme')==='dark';
@@ -33,15 +25,10 @@
   }
   
   async function submitQuote(e){
-    // Форма отправляется обычным POST на почту компании (FormSubmit),
-    // поэтому перехватывать её не нужно — только блокируем двойной клик.
     var btn=e.target.querySelector('[type="submit"]');
     if(btn){ btn.disabled=true; btn.textContent="Sending…"; }
     return true;
   }
-
-/* Длинный SEO-текст на телефоне: сворачиваем до трёх строк, читать по кнопке.
-   Раньше, начав читать, закрыть его было нельзя — приходилось листать до конца. */
 (function(){
   function init(){
     if (window.innerWidth > 820) return;
@@ -66,22 +53,15 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
   else init();
 })();
-
-/* Мобильное меню. core.js подключён в <head> без defer, поэтому обработчики
-   ставим после разбора страницы — иначе nav ещё не существует и код молча выходил.
-   Панель закрывается по пункту, по тапу мимо и по Esc; SERVICES и LOCATIONS
-   раскрывают свой список, а не уводят на якорь. */
 (function(){
   function boot(){
     var nav = document.querySelector('header.site nav.main');
     if (!nav) return;
-
     function close(){
       nav.classList.remove('open');
       nav.querySelectorAll('.navdrop.is-open').forEach(function(d){ d.classList.remove('is-open') });
       document.body.classList.remove('menu-open');
     }
-
     nav.addEventListener('click', function(e){
       if (window.innerWidth > 1080 || !nav.classList.contains('open')) return;
       var head = e.target.closest('.navdrop > a');
@@ -93,20 +73,16 @@
       nav.querySelectorAll('.navdrop.is-open').forEach(function(d){ d.classList.remove('is-open') });
       if (!wasOpen) drop.classList.add('is-open');
     }, true);
-
     nav.addEventListener('click', function(e){
       var a = e.target.closest('a');
       if (a && !a.parentElement.classList.contains('navdrop')) close();
     });
-
     document.addEventListener('click', function(e){
       if (!nav.classList.contains('open')) return;
       if (e.target.closest('nav.main') || e.target.closest('.hamburger')) return;
       close();
     });
-
     document.addEventListener('keydown', function(e){ if (e.key === 'Escape') close(); });
-
     var burger = document.querySelector('.hamburger');
     if (burger) burger.addEventListener('click', function(){
       setTimeout(function(){
@@ -117,10 +93,6 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
   else boot();
 })();
-
-/* Кнопки-якоря («Get a quote», пункты подвала). Родной переход по якорю попадал
-   мимо: закреплённая шапка закрывала цель, а на длинных прокрутках плавный скролл
-   срывался из-за подгрузки картинок. Считаем позицию сами и дважды поправляем. */
 (function(){
   function boot(){
     function animateTo(y){
@@ -167,9 +139,6 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
   else boot();
 })();
-
-/* Подсказки при проверке полей. Тексты «Заполните это поле» рисует сам браузер
-   на языке своего интерфейса — в разметке их нет. Задаём свои, английские. */
 (function(){
   function boot(){
     var TEXT = {
@@ -217,10 +186,6 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
   else boot();
 })();
-
-/* Первый экран на телефоне должен быть чистым: оранжевая полоса звонка
-   и плашка о куки раньше висели поверх него и съедали половину высоты.
-   Показываем их только после того, как человек начал листать. */
 (function(){
   function boot(){
     if (window.innerWidth > 820) return;
@@ -243,9 +208,6 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
   else boot();
 })();
-
-/* Кнопка «наверх» висела поверх текста с самого начала и мешала листать.
-   Показываем её только когда действительно есть куда возвращаться. */
 (function(){
   function boot(){
     var btn = document.querySelector('.chatbubble');
@@ -260,10 +222,6 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
   else boot();
 })();
-
-/* Название города на фото. Одно слово («Westminster», «Centennial») должно
-   помещаться в одну строку — переносить его по буквам нельзя. Два слова
-   («Commerce City») переносим по пробелу. Кегль подгоняем под ширину полосы. */
 (function(){
   function boot(){
     var h = document.querySelector('.topband__title');
@@ -272,7 +230,6 @@
     var sp = svc ? h : h.querySelector('span');
     if (!sp) return;
     var одно = sp.textContent.trim().split(/\s+/).length === 1;
-
     function fit(){
       var box = sp.parentElement.clientWidth;
       if (!box) return;
@@ -291,11 +248,49 @@
         guard++;
       }
     }
-
     fit();
     window.addEventListener('resize', fit, { passive:true });
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
     window.addEventListener('load', fit);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
+  else boot();
+})();
+(function(){
+  function boot(){
+    document.querySelectorAll('form[action*="formsubmit"]').forEach(function(form){
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        var btn = form.querySelector('[type="submit"]');
+        var было = btn ? btn.textContent : '';
+        if (btn){ btn.disabled = true; btn.textContent = 'Sending…' }
+        var сообщение = form.querySelector('.form-msg');
+        if (!сообщение){
+          сообщение = document.createElement('p');
+          сообщение.className = 'form-msg';
+          form.appendChild(сообщение);
+        }
+        сообщение.textContent = '';
+        сообщение.classList.remove('form-msg--error');
+        var стоп = new AbortController();
+        var таймер = setTimeout(function(){ стоп.abort() }, 12000);   /* не висим дольше 12 с */
+        fetch(form.action, { method:'POST', body:new FormData(form),
+                             headers:{ 'Accept':'application/json' }, signal:стоп.signal })
+          .then(function(r){
+            clearTimeout(таймер);
+            if (!r.ok) throw new Error('bad status');
+            var next = form.querySelector('[name="_next"]');
+            window.location.href = next ? next.value : 'thanks.html';
+          })
+          .catch(function(){
+            clearTimeout(таймер);
+            if (btn){ btn.disabled = false; btn.textContent = было }
+            сообщение.classList.add('form-msg--error');
+            сообщение.innerHTML = 'We could not send the form just now. '
+              + 'Please call <a href="tel:+17204620407">720-462-0407</a> — we answer every day, 8am – 6pm.';
+          });
+      });
+    });
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
   else boot();
