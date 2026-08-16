@@ -6243,3 +6243,47 @@ body.home header.site .navdrop > a{
 :root[data-theme="dark"] body.home .chip--current{
   background:#FFA24D !important; color:#0B1524 !important; border-color:#FFA24D !important;
 }
+
+/* ══ Шапка на средних экранах: строка была шире окна (1177 px при окне 1105),
+   поэтому правые кнопки уезжали за край и налезали на название компании.
+   1081–1280 px — ужимаем меню; уже 1080 px — переходим на «бургер». ══ */
+@media (min-width:1081px) and (max-width:1280px){
+  body.home header.site nav.main{ gap:2px !important; }
+  body.home header.site nav.main > a,
+  body.home header.site .navdrop > a{
+    font-size:13px !important; letter-spacing:.02em !important;
+    padding:10px 8px !important; margin-inline:-8px !important;
+  }
+  body.home header.site .cta .callbtn{ padding-inline:14px !important; }
+}
+@media (min-width:821px) and (max-width:1080px){
+  body.home header.site nav.main{ display:none !important; }
+  body.home header.site .cta{
+    display:flex !important; align-items:center !important; gap:8px !important;
+    max-width:none !important; width:auto !important; flex:0 0 auto !important;
+    margin-left:auto !important;
+  }
+  body.home header.site .cta > *{ display:none !important; }
+  body.home header.site .cta .hamburger{
+    display:inline-flex !important; align-items:center !important; justify-content:center !important;
+    width:46px !important; height:46px !important;
+    border:1.5px solid rgba(255,255,255,.45) !important;
+    border-radius:10px !important; background:transparent !important;
+  }
+  body.home header.site .cta .hamburger svg,
+  body.home header.site .cta .hamburger span{ display:block !important; }
+  body.home header.site .cta .hamburger *{ stroke:#FFFFFF !important; color:#FFFFFF !important; }
+  body.home header.site nav.main.open,
+  body.home header.site nav.main.is-open,
+  body.home header.site nav.main[data-open="1"]{
+    display:flex !important; flex-direction:column !important; align-items:stretch !important;
+    position:fixed !important; left:0 !important; right:0 !important; top:86px !important;
+    background:#0C1E3C !important; padding:10px 16px 20px !important; gap:2px !important;
+    max-height:calc(100vh - 86px) !important; overflow:auto !important;
+    box-shadow:0 16px 34px rgba(3,10,24,.5) !important; z-index:90 !important;
+  }
+  body.home header.site nav.main.open a{
+    padding:12px 4px !important; margin-inline:0 !important;
+    border-bottom:1px solid rgba(255,255,255,.10) !important;
+  }
+}
