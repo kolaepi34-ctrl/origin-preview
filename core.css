@@ -6580,3 +6580,29 @@ html{ scroll-behavior:auto !important; }
     min-height:0 !important; display:inline !important;
   }
 }
+
+/* Базовые заголовки собраны на clamp(32px,4.6vw,56px) — на телефоне это
+   всегда 32 px, крупнее заголовка первого экрана. Перебиваем с запасом
+   по «весу» селектора (добавлен html), иначе правило проигрывает. */
+@media (max-width:820px){
+  html body.home h2,
+  html body.home .sec-head h2,
+  html body.home .group-head h2,
+  html body.home .est h2,
+  html body.home .areas h2,
+  html body.home .trustb h2,
+  html body.home .svcarea h2,
+  html body.home .final h2,
+  html body.home #services .group-head h2{
+    font-size:25px !important; line-height:1.16 !important;
+  }
+  html body.home .prose h2{ font-size:21px !important; }
+  html body.home .areas h2.areas-h2{ font-size:25px !important; }
+
+  /* Подписи полей формы были 12 px */
+  html body.home form label,
+  html body.home .hero form.quote label,
+  html body.home .est label, html body.home .q30 label{
+    font-size:13px !important;
+  }
+}
