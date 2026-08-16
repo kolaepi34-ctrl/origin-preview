@@ -268,7 +268,10 @@
    («Commerce City») переносим по пробелу. Кегль подгоняем под ширину полосы. */
 (function(){
   function boot(){
-    var sp = document.querySelector('.topband__title span');
+    var h = document.querySelector('.topband__title');
+    if (!h) return;
+    var svc = h.classList.contains('topband__title--svc');
+    var sp = svc ? h : h.querySelector('span');
     if (!sp) return;
     var одно = sp.textContent.trim().split(/\s+/).length === 1;
 
