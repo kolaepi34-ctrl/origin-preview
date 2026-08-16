@@ -54,13 +54,13 @@
     var btn = document.createElement('button');
     btn.type = 'button';
     btn.className = 'prose__more';
-    btn.textContent = 'Read more';
+    btn.textContent = 'Read more about moving in Denver';
     btn.setAttribute('aria-expanded', 'false');
     p.after(btn);
     btn.addEventListener('click', function(){
       var open = p.classList.toggle('prose--open');
       p.classList.toggle('prose--clamped', !open);
-      btn.textContent = open ? 'Hide' : 'Read more';
+      btn.textContent = open ? 'Hide the text' : 'Read more about moving in Denver';
       btn.setAttribute('aria-expanded', open ? 'true' : 'false');
       if (!open) p.scrollIntoView({block:'start', behavior:'smooth'});
     });
