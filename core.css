@@ -6167,3 +6167,34 @@ body.home .cookie{ z-index:110 !important; }
 :root[data-theme="dark"] body.home .incl li b,
 :root[data-theme="dark"] body.home .included .ic,
 :root[data-theme="dark"] body.home .incl .ic{ color:#FFA24D !important; }
+
+/* ══ Кнопки на телефоне: текст по центру и не обрезан ══════════════════ */
+@media (max-width:820px){
+  body.home a.btn, body.home button, body.home .callus, body.home .learn,
+  body.home .chip, body.home .trustb__btn, body.home .trustb__call,
+  body.home .rev-cta__btn, body.home .est button, body.home .q30__form button,
+  body.home form.quote button, body.home form.quote a{
+    display:inline-flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    text-align:center !important;
+    line-height:1.25 !important;
+    padding-inline:16px !important;
+    white-space:normal !important;      /* длинный текст переносится, а не режется */
+    height:auto !important;
+    min-height:48px !important;
+    overflow:visible !important;
+  }
+  /* Кнопки во всю ширину блока — тогда текст точно помещается */
+  body.home .trustb__actions,
+  body.home .final .btns,
+  body.home .hero .pitch > div:has(> a[href^="tel:"]){
+    display:grid !important; grid-template-columns:1fr !important; gap:10px !important;
+  }
+  body.home .trustb__btn, body.home .trustb__call,
+  body.home .final a.btn, body.home .hero .pitch a{
+    width:100% !important;
+  }
+  /* Плашки городов: текст по центру */
+  body.home .chip{ padding-inline:14px !important; }
+}
