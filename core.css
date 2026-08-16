@@ -6779,3 +6779,15 @@ html body.home.nobar .callbar{ display:none !important; }
 @media (max-width:820px){
   html body.home .topband{ margin-top:76px !important; }
 }
+
+/* Заголовок первого экрана выглядел «не по центру»: первая строка упиралась
+   в оба края, остальные короткие. Уменьшаем кегль и балансируем перенос. */
+@media (max-width:820px){
+  html body.home .hero h1{
+    font-size:26px !important; line-height:1.15 !important;
+    text-align:center !important; text-wrap:balance !important;
+    max-width:19ch !important; margin-inline:auto !important;
+  }
+  html body.home .hero .lead{ max-width:32ch !important; }
+  html body.home .topband{ padding-block:44px !important; }
+}
