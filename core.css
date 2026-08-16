@@ -5910,3 +5910,33 @@ body.home header.site{
 body.home .topbar{ position:relative !important; z-index:61 !important; }
 /* Якорям нужен запас, чтобы шапка не накрывала заголовок секции */
 body.home section[id]{ scroll-margin-top:100px !important; }
+
+/* Закрепляем только само меню: верхняя полоса с почтой уезжает вверх,
+   а шапка с логотипом и пунктами остаётся на месте. */
+body.home .topbar{ position:static !important; }
+body.home header.site{
+  position:sticky !important; top:0 !important; z-index:70 !important;
+}
+body.home .topnote{ position:static !important; }
+
+/* ══ Закреплённое меню: делаем его fixed ═══════════════════════════════
+   position:sticky не работал, потому что у html/body стоит overflow-x:hidden —
+   это создаёт свой контейнер прокрутки, и элемент «прилипал» к нему, а не к
+   окну. Прячем горизонтальную прокрутку только у html, а меню фиксируем. */
+html{ overflow-x:hidden !important; }
+body{ overflow-x:visible !important; }
+body.home header.site{
+  position:fixed !important;
+  top:0 !important; left:0 !important; right:0 !important;
+  z-index:80 !important;
+  box-shadow:0 6px 22px rgba(3,10,24,.30) !important;
+}
+/* Освобождаем под меню место, чтобы верхняя полоса не пряталась под ним */
+body.home .topbar{ margin-top:87px !important; }
+body.home section[id]{ scroll-margin-top:110px !important; }
+body.home footer.site#contact{ scroll-margin-top:110px !important; }
+
+/* Белую полосу под меню («Trained crews, right-size truck…») убираем:
+   меню закреплено, и лишняя строка только съедает первый экран. */
+body.home .topnote{ display:none !important; }
+body.home .topbar{ margin-top:87px !important; }
