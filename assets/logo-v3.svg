@@ -1,0 +1,49 @@
+<!--
+  Вариант 3 — «Motion Truck».
+  Грузовик в профиль, собранный из геометрии одного радиуса; кузов — навy,
+  кабина — оранжевая, в кузове читается буква O (закрытая коробка = груз).
+  Линии скорости слева и наклон 4° дают движение вправо, к новому адресу.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Origin Movers">
+  <defs>
+    <linearGradient id="v3navy" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#17325C"/>
+      <stop offset="1" stop-color="#0C1E3C"/>
+    </linearGradient>
+    <linearGradient id="v3or" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FA9540"/>
+      <stop offset="1" stop-color="#E86A0C"/>
+    </linearGradient>
+  </defs>
+
+  <!-- скруглённый квадрат-подложка -->
+  <rect x="16" y="16" width="480" height="480" rx="112" fill="url(#v3navy)"/>
+  <!-- диагональная лента: дорога -->
+  <path d="M16 386 h480 v40 a112 112 0 0 1 -112 70 h-256 a112 112 0 0 1 -112 -70 z" fill="#0A182F"/>
+
+  <g transform="translate(0,-14) rotate(-4 256 256)">
+    <!-- линии скорости -->
+    <path d="M52 214 h74" stroke="#E86A0C" stroke-width="16" stroke-linecap="round" opacity=".9"/>
+    <path d="M36 264 h58" stroke="#E86A0C" stroke-width="16" stroke-linecap="round" opacity=".6"/>
+    <path d="M60 314 h44" stroke="#E86A0C" stroke-width="16" stroke-linecap="round" opacity=".35"/>
+
+    <!-- кузов -->
+    <rect x="126" y="168" width="196" height="152" rx="20" fill="#FFFFFF"/>
+    <!-- буква O в кузове: груз и первая буква названия -->
+    <circle cx="224" cy="244" r="46" fill="none" stroke="#0C1E3C" stroke-width="22"/>
+    <path d="M224 198 a46 46 0 0 1 33 78" fill="none" stroke="url(#v3or)" stroke-width="22" stroke-linecap="round"/>
+
+    <!-- кабина -->
+    <path d="M330 214 h58 l52 60 v46 h-110 z" fill="url(#v3or)"/>
+    <path d="M344 226 h38 l34 42 h-72 z" fill="#0C1E3C" opacity=".85"/>
+
+    <!-- бампер и рама -->
+    <rect x="126" y="320" width="314" height="20" rx="10" fill="#E86A0C"/>
+
+    <!-- колёса -->
+    <circle cx="196" cy="356" r="42" fill="#0C1E3C" stroke="#FFFFFF" stroke-width="12"/>
+    <circle cx="196" cy="356" r="14" fill="#E86A0C"/>
+    <circle cx="382" cy="356" r="42" fill="#0C1E3C" stroke="#FFFFFF" stroke-width="12"/>
+    <circle cx="382" cy="356" r="14" fill="#E86A0C"/>
+  </g>
+</svg>

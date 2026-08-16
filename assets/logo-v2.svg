@@ -1,0 +1,45 @@
+<!--
+  Вариант 2 — «Origin Point».
+  Метка на карте (origin = точка отправления), внутри которой дом.
+  Через метку проходит маршрут A→B: он выходит за границы знака,
+  поэтому логотип читается как движение, а не как статичная иконка.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Origin Movers">
+  <defs>
+    <linearGradient id="v2navy" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#16305A"/>
+      <stop offset="1" stop-color="#0C1E3C"/>
+    </linearGradient>
+    <linearGradient id="v2or" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F8913B"/>
+      <stop offset="1" stop-color="#E86A0C"/>
+    </linearGradient>
+  </defs>
+
+  <!-- подложка со срезанным углом: «коробка» как отсылка к переезду -->
+  <path d="M64 40 h304 l80 80 v352 a0 0 0 0 1 0 0 h-384 a0 0 0 0 1 0 0 z"
+        fill="url(#v2navy)" rx="0"/>
+  <path d="M368 40 v80 h80 z" fill="#1E3A6B"/>
+
+  <!-- маршрут: пунктир из точки A в точку B, проходит через знак -->
+  <path d="M96 396 q80 -20 120 -70" fill="none" stroke="#E86A0C" stroke-width="9"
+        stroke-linecap="round" stroke-dasharray="2 26"/>
+  <path d="M296 262 q56 -54 124 -46" fill="none" stroke="#E86A0C" stroke-width="9"
+        stroke-linecap="round" stroke-dasharray="2 26"/>
+  <circle cx="96" cy="396" r="15" fill="#E86A0C"/>
+  <circle cx="420" cy="216" r="15" fill="#E86A0C"/>
+
+  <!-- метка-капля -->
+  <path d="M256 118 c-62 0 -112 49 -112 110 c0 78 92 148 108 160 a7 7 0 0 0 8 0
+           c16 -12 108 -82 108 -160 c0 -61 -50 -110 -112 -110 z"
+        fill="url(#v2or)"/>
+  <path d="M256 118 c-62 0 -112 49 -112 110 c0 78 92 148 108 160 a7 7 0 0 0 8 0
+           c16 -12 108 -82 108 -160 c0 -61 -50 -110 -112 -110 z"
+        fill="none" stroke="#0C1E3C" stroke-width="12"/>
+
+  <!-- дом внутри метки: крыша, корпус, дверь -->
+  <path d="M196 244 l60 -50 l60 50" fill="none" stroke="#0C1E3C" stroke-width="17"
+        stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M212 250 v58 h88 v-58" fill="#0C1E3C"/>
+  <rect x="242" y="272" width="28" height="36" rx="4" fill="url(#v2or)"/>
+</svg>

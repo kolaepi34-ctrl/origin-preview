@@ -1,0 +1,44 @@
+<!--
+  Вариант 1 — «Origin Seal».
+  Круглая печать: внешнее кольцо с разрывом снизу, внутри монограмма O+M,
+  где перемычка M построена из двух скатов крыши — читается и как буква,
+  и как два дома: старый адрес и новый. Сверху точка отправления (origin).
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Origin Movers">
+  <defs>
+    <linearGradient id="v1navy" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#14294B"/>
+      <stop offset="1" stop-color="#0C1E3C"/>
+    </linearGradient>
+    <linearGradient id="v1orange" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F5842B"/>
+      <stop offset="1" stop-color="#E86A0C"/>
+    </linearGradient>
+  </defs>
+
+  <!-- корпус печати -->
+  <circle cx="256" cy="256" r="236" fill="url(#v1navy)"/>
+
+  <!-- внешнее кольцо с разрывом снизу: разрыв даёт «движение», а не статичный круг -->
+  <path d="M256 44 a212 212 0 1 1 -150 362" fill="none" stroke="#E86A0C" stroke-width="10"
+        stroke-linecap="round" opacity=".95"/>
+  <path d="M256 44 a212 212 0 0 1 150 362" fill="none" stroke="#2C4570" stroke-width="10"
+        stroke-linecap="round"/>
+
+  <!-- точка отправления в разрыве кольца -->
+  <circle cx="256" cy="44" r="17" fill="url(#v1orange)"/>
+  <circle cx="256" cy="44" r="7" fill="#0C1E3C"/>
+
+  <!-- буква O — незамкнутое кольцо, открытое вправо: путь продолжается -->
+  <path d="M256 128 a92 92 0 1 0 76 40" fill="none" stroke="#FFFFFF" stroke-width="26" stroke-linecap="round"/>
+
+  <!-- монограмма M из двух скатов: два адреса, один маршрут -->
+  <path d="M206 292 v-56 l50 -44 l50 44 v56" fill="none" stroke="url(#v1orange)"
+        stroke-width="24" stroke-linejoin="round" stroke-linecap="round"/>
+
+  <!-- основание: земля под домами -->
+  <path d="M186 318 h140" stroke="#FFFFFF" stroke-width="16" stroke-linecap="round" opacity=".92"/>
+
+  <!-- нижняя дуга — дорога -->
+  <path d="M150 372 q106 46 212 0" fill="none" stroke="#E86A0C" stroke-width="14" stroke-linecap="round"/>
+</svg>
