@@ -6971,3 +6971,40 @@ html body.home .trustb + *{ border-top:0 !important; box-shadow:none !important;
   html body.home.home.home form :is(label, p),
   html body.home.home.home .field label{ text-align:left !important; margin-inline:0 !important; }
 }
+
+/* ══ Блок «Three things you will not have to worry about» на телефоне ══
+   1) Заголовок стоял в узкой колонке 267 px из десктопной сетки — текст был
+      «по центру» внутри неё, а сама колонка прижата влево.
+   2) У пунктов слева висела оранжевая линия-акцент, не связанная с текстом. */
+@media (max-width:820px){
+  html body.home.home .trustb .trustb__in{
+    grid-template-columns:1fr !important; display:block !important;
+  }
+  html body.home.home .trustb h2,
+  html body.home.home .trustb .eyebrow,
+  html body.home.home .trustb p,
+  html body.home.home .trustb ul,
+  html body.home.home .trustb ol{
+    width:100% !important; max-width:100% !important;
+    margin-left:auto !important; margin-right:auto !important;
+    text-align:center !important;
+  }
+  html body.home.home .trustb li{
+    border-left:0 !important; border-right:0 !important;
+    border-radius:12px !important; padding:14px 14px !important;
+    background:rgba(255,255,255,.04) !important;
+  }
+  html body.home.home .trustb li .ic{ margin:0 auto 6px !important; }
+
+  /* ══ «What the hourly rate already covers»: галочка и текст в одной
+     строке по центру, рамка вокруг них целиком ═══════════════════════ */
+  html body.home.home .included li,
+  html body.home.home .incl li{
+    display:flex !important; align-items:flex-start !important;
+    justify-content:center !important; gap:9px !important;
+    text-align:left !important; padding:13px 14px !important;
+    border-radius:12px !important;
+  }
+  html body.home.home .included li::before,
+  html body.home.home .incl li::before{ flex:0 0 auto !important; }
+}
