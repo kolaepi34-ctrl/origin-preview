@@ -6547,3 +6547,18 @@ html{ scroll-behavior:auto !important; }
     font-size:25px !important; line-height:1.16 !important;
   }
 }
+
+/* Оставшиеся заголовки 32 px на телефоне: .sec-head h2, .est__title,
+   заголовки SEO-текста и «Ready to move?». Приводим к единым 25 px. */
+@media (max-width:820px){
+  body.home .sec-head h2,
+  body.home .sec-head.group-head h2,
+  body.home .est__copy h2.est__title,
+  body.home .prose h2,
+  body.home .wrap > h2,
+  body.home section .wrap h2,
+  body.home .final h2{
+    font-size:25px !important; line-height:1.16 !important; letter-spacing:-.02em !important;
+  }
+  body.home .prose h2{ font-size:21px !important; }
+}
