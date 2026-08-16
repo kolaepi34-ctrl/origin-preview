@@ -9,6 +9,10 @@ const fs=require('fs'),p=require('path');
 let s=fs.readFileSync('origin-preview/index.html','utf8');
 s=s.replace(/(src|href)=\"\/(?!\/)/g,'\$1=\"').replace(/url\((['\"]?)\/(?!\/)/g,'url(\$1');
 fs.writeFileSync('origin-preview/index.html',s);
+// cssFix: пути в стилях тоже делаем относительными
+let css=fs.readFileSync('origin-preview/core.css','utf8');
+css=css.replace(/url((['"]?)/assets//g,'url($1assets/');
+fs.writeFileSync('origin-preview/core.css',css);
 const need=new Set([...s.matchAll(/assets\/([A-Za-z0-9._-]+)/g)].map(m=>m[1]));
 let ok=0,miss=[];
 for(const f of need){const from=p.join('origin-site/assets',f);
