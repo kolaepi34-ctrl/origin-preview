@@ -1,9 +1,7 @@
 <!--
-  Вариант A — «Established Crest».
-  Полноценный герб перевозчика: гильошированное двойное кольцо с зубцами,
-  ленточный картуш EST. 2024, внутри — фургон под аркой моста Денвера,
-  под ним горная гряда Front Range, сверху компасная роза (origin = точка старта).
-  Рассчитан на 512 px; для 32 px есть упрощённая версия logo-a-mini.svg.
+  Вариант A — «Established Crest», вторая редакция.
+  Правки: название читается сверху по центру дуги (раньше textPath уводил его вбок),
+  пустое небо над фургоном заменено силуэтом Денвера, фургон крупнее и стоит на дороге.
 -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="640" height="640"
      role="img" aria-label="Origin Movers">
@@ -17,87 +15,100 @@
       <stop offset="1" stop-color="#C85508"/>
     </linearGradient>
     <linearGradient id="aSheen" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#FFFFFF" stop-opacity=".22"/>
-      <stop offset=".45" stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity=".18"/>
+      <stop offset=".5" stop-color="#FFFFFF" stop-opacity="0"/>
     </linearGradient>
-    <!-- зубчатый ободок печати -->
     <pattern id="aTeeth" width="16" height="16" patternUnits="userSpaceOnUse">
       <rect width="8" height="16" fill="#E86A0C"/>
     </pattern>
-    <clipPath id="aClip"><circle cx="320" cy="300" r="196"/></clipPath>
+    <clipPath id="aClip"><circle cx="320" cy="316" r="182"/></clipPath>
+    <!-- дуга для надписи: идёт СВЕРХУ слева направо, поэтому 50% — ровно верхняя точка -->
+    <path id="aTop" d="M118 316 A202 202 0 0 1 522 316" fill="none"/>
+    <path id="aBottom" d="M132 316 A188 188 0 0 0 508 316" fill="none"/>
   </defs>
 
   <!-- зубчатое внешнее кольцо -->
-  <circle cx="320" cy="300" r="252" fill="url(#aOr)"/>
-  <circle cx="320" cy="300" r="252" fill="none" stroke="#0A1930" stroke-width="6"/>
-  <g>
-    <circle cx="320" cy="300" r="238" fill="none" stroke="url(#aTeeth)" stroke-width="26" opacity=".55"/>
-  </g>
-  <circle cx="320" cy="300" r="226" fill="url(#aNavy)"/>
-  <circle cx="320" cy="300" r="226" fill="none" stroke="#E86A0C" stroke-width="3" opacity=".9"/>
-  <circle cx="320" cy="300" r="205" fill="none" stroke="#2B4B7E" stroke-width="2"/>
+  <circle cx="320" cy="316" r="252" fill="url(#aOr)"/>
+  <circle cx="320" cy="316" r="252" fill="none" stroke="#0A1930" stroke-width="6"/>
+  <circle cx="320" cy="316" r="238" fill="none" stroke="url(#aTeeth)" stroke-width="26" opacity=".5"/>
+  <circle cx="320" cy="316" r="226" fill="url(#aNavy)"/>
+  <circle cx="320" cy="316" r="226" fill="none" stroke="#E86A0C" stroke-width="3"/>
+  <circle cx="320" cy="316" r="186" fill="none" stroke="#2B4B7E" stroke-width="2"/>
 
-  <!-- гильоше: тонкие лучи по кольцу -->
-  <g stroke="#2B4B7E" stroke-width="2" opacity=".65">
-    <g id="aRays">
-      <path d="M320 84 v20"/><path d="M320 496 v-20"/>
-      <path d="M104 300 h20"/><path d="M536 300 h-20"/>
-      <path d="M167 147 l14 14"/><path d="M473 453 l-14 -14"/>
-      <path d="M473 147 l-14 14"/><path d="M167 453 l14 -14"/>
-    </g>
-  </g>
+  <!-- надпись по верхней дуге, ровно по центру -->
+  <text font-family="Georgia,'Times New Roman',serif" font-size="34" font-weight="700"
+        letter-spacing="10" fill="#FFFFFF">
+    <textPath href="#aTop" startOffset="50%" text-anchor="middle">ORIGIN MOVERS</textPath>
+  </text>
+  <!-- город и штат по нижней дуге -->
+  <text font-family="Georgia,'Times New Roman',serif" font-size="22" letter-spacing="8"
+        fill="#FFC79A">
+    <textPath href="#aBottom" startOffset="50%" text-anchor="middle">DENVER · COLORADO</textPath>
+  </text>
 
-  <!-- компасная роза сверху -->
-  <g transform="translate(320 128)">
-    <path d="M0 -34 L9 -9 L34 0 L9 9 L0 34 L-9 9 L-34 0 L-9 -9 Z" fill="url(#aOr)"/>
-    <circle cx="0" cy="0" r="6" fill="#0A1930"/>
+  <!-- разделительные звёздочки на кольце -->
+  <g fill="#E86A0C">
+    <circle cx="126" cy="316" r="7"/><circle cx="514" cy="316" r="7"/>
   </g>
 
   <g clip-path="url(#aClip)">
-    <!-- небо и солнце -->
-    <circle cx="320" cy="300" r="196" fill="#12294C"/>
-    <circle cx="430" cy="214" r="34" fill="#E86A0C" opacity=".22"/>
+    <circle cx="320" cy="316" r="182" fill="#12294C"/>
 
-    <!-- горная гряда Front Range -->
-    <path d="M124 372 l64 -78 l40 44 l58 -80 l52 66 l46 -40 l72 88 v90 H124 z" fill="#1B3766"/>
-    <path d="M124 372 l64 -78 l22 26 l-52 52 z" fill="#24457C" opacity=".8"/>
-    <path d="M284 258 l24 30 l-40 22 z" fill="#FFFFFF" opacity=".55"/>
-    <path d="M406 282 l30 36 l-52 20 z" fill="#FFFFFF" opacity=".4"/>
+    <!-- закатное солнце -->
+    <circle cx="320" cy="270" r="86" fill="#E86A0C" opacity=".18"/>
+    <circle cx="320" cy="272" r="52" fill="url(#aOr)" opacity=".85"/>
 
-    <!-- дорога уходит вглубь -->
-    <path d="M232 496 L296 388 h48 l64 108 z" fill="#0A1930"/>
-    <path d="M320 388 v108" stroke="#E86A0C" stroke-width="6" stroke-dasharray="16 14"/>
+    <!-- горы позади города -->
+    <path d="M138 300 l58 -62 l40 44 l52 -56 l44 50 l50 -38 l60 74 v70 H138 z" fill="#16305C"/>
+    <path d="M262 226 l20 24 l-34 18 z" fill="#FFFFFF" opacity=".45"/>
+    <path d="M376 238 l22 26 l-40 16 z" fill="#FFFFFF" opacity=".32"/>
 
-    <!-- фургон в профиль -->
-    <g transform="translate(196 300)">
-      <rect x="0" y="0" width="150" height="96" rx="10" fill="#FFFFFF"/>
-      <rect x="14" y="14" width="122" height="68" rx="6" fill="none" stroke="#0A1930" stroke-width="7"/>
-      <path d="M75 14 v68 M14 48 h122" stroke="#0A1930" stroke-width="7"/>
-      <path d="M150 26 h42 l40 46 v24 h-82 z" fill="url(#aOr)"/>
-      <path d="M160 36 h28 l26 32 h-54 z" fill="#0A1930" opacity=".85"/>
-      <rect x="0" y="96" width="232" height="12" rx="6" fill="#E86A0C"/>
-      <circle cx="46" cy="118" r="26" fill="#0A1930" stroke="#FFFFFF" stroke-width="7"/>
-      <circle cx="46" cy="118" r="9" fill="#E86A0C"/>
-      <circle cx="186" cy="118" r="26" fill="#0A1930" stroke="#FFFFFF" stroke-width="7"/>
-      <circle cx="186" cy="118" r="9" fill="#E86A0C"/>
+    <!-- силуэт Денвера: воздух над фургоном заполнен городом -->
+    <g fill="#0A1930">
+      <rect x="150" y="300" width="34" height="96"/>
+      <rect x="192" y="276" width="28" height="120"/>
+      <path d="M228 282 l20 -28 l20 28 v114 h-40 z"/>
+      <rect x="278" y="262" width="34" height="134"/>
+      <rect x="320" y="292" width="26" height="104"/>
+      <path d="M354 306 h40 v90 h-40 z"/>
+      <rect x="402" y="284" width="30" height="112"/>
+      <rect x="440" y="316" width="34" height="80"/>
+    </g>
+    <g fill="#E86A0C" opacity=".9">
+      <rect x="158" y="314" width="7" height="9"/><rect x="170" y="338" width="7" height="9"/>
+      <rect x="200" y="292" width="7" height="9"/><rect x="206" y="322" width="7" height="9"/>
+      <rect x="288" y="278" width="7" height="9"/><rect x="298" y="312" width="7" height="9"/>
+      <rect x="328" y="308" width="7" height="9"/><rect x="366" y="322" width="7" height="9"/>
+      <rect x="410" y="300" width="7" height="9"/><rect x="450" y="332" width="7" height="9"/>
     </g>
 
-    <!-- блик -->
-    <circle cx="320" cy="300" r="196" fill="url(#aSheen)"/>
+    <!-- дорога -->
+    <path d="M138 396 h364 v102 H138 z" fill="#0E2646"/>
+    <path d="M138 430 h364" stroke="#2B4B7E" stroke-width="3"/>
+    <path d="M138 470 h364" stroke="#E86A0C" stroke-width="7" stroke-dasharray="26 20"/>
+
+    <!-- фургон крупно, стоит на дороге -->
+    <g transform="translate(168 358)">
+      <rect x="0" y="0" width="168" height="86" rx="9" fill="#FFFFFF"/>
+      <rect x="13" y="13" width="142" height="60" rx="5" fill="none" stroke="#0A1930" stroke-width="7"/>
+      <path d="M84 13 v60 M13 43 h142" stroke="#0A1930" stroke-width="7"/>
+      <path d="M168 24 h44 l40 44 v18 h-84 z" fill="url(#aOr)"/>
+      <path d="M179 34 h30 l28 30 h-58 z" fill="#0A1930" opacity=".85"/>
+      <rect x="0" y="86" width="252" height="12" rx="6" fill="#E86A0C"/>
+      <circle cx="50" cy="110" r="25" fill="#0A1930" stroke="#FFFFFF" stroke-width="7"/>
+      <circle cx="50" cy="110" r="9" fill="#E86A0C"/>
+      <circle cx="200" cy="110" r="25" fill="#0A1930" stroke="#FFFFFF" stroke-width="7"/>
+      <circle cx="200" cy="110" r="9" fill="#E86A0C"/>
+    </g>
+
+    <circle cx="320" cy="316" r="182" fill="url(#aSheen)"/>
   </g>
 
   <!-- лента-картуш -->
-  <path d="M96 470 h448 l-34 46 H130 z" fill="#0A1930"/>
-  <path d="M96 470 l-30 30 l30 16 z" fill="#C85508"/>
-  <path d="M544 470 l30 30 l-30 16 z" fill="#C85508"/>
-  <path d="M110 478 h420 l-26 32 H136 z" fill="url(#aOr)"/>
-  <text x="320" y="502" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif"
-        font-size="26" font-weight="700" letter-spacing="6" fill="#0A1930">EST. DENVER CO</text>
-
-  <!-- кольцевая надпись -->
-  <path id="aArc" d="M320 106 a194 194 0 0 1 0 388 a194 194 0 0 1 0 -388" fill="none"/>
-  <text font-family="Georgia, 'Times New Roman', serif" font-size="27" letter-spacing="9"
-        fill="#FFFFFF" opacity=".92">
-    <textPath href="#aArc" startOffset="25%" text-anchor="middle">ORIGIN · MOVERS</textPath>
-  </text>
+  <path d="M104 500 h432 l-32 44 H136 z" fill="#0A1930"/>
+  <path d="M104 500 l-28 28 l28 16 z" fill="#C85508"/>
+  <path d="M536 500 l28 28 l-28 16 z" fill="#C85508"/>
+  <path d="M118 508 h404 l-25 30 H143 z" fill="url(#aOr)"/>
+  <text x="320" y="530" text-anchor="middle" font-family="Georgia,'Times New Roman',serif"
+        font-size="24" font-weight="700" letter-spacing="7" fill="#0A1930">SINCE THE FIRST BOX</text>
 </svg>
