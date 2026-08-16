@@ -6361,3 +6361,29 @@ body.home header.site .navdrop > a{
   body.home header.site nav.main.open{ top:76px !important; max-height:calc(100vh - 76px) !important; }
 }
 body.home.menu-open{ overflow:hidden !important; }
+
+/* Тёмная тема, блок отзывов: у карточки .rev цвет текста оставался тёмно-синим
+   (37,64,107) на фоне (16,32,58) — текст пропадал. */
+:root[data-theme="dark"] body.home .reviews,
+:root[data-theme="dark"] body.home #reviews{ background-color:#0B1524 !important; }
+:root[data-theme="dark"] body.home .rev{
+  background:#16294A !important;
+  border:1px solid rgba(255,255,255,.12) !important;
+  color:#E8EEF8 !important;
+}
+:root[data-theme="dark"] body.home .rev *:not(.stars):not(.rev-kicker){ color:#E8EEF8 !important; }
+:root[data-theme="dark"] body.home .rev .stars{ color:#FFA24D !important; }
+:root[data-theme="dark"] body.home .rev .rev-kicker{
+  color:#FFC79A !important; background:rgba(255,162,77,.14) !important;
+}
+
+/* Тёмная тема: города и услуги в выпадающем меню — оранжевые, а не серые */
+:root[data-theme="dark"] body.home header.site .dropmenu,
+:root[data-theme="dark"] body.home header.site .navdrop .dropmenu{
+  background:#10203A !important; border:1px solid rgba(255,255,255,.12) !important;
+}
+:root[data-theme="dark"] body.home header.site .dropmenu a{ color:#FFA24D !important; }
+:root[data-theme="dark"] body.home header.site .dropmenu a:hover{
+  background:rgba(255,162,77,.16) !important; color:#FFC79A !important;
+}
+:root[data-theme="dark"] body.home header.site nav.main.open .dropmenu a{ color:#FFA24D !important; }
