@@ -7368,3 +7368,16 @@ html body.home .topband__title--svc span{
   }
   html body.home.home.home.home .topband{ padding-block:40px !important; }
 }
+
+/* Полоса услуги: одно слово во всю ширину, крупным кеглем.
+   Служебной мелкой строки нет — она смотрелась «половиной надписи». */
+html body.home .topband__title--one{ font-size:0 !important; }
+html body.home .topband__title--one span{
+  font-size:clamp(46px, 9vw, 96px) !important; font-weight:900 !important;
+  letter-spacing:-.035em !important; line-height:1 !important; display:block !important;
+}
+@media (max-width:820px){
+  html body.home.home.home.home .topband .topband__in .topband__title--one span{
+    font-size:clamp(46px, 13.5vw, 64px) !important;
+  }
+}
