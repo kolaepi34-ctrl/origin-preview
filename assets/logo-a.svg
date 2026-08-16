@@ -1,114 +1,121 @@
 <!--
-  Вариант A — «Established Crest», вторая редакция.
-  Правки: название читается сверху по центру дуги (раньше textPath уводил его вбок),
-  пустое небо над фургоном заменено силуэтом Денвера, фургон крупнее и стоит на дороге.
+  Origin Movers — «Established Crest», третья редакция.
+
+  Геометрия пересчитана, зоны не пересекаются:
+    холст            640 × 640
+    центр эмблемы    320 / 292
+    внешний кант     r 250 … 236   (оранжевый с зубцами)
+    поле надписи     r 232 … 188   (текст по дуге, сюда рисунок не заходит)
+    медальон         r 178          (весь сюжет внутри, обрезан по кругу)
+    лента            y 470 … 556    (ниже медальона, текст внутри ленты)
+  Поэтому под колёсами больше ничего не просвечивает, а нижняя строка
+  целиком помещается в холст.
 -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="640" height="640"
-     role="img" aria-label="Origin Movers">
+     role="img" aria-label="Origin Movers — Denver, Colorado">
   <defs>
-    <linearGradient id="aNavy" x1=".2" y1="0" x2=".8" y2="1">
-      <stop offset="0" stop-color="#1B3766"/><stop offset=".55" stop-color="#12294C"/>
+    <linearGradient id="cNavy" x1=".15" y1="0" x2=".85" y2="1">
+      <stop offset="0" stop-color="#1D3A6B"/><stop offset=".55" stop-color="#12294C"/>
       <stop offset="1" stop-color="#0A1930"/>
     </linearGradient>
-    <linearGradient id="aOr" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#FFA24D"/><stop offset=".5" stop-color="#F0770F"/>
-      <stop offset="1" stop-color="#C85508"/>
+    <linearGradient id="cOr" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFAE5E"/><stop offset=".5" stop-color="#F0770F"/>
+      <stop offset="1" stop-color="#BE5207"/>
     </linearGradient>
-    <linearGradient id="aSheen" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#FFFFFF" stop-opacity=".18"/>
-      <stop offset=".5" stop-color="#FFFFFF" stop-opacity="0"/>
+    <linearGradient id="cSun" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFD3A1"/><stop offset="1" stop-color="#F0770F"/>
     </linearGradient>
-    <pattern id="aTeeth" width="16" height="16" patternUnits="userSpaceOnUse">
-      <rect width="8" height="16" fill="#E86A0C"/>
+    <linearGradient id="cGloss" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity=".16"/>
+      <stop offset=".55" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="cTeeth" width="18" height="18" patternUnits="userSpaceOnUse">
+      <rect width="9" height="18" fill="#0A1930" opacity=".55"/>
     </pattern>
-    <clipPath id="aClip"><circle cx="320" cy="316" r="182"/></clipPath>
-    <!-- дуга для надписи: идёт СВЕРХУ слева направо, поэтому 50% — ровно верхняя точка -->
-    <path id="aTop" d="M118 316 A202 202 0 0 1 522 316" fill="none"/>
-    <path id="aBottom" d="M132 316 A188 188 0 0 0 508 316" fill="none"/>
+    <clipPath id="cMedal"><circle cx="320" cy="292" r="178"/></clipPath>
+    <!-- дуга надписи: слева направо через верх, поэтому 50 % — точный центр -->
+    <path id="cArcTop" d="M110 292 A210 210 0 0 1 530 292" fill="none"/>
   </defs>
 
-  <!-- зубчатое внешнее кольцо -->
-  <circle cx="320" cy="316" r="252" fill="url(#aOr)"/>
-  <circle cx="320" cy="316" r="252" fill="none" stroke="#0A1930" stroke-width="6"/>
-  <circle cx="320" cy="316" r="238" fill="none" stroke="url(#aTeeth)" stroke-width="26" opacity=".5"/>
-  <circle cx="320" cy="316" r="226" fill="url(#aNavy)"/>
-  <circle cx="320" cy="316" r="226" fill="none" stroke="#E86A0C" stroke-width="3"/>
-  <circle cx="320" cy="316" r="186" fill="none" stroke="#2B4B7E" stroke-width="2"/>
+  <!-- ── внешний кант ─────────────────────────────────────────────── -->
+  <circle cx="320" cy="292" r="250" fill="url(#cOr)"/>
+  <circle cx="320" cy="292" r="250" fill="none" stroke="#0A1930" stroke-width="5"/>
+  <circle cx="320" cy="292" r="243" fill="none" stroke="url(#cTeeth)" stroke-width="14"/>
+  <circle cx="320" cy="292" r="236" fill="url(#cNavy)"/>
+  <circle cx="320" cy="292" r="236" fill="none" stroke="#0A1930" stroke-width="4"/>
 
-  <!-- надпись по верхней дуге, ровно по центру -->
-  <text font-family="Georgia,'Times New Roman',serif" font-size="34" font-weight="700"
-        letter-spacing="10" fill="#FFFFFF">
-    <textPath href="#aTop" startOffset="50%" text-anchor="middle">ORIGIN MOVERS</textPath>
+  <!-- ── поле надписи ─────────────────────────────────────────────── -->
+  <circle cx="320" cy="292" r="188" fill="none" stroke="#E86A0C" stroke-width="3"/>
+  <circle cx="320" cy="292" r="182" fill="none" stroke="#2B4B7E" stroke-width="2"/>
+  <text font-family="Georgia,'Times New Roman',serif" font-size="40" font-weight="700"
+        letter-spacing="12" fill="#FFFFFF">
+    <textPath href="#cArcTop" startOffset="50%" text-anchor="middle">ORIGIN MOVERS</textPath>
   </text>
-  <!-- город и штат по нижней дуге -->
-  <text font-family="Georgia,'Times New Roman',serif" font-size="22" letter-spacing="8"
-        fill="#FFC79A">
-    <textPath href="#aBottom" startOffset="50%" text-anchor="middle">DENVER · COLORADO</textPath>
-  </text>
-
-  <!-- разделительные звёздочки на кольце -->
+  <!-- ромбы-разделители на уровне центра -->
   <g fill="#E86A0C">
-    <circle cx="126" cy="316" r="7"/><circle cx="514" cy="316" r="7"/>
+    <path d="M112 292 l12 -12 l12 12 l-12 12 z"/>
+    <path d="M504 292 l12 -12 l12 12 l-12 12 z"/>
   </g>
 
-  <g clip-path="url(#aClip)">
-    <circle cx="320" cy="316" r="182" fill="#12294C"/>
+  <!-- ── медальон ─────────────────────────────────────────────────── -->
+  <g clip-path="url(#cMedal)">
+    <circle cx="320" cy="292" r="178" fill="#12294C"/>
 
     <!-- закатное солнце -->
-    <circle cx="320" cy="270" r="86" fill="#E86A0C" opacity=".18"/>
-    <circle cx="320" cy="272" r="52" fill="url(#aOr)" opacity=".85"/>
+    <circle cx="320" cy="250" r="96" fill="#E86A0C" opacity=".14"/>
+    <circle cx="320" cy="252" r="58" fill="url(#cSun)"/>
 
-    <!-- горы позади города -->
-    <path d="M138 300 l58 -62 l40 44 l52 -56 l44 50 l50 -38 l60 74 v70 H138 z" fill="#16305C"/>
-    <path d="M262 226 l20 24 l-34 18 z" fill="#FFFFFF" opacity=".45"/>
-    <path d="M376 238 l22 26 l-40 16 z" fill="#FFFFFF" opacity=".32"/>
+    <!-- Front Range -->
+    <path d="M142 296 l60 -66 l40 46 l54 -60 l46 54 l52 -42 l64 80 v64 H142 z" fill="#16305C"/>
+    <path d="M256 216 l22 26 l-38 20 z" fill="#FFFFFF" opacity=".5"/>
+    <path d="M374 230 l24 30 l-44 18 z" fill="#FFFFFF" opacity=".34"/>
 
-    <!-- силуэт Денвера: воздух над фургоном заполнен городом -->
+    <!-- силуэт Денвера: небо над фургоном заполнено городом -->
     <g fill="#0A1930">
-      <rect x="150" y="300" width="34" height="96"/>
-      <rect x="192" y="276" width="28" height="120"/>
-      <path d="M228 282 l20 -28 l20 28 v114 h-40 z"/>
-      <rect x="278" y="262" width="34" height="134"/>
-      <rect x="320" y="292" width="26" height="104"/>
-      <path d="M354 306 h40 v90 h-40 z"/>
-      <rect x="402" y="284" width="30" height="112"/>
-      <rect x="440" y="316" width="34" height="80"/>
+      <rect x="150" y="300" width="32" height="70"/>
+      <rect x="190" y="278" width="26" height="92"/>
+      <path d="M224 284 l19 -26 l19 26 v112 h-38 z"/>
+      <rect x="272" y="266" width="32" height="104"/>
+      <rect x="312" y="294" width="24" height="76"/>
+      <path d="M344 306 h38 v64 h-38 z"/>
+      <rect x="392" y="286" width="28" height="84"/>
+      <rect x="428" y="314" width="32" height="56"/>
     </g>
-    <g fill="#E86A0C" opacity=".9">
-      <rect x="158" y="314" width="7" height="9"/><rect x="170" y="338" width="7" height="9"/>
-      <rect x="200" y="292" width="7" height="9"/><rect x="206" y="322" width="7" height="9"/>
-      <rect x="288" y="278" width="7" height="9"/><rect x="298" y="312" width="7" height="9"/>
-      <rect x="328" y="308" width="7" height="9"/><rect x="366" y="322" width="7" height="9"/>
-      <rect x="410" y="300" width="7" height="9"/><rect x="450" y="332" width="7" height="9"/>
-    </g>
-
-    <!-- дорога -->
-    <path d="M138 396 h364 v102 H138 z" fill="#0E2646"/>
-    <path d="M138 430 h364" stroke="#2B4B7E" stroke-width="3"/>
-    <path d="M138 470 h364" stroke="#E86A0C" stroke-width="7" stroke-dasharray="26 20"/>
-
-    <!-- фургон крупно, стоит на дороге -->
-    <g transform="translate(168 358)">
-      <rect x="0" y="0" width="168" height="86" rx="9" fill="#FFFFFF"/>
-      <rect x="13" y="13" width="142" height="60" rx="5" fill="none" stroke="#0A1930" stroke-width="7"/>
-      <path d="M84 13 v60 M13 43 h142" stroke="#0A1930" stroke-width="7"/>
-      <path d="M168 24 h44 l40 44 v18 h-84 z" fill="url(#aOr)"/>
-      <path d="M179 34 h30 l28 30 h-58 z" fill="#0A1930" opacity=".85"/>
-      <rect x="0" y="86" width="252" height="12" rx="6" fill="#E86A0C"/>
-      <circle cx="50" cy="110" r="25" fill="#0A1930" stroke="#FFFFFF" stroke-width="7"/>
-      <circle cx="50" cy="110" r="9" fill="#E86A0C"/>
-      <circle cx="200" cy="110" r="25" fill="#0A1930" stroke="#FFFFFF" stroke-width="7"/>
-      <circle cx="200" cy="110" r="9" fill="#E86A0C"/>
+    <g fill="#E86A0C" opacity=".92">
+      <rect x="157" y="312" width="7" height="9"/><rect x="169" y="334" width="7" height="9"/>
+      <rect x="197" y="292" width="7" height="9"/><rect x="203" y="320" width="7" height="9"/>
+      <rect x="281" y="280" width="7" height="9"/><rect x="290" y="312" width="7" height="9"/>
+      <rect x="319" y="308" width="7" height="9"/><rect x="355" y="322" width="7" height="9"/>
+      <rect x="399" y="300" width="7" height="9"/><rect x="437" y="330" width="7" height="9"/>
     </g>
 
-    <circle cx="320" cy="316" r="182" fill="url(#aSheen)"/>
+    <!-- дорога: под фургоном, до нижнего края медальона -->
+    <path d="M142 370 h356 v106 H142 z" fill="#0E2646"/>
+    <path d="M142 398 h356" stroke="#2B4B7E" stroke-width="3"/>
+    <path d="M142 442 h356" stroke="#E86A0C" stroke-width="8" stroke-dasharray="28 22"/>
+
+    <!-- фургон -->
+    <g transform="translate(170 330)">
+      <rect x="0" y="0" width="164" height="82" rx="9" fill="#FFFFFF"/>
+      <rect x="12" y="12" width="140" height="58" rx="5" fill="none" stroke="#0A1930" stroke-width="7"/>
+      <path d="M82 12 v58 M12 41 h140" stroke="#0A1930" stroke-width="7"/>
+      <path d="M164 22 h42 l38 42 v18 h-80 z" fill="url(#cOr)"/>
+      <path d="M175 32 h28 l26 28 h-54 z" fill="#0A1930" opacity=".85"/>
+      <rect x="0" y="82" width="244" height="12" rx="6" fill="#E86A0C"/>
+      <circle cx="48" cy="106" r="24" fill="#0A1930" stroke="#FFFFFF" stroke-width="7"/>
+      <circle cx="48" cy="106" r="9" fill="#E86A0C"/>
+      <circle cx="194" cy="106" r="24" fill="#0A1930" stroke="#FFFFFF" stroke-width="7"/>
+      <circle cx="194" cy="106" r="9" fill="#E86A0C"/>
+    </g>
+
+    <circle cx="320" cy="292" r="178" fill="url(#cGloss)"/>
   </g>
 
-  <!-- лента-картуш -->
-  <path d="M104 500 h432 l-32 44 H136 z" fill="#0A1930"/>
-  <path d="M104 500 l-28 28 l28 16 z" fill="#C85508"/>
-  <path d="M536 500 l28 28 l-28 16 z" fill="#C85508"/>
-  <path d="M118 508 h404 l-25 30 H143 z" fill="url(#aOr)"/>
-  <text x="320" y="530" text-anchor="middle" font-family="Georgia,'Times New Roman',serif"
-        font-size="24" font-weight="700" letter-spacing="7" fill="#0A1930">SINCE THE FIRST BOX</text>
+  <!-- ── лента: ниже медальона, целиком в холсте ──────────────────── -->
+  <path d="M96 470 h448 v56 l-24 22 H120 l-24 -22 z" fill="#0A1930"/>
+  <path d="M96 470 l-34 26 l34 20 z" fill="#BE5207"/>
+  <path d="M544 470 l34 26 l-34 20 z" fill="#BE5207"/>
+  <path d="M110 478 h420 v42 l-16 14 H126 l-16 -14 z" fill="url(#cOr)"/>
+  <text x="320" y="512" text-anchor="middle" font-family="Georgia,'Times New Roman',serif"
+        font-size="27" font-weight="700" letter-spacing="9" fill="#0A1930">DENVER · COLORADO</text>
 </svg>
