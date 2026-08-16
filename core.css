@@ -6387,3 +6387,31 @@ body.home.menu-open{ overflow:hidden !important; }
   background:rgba(255,162,77,.16) !important; color:#FFC79A !important;
 }
 :root[data-theme="dark"] body.home header.site nav.main.open .dropmenu a{ color:#FFA24D !important; }
+
+/* Мобильное меню: подпункты SERVICES и LOCATIONS были всегда раскрыты —
+   14 ссылок выталкивали ABOUT, FAQ и CONTACT за пределы экрана.
+   Теперь списки свёрнуты и раскрываются нажатием на пункт. */
+@media (max-width:1080px){
+  body.home header.site nav.main.open .navdrop{
+    display:block !important; width:100% !important;
+  }
+  body.home header.site nav.main.open .navdrop > a{
+    display:flex !important; align-items:center !important; justify-content:space-between !important;
+    width:100% !important;
+  }
+  body.home header.site nav.main.open .dropmenu{
+    display:none !important; position:static !important;
+    box-shadow:none !important; border:0 !important;
+    background:rgba(255,255,255,.05) !important;
+    padding:4px 0 8px 12px !important; min-width:0 !important; width:auto !important;
+  }
+  body.home header.site nav.main.open .navdrop.is-open .dropmenu{ display:block !important; }
+  body.home header.site nav.main.open .navdrop.is-open > a .caret{ transform:rotate(180deg) !important; }
+  body.home header.site nav.main.open .dropmenu a{
+    display:block !important; padding:11px 6px !important;
+    border-bottom:1px solid rgba(255,255,255,.07) !important;
+  }
+  body.home header.site nav.main.open .caret{
+    transition:transform .18s !important; font-size:18px !important; line-height:1 !important;
+  }
+}

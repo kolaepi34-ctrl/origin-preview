@@ -96,3 +96,21 @@
     }, 0);
   });
 })();
+
+/* На телефоне нажатие на SERVICES и LOCATIONS раскрывает список,
+   а не уводит на якорь: иначе подпункты висели раскрытыми всегда. */
+(function(){
+  var nav = document.querySelector('header.site nav.main');
+  if (!nav) return;
+  nav.addEventListener('click', function(e){
+    if (window.innerWidth > 1080) return;
+    var head = e.target.closest('.navdrop > a');
+    if (!head || !nav.classList.contains('open')) return;
+    e.preventDefault();
+    e.stopPropagation();
+    var drop = head.parentElement;
+    var open = drop.classList.contains('is-open');
+    nav.querySelectorAll('.navdrop.is-open').forEach(function(d){ d.classList.remove('is-open') });
+    if (!open) drop.classList.add('is-open');
+  }, true);
+})();
