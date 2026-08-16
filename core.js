@@ -153,3 +153,54 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
   else boot();
 })();
+
+/* Подсказки при проверке полей. Тексты «Заполните это поле» рисует сам браузер
+   на языке своего интерфейса — в разметке их нет. Задаём свои, английские. */
+(function(){
+  function boot(){
+    var TEXT = {
+      valueMissing:    'Please fill in this field.',
+      typeMismatchEmail:'Please enter a valid email address, for example you@example.com.',
+      typeMismatchUrl: 'Please enter a valid web address.',
+      tooShort:        'Please make this a little longer.',
+      tooLong:         'Please make this shorter.',
+      patternMismatch: 'Please check the format of this field.',
+      badInput:        'Please check what you typed here.',
+      rangeUnderflow:  'Please choose a later value.',
+      rangeOverflow:   'Please choose an earlier value.',
+      stepMismatch:    'Please choose a valid value.'
+    };
+    function message(el){
+      var v = el.validity;
+      if (v.valueMissing){
+        if (el.type === 'checkbox' || el.type === 'radio') return 'Please select this option.';
+        if (el.tagName === 'SELECT') return 'Please choose one of the options.';
+        if (el.type === 'tel') return 'Please enter a phone number we can call you back on.';
+        return TEXT.valueMissing;
+      }
+      if (v.typeMismatch) return el.type === 'email' ? TEXT.typeMismatchEmail : TEXT.typeMismatchUrl;
+      if (v.tooShort) return TEXT.tooShort;
+      if (v.tooLong) return TEXT.tooLong;
+      if (v.patternMismatch) return TEXT.patternMismatch;
+      if (v.badInput) return TEXT.badInput;
+      if (v.rangeUnderflow) return TEXT.rangeUnderflow;
+      if (v.rangeOverflow) return TEXT.rangeOverflow;
+      if (v.stepMismatch) return TEXT.stepMismatch;
+      return '';
+    }
+    document.addEventListener('invalid', function(e){
+      var el = e.target;
+      if (!el.setCustomValidity) return;
+      el.setCustomValidity('');
+      if (!el.validity.valid) el.setCustomValidity(message(el));
+    }, true);
+    document.addEventListener('input',  function(e){
+      if (e.target.setCustomValidity) e.target.setCustomValidity('');
+    }, true);
+    document.addEventListener('change', function(e){
+      if (e.target.setCustomValidity) e.target.setCustomValidity('');
+    }, true);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
+  else boot();
+})();
