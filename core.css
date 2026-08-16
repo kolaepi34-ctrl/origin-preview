@@ -6346,3 +6346,18 @@ body.home header.site .navdrop > a{
     font-size:28px !important; white-space:nowrap !important;
   }
 }
+
+/* Воздух над первым экраном на телефоне: между полосой с фото и текстом
+   стояла пустая ссылка-якорь высотой 44 px, а контактная полоса занимала 105 px. */
+@media (max-width:820px){
+  body.home > a:empty{ display:none !important; }
+  body.home .topbar{
+    padding-block:4px !important; font-size:12.5px !important; line-height:1.35 !important;
+  }
+  body.home .hero{ padding-top:10px !important; }
+}
+/* Открытое мобильное меню: панель начинается ровно под шапкой */
+@media (max-width:1080px){
+  body.home header.site nav.main.open{ top:76px !important; max-height:calc(100vh - 76px) !important; }
+}
+body.home.menu-open{ overflow:hidden !important; }

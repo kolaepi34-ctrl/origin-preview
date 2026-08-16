@@ -69,3 +69,30 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
   else init();
 })();
+
+/* Мобильное меню: закрывается по нажатию на пункт, мимо панели и по Esc.
+   Раньше единственным способом закрыть был повторный тап по «бургеру»,
+   а после перехода по якорю панель оставалась висеть поверх страницы. */
+(function(){
+  var nav = document.querySelector('header.site nav.main');
+  if (!nav) return;
+  function close(){
+    nav.classList.remove('open');
+    document.body.classList.remove('menu-open');
+  }
+  nav.addEventListener('click', function(e){
+    if (e.target.closest('a')) close();
+  });
+  document.addEventListener('click', function(e){
+    if (!nav.classList.contains('open')) return;
+    if (e.target.closest('nav.main') || e.target.closest('.hamburger')) return;
+    close();
+  });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') close(); });
+  var burger = document.querySelector('.hamburger');
+  if (burger) burger.addEventListener('click', function(){
+    setTimeout(function(){
+      document.body.classList.toggle('menu-open', nav.classList.contains('open'));
+    }, 0);
+  });
+})();
