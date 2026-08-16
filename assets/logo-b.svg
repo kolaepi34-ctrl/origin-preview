@@ -1,0 +1,69 @@
+<!--
+  Вариант B — «Monogram Shield».
+  Геральдический щит с фаской, внутри выстроенная по сетке монограмма OM:
+  буква O — кольцо-маршрут с разрывом и стрелкой, буква M — два ската крыши.
+  Фон щита набран диагональной штриховкой (как на защищённых бланках),
+  снизу — три ступени: погрузка, перевозка, разгрузка.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="640" height="640"
+     role="img" aria-label="Origin Movers">
+  <defs>
+    <linearGradient id="bNavy" x1="0" y1="0" x2=".7" y2="1">
+      <stop offset="0" stop-color="#1E3D70"/><stop offset=".6" stop-color="#102A50"/>
+      <stop offset="1" stop-color="#0A1930"/>
+    </linearGradient>
+    <linearGradient id="bOr" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFB169"/><stop offset=".45" stop-color="#F0770F"/>
+      <stop offset="1" stop-color="#B94E06"/>
+    </linearGradient>
+    <pattern id="bHatch" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="14" height="14" fill="none"/>
+      <path d="M0 0 v14" stroke="#20406F" stroke-width="3" opacity=".55"/>
+    </pattern>
+    <linearGradient id="bGloss" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity=".18"/>
+      <stop offset=".5" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="bShield">
+      <path d="M320 44 l236 74 v186 c0 128 -96 216 -236 292 C180 520 84 432 84 304 V118 z"/>
+    </clipPath>
+  </defs>
+
+  <!-- корпус щита -->
+  <path d="M320 44 l236 74 v186 c0 128 -96 216 -236 292 C180 520 84 432 84 304 V118 z" fill="url(#bNavy)"/>
+  <g clip-path="url(#bShield)">
+    <rect x="60" y="20" width="520" height="600" fill="url(#bHatch)"/>
+    <!-- диагональная перевязь -->
+    <path d="M84 392 L556 214 v70 L84 462 z" fill="url(#bOr)" opacity=".95"/>
+    <path d="M84 392 L556 214 v14 L84 406 z" fill="#FFFFFF" opacity=".25"/>
+    <rect x="60" y="20" width="520" height="330" fill="url(#bGloss)"/>
+  </g>
+  <path d="M320 44 l236 74 v186 c0 128 -96 216 -236 292 C180 520 84 432 84 304 V118 z"
+        fill="none" stroke="#E86A0C" stroke-width="10"/>
+  <path d="M320 70 l212 66 v168 c0 114 -86 194 -212 262 C194 498 108 418 108 304 V136 z"
+        fill="none" stroke="#FFFFFF" stroke-width="3" opacity=".35"/>
+
+  <!-- монограмма: O как маршрут со стрелкой -->
+  <g transform="translate(320 286)">
+    <path d="M0 -96 a96 96 0 1 0 62 26" fill="none" stroke="#FFFFFF" stroke-width="30"
+          stroke-linecap="round"/>
+    <path d="M44 -76 l30 6 l-8 30" fill="none" stroke="url(#bOr)" stroke-width="18"
+          stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- M из двух скатов внутри O -->
+    <path d="M-46 46 v-42 l46 -40 l46 40 v42" fill="none" stroke="url(#bOr)" stroke-width="22"
+          stroke-linejoin="round" stroke-linecap="round"/>
+    <path d="M-62 62 h124" stroke="#FFFFFF" stroke-width="14" stroke-linecap="round"/>
+  </g>
+
+  <!-- три ступени процесса -->
+  <g transform="translate(320 432)">
+    <rect x="-96" y="0" width="52" height="14" rx="7" fill="#FFFFFF" opacity=".9"/>
+    <rect x="-26" y="0" width="52" height="14" rx="7" fill="#E86A0C"/>
+    <rect x="44" y="0" width="52" height="14" rx="7" fill="#FFFFFF" opacity=".55"/>
+  </g>
+
+  <!-- нижний картуш -->
+  <path d="M320 596 l-118 -46 h236 z" fill="#E86A0C" opacity=".9"/>
+  <text x="320" y="576" text-anchor="middle" font-family="Georgia, serif" font-size="24"
+        letter-spacing="7" fill="#FFFFFF" opacity=".9">DENVER</text>
+</svg>

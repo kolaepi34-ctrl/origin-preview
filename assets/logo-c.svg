@@ -1,0 +1,101 @@
+<!--
+  Вариант C — «Skyline Badge».
+  Восьмиугольный бейдж: панорама Денвера (небоскрёбы + Front Range),
+  под ней фургон на дороге, вверху восходящее солнце Колорадо,
+  по периметру наборная рамка с заклёпками — фактура транспортной таблички.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="640" height="640"
+     role="img" aria-label="Origin Movers">
+  <defs>
+    <linearGradient id="cSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#173561"/><stop offset=".6" stop-color="#0F274A"/>
+      <stop offset="1" stop-color="#0A1930"/>
+    </linearGradient>
+    <linearGradient id="cOr" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFB067"/><stop offset=".5" stop-color="#F0770F"/>
+      <stop offset="1" stop-color="#C2530A"/>
+    </linearGradient>
+    <linearGradient id="cSun" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFC98A"/><stop offset="1" stop-color="#E86A0C"/>
+    </linearGradient>
+    <clipPath id="cOcta">
+      <path d="M196 60 h248 l136 136 v248 l-136 136 H196 L60 444 V196 z"/>
+    </clipPath>
+  </defs>
+
+  <!-- корпус -->
+  <path d="M186 44 h268 l142 142 v268 l-142 142 H186 L44 454 V186 z" fill="url(#cOr)"/>
+  <path d="M196 60 h248 l136 136 v248 l-136 136 H196 L60 444 V196 z" fill="url(#cSky)"/>
+
+  <!-- заклёпки по углам -->
+  <g fill="#FFFFFF" opacity=".8">
+    <circle cx="196" cy="80" r="6"/><circle cx="444" cy="80" r="6"/>
+    <circle cx="560" cy="196" r="6"/><circle cx="560" cy="444" r="6"/>
+    <circle cx="444" cy="560" r="6"/><circle cx="196" cy="560" r="6"/>
+    <circle cx="80" cy="444" r="6"/><circle cx="80" cy="196" r="6"/>
+  </g>
+
+  <g clip-path="url(#cOcta)">
+    <!-- солнце -->
+    <circle cx="320" cy="250" r="86" fill="url(#cSun)" opacity=".35"/>
+    <circle cx="320" cy="250" r="54" fill="url(#cSun)"/>
+    <!-- лучи -->
+    <g stroke="#F0770F" stroke-width="6" stroke-linecap="round" opacity=".55">
+      <path d="M320 150 v-26"/><path d="M320 376 v26"/>
+      <path d="M220 250 h-26"/><path d="M420 250 h26"/>
+      <path d="M249 179 l-18 -18"/><path d="M391 321 l18 18"/>
+      <path d="M391 179 l18 -18"/><path d="M249 321 l-18 18"/>
+    </g>
+
+    <!-- Front Range -->
+    <path d="M60 330 l70 -74 l46 50 l62 -66 l50 58 l58 -44 l84 96 v40 H60 z" fill="#0C2247"/>
+    <path d="M238 240 l22 26 l-38 20 z" fill="#FFFFFF" opacity=".5"/>
+    <path d="M348 254 l26 30 l-46 18 z" fill="#FFFFFF" opacity=".35"/>
+
+    <!-- небоскрёбы Денвера -->
+    <g fill="#0A1930">
+      <rect x="150" y="330" width="42" height="120"/>
+      <rect x="200" y="300" width="34" height="150"/>
+      <path d="M244 306 l24 -34 l24 34 v144 h-48 z"/>
+      <rect x="302" y="286" width="40" height="164"/>
+      <rect x="352" y="322" width="30" height="128"/>
+      <path d="M392 340 h46 v110 h-46 z"/>
+      <rect x="448" y="356" width="36" height="94"/>
+    </g>
+    <g fill="#E86A0C" opacity=".85">
+      <rect x="160" y="346" width="8" height="10"/><rect x="176" y="372" width="8" height="10"/>
+      <rect x="210" y="322" width="8" height="10"/><rect x="216" y="356" width="8" height="10"/>
+      <rect x="312" y="308" width="8" height="10"/><rect x="326" y="344" width="8" height="10"/>
+      <rect x="360" y="344" width="8" height="10"/><rect x="404" y="362" width="8" height="10"/>
+      <rect x="458" y="378" width="8" height="10"/>
+    </g>
+
+    <!-- дорога -->
+    <path d="M60 450 h520 v40 H60 z" fill="#132D55"/>
+    <path d="M60 470 h520" stroke="#E86A0C" stroke-width="6" stroke-dasharray="26 22"/>
+
+    <!-- фургон -->
+    <g transform="translate(178 396)">
+      <rect x="0" y="0" width="132" height="72" rx="8" fill="#FFFFFF"/>
+      <path d="M12 12 h108 v48 H12 z" fill="none" stroke="#0A1930" stroke-width="6"/>
+      <path d="M66 12 v48 M12 36 h108" stroke="#0A1930" stroke-width="6"/>
+      <path d="M132 22 h36 l34 38 v20 h-70 z" fill="url(#cOr)"/>
+      <path d="M140 30 h24 l22 26 h-46 z" fill="#0A1930" opacity=".85"/>
+      <rect x="0" y="72" width="202" height="10" rx="5" fill="#E86A0C"/>
+      <circle cx="40" cy="92" r="20" fill="#0A1930" stroke="#FFFFFF" stroke-width="6"/>
+      <circle cx="40" cy="92" r="7" fill="#E86A0C"/>
+      <circle cx="162" cy="92" r="20" fill="#0A1930" stroke="#FFFFFF" stroke-width="6"/>
+      <circle cx="162" cy="92" r="7" fill="#E86A0C"/>
+    </g>
+  </g>
+
+  <!-- внутренняя рамка -->
+  <path d="M206 74 h228 l132 132 v228 l-132 132 H206 L74 434 V206 z"
+        fill="none" stroke="#FFFFFF" stroke-width="3" opacity=".38"/>
+
+  <!-- нижняя планка -->
+  <path d="M150 512 h340 v58 H150 z" fill="#0A1930"/>
+  <path d="M150 512 h340 v6 H150 z" fill="#E86A0C"/>
+  <text x="320" y="552" text-anchor="middle" font-family="Georgia, serif" font-size="30"
+        font-weight="700" letter-spacing="8" fill="#FFFFFF">ORIGIN</text>
+</svg>
