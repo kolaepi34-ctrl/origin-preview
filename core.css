@@ -6321,3 +6321,12 @@ body.home header.site .navdrop > a{
   }
 }
 :root[data-theme="dark"] body.home .prose__more{ border-color:#FFA24D !important; color:#FFA24D !important; }
+
+/* Много воздуха над заголовком на телефоне: до h1 набегало 587 px пустоты
+   (полоса 111 + баннер 240 + отступ первого экрана 44). Ужимаем. */
+@media (max-width:820px){
+  body.home .topbar{ padding-block:6px !important; }
+  body.home .topband{ padding-block:22px !important; min-height:0 !important; }
+  body.home .hero{ padding-top:18px !important; }
+  body.home .hero .eyebrow{ margin-bottom:8px !important; }
+}
