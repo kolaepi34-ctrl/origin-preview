@@ -6718,3 +6718,54 @@ html{ scroll-behavior:auto !important; }
   html body.home .cookie{ bottom:52px !important; z-index:115 !important; }
   html body.home .chatbubble{ bottom:112px !important; z-index:120 !important; }
 }
+
+/* ══ Телефон: разбор замечаний по первому экрану ════════════════════ */
+@media (max-width:820px){
+  /* Белая полоса с почтой сразу под меню занимала 95 px ради двух строк.
+     Те же данные есть в подвале и в полосе звонка — на телефоне убираем. */
+  html body.home .topbar{ display:none !important; }
+  html body.home .topband{ margin-top:0 !important; }
+
+  /* «MOVING IN DENVER» — главная надпись, должна быть крупной */
+  html body.home .topband{ padding-block:34px !important; }
+  html body.home .topband__title{
+    font-size:34px !important; line-height:1.05 !important;
+    letter-spacing:-.01em !important; text-align:center !important;
+  }
+
+  /* Тексты блоков — единое выравнивание по центру, без «одно там, одно тут» */
+  html body.home .stats .item, html body.home .stats > div,
+  html body.home .cards .card, html body.home .sec-head,
+  html body.home .why li, html body.home .included li,
+  html body.home .about__copy, html body.home .final{
+    text-align:center !important;
+  }
+  html body.home .cards .card p, html body.home .sec-head p{ margin-inline:auto !important; }
+
+  /* Полоса звонка: тоньше, с крестиком, чтобы её можно было убрать */
+  html body.home .callbar{
+    position:fixed !important; left:0 !important; right:0 !important; bottom:0 !important;
+    display:flex !important; align-items:stretch !important; z-index:100 !important;
+  }
+  html body.home .callbar .mobile-call{
+    flex:1 1 auto !important; height:42px !important; min-height:42px !important;
+    font-size:13.5px !important; position:static !important;
+  }
+  html body.home .callbar__close{
+    flex:0 0 40px !important; height:42px !important; min-height:42px !important;
+    border:0 !important; background:#C25508 !important; color:#fff !important;
+    font-size:20px !important; line-height:1 !important; cursor:pointer !important;
+  }
+  html body.home{ padding-bottom:42px !important; }
+  html body.home.nobar{ padding-bottom:0 !important; }
+  html body.home.nobar .cookie{ bottom:8px !important; }
+  html body.home.nobar .chatbubble{ bottom:66px !important; }
+  html body.home .cookie{ bottom:48px !important; }
+  html body.home .chatbubble{ bottom:106px !important; }
+
+  /* Кнопка отправки формы была красной — приводим к фирменному оранжевому */
+  html body.home form.quote button[type="submit"],
+  html body.home .quote .btn--send{
+    background:#E86A0C !important; border-color:#E86A0C !important;
+  }
+}
