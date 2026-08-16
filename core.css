@@ -6920,3 +6920,36 @@ html body.home .trustb + *{ border-top:0 !important; box-shadow:none !important;
     display:flex !important; width:100% !important; margin:14px auto 0 !important;
   }
 }
+
+/* ══ Телефон: единый размер заголовков секций и текст по центру ═══════
+   Форму не трогаем — подписи полей должны оставаться слева, иначе
+   поле и его название расходятся. */
+@media (max-width:820px){
+  html body.home section h2,
+  html body.home .trustb h2,
+  html body.home .est h2,
+  html body.home .seo-content .prose h2,
+  html body.home .seo-body .prose h2{
+    font-size:25px !important; line-height:1.16 !important; text-align:center !important;
+  }
+  html body.home section h3,
+  html body.home .seo-content h3{ text-align:center !important; }
+
+  html body.home section p,
+  html body.home section li,
+  html body.home section .eyebrow,
+  html body.home .stats p,
+  html body.home .trustb p, html body.home .trustb li,
+  html body.home .est p,
+  html body.home .prose p, html body.home .prose li,
+  html body.home .faq p, html body.home .faq li{
+    text-align:center !important;
+    text-justify:auto !important;
+    margin-inline:auto !important;
+  }
+  /* исключения: форма и подписи полей */
+  html body.home form label,
+  html body.home form p,
+  html body.home .quote label,
+  html body.home .q30 label{ text-align:left !important; margin-inline:0 !important; }
+}
