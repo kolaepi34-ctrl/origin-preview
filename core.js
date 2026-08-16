@@ -44,6 +44,8 @@ window.dataLayer = window.dataLayer || [];
     p.after(btn);
     btn.addEventListener('click', function(){
       var open = p.classList.toggle('prose--open');
+      var сек = p.closest('.seo-content');
+      if (сек) сек.classList.toggle('is-open', open);
       p.classList.toggle('prose--clamped', !open);
       if (open){ p.style.setProperty('max-height','none','important');
         p.style.setProperty('overflow','visible','important');
