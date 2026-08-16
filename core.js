@@ -12,7 +12,7 @@
     var h=document.querySelector('header.site');
     var off=(h?h.getBoundingClientRect().height:0)+10;
     var y=f.getBoundingClientRect().top+(window.pageYOffset||0)-off;
-    window.scrollTo({top:Math.max(0,y), behavior:'auto'});
+    window.scrollTo({top:Math.max(0,y), behavior:'instant'});
     return false;
   }
   // Click a city chip -> prefill the form and set the city in the form title, then scroll
@@ -133,7 +133,7 @@
       var y = target.getBoundingClientRect().top
             + (window.pageYOffset || document.documentElement.scrollTop)
             - headOffset();
-      window.scrollTo({ top: Math.max(0, y), behavior: smooth ? 'smooth' : 'auto' });
+      window.scrollTo({ top: Math.max(0, y), behavior: smooth ? 'smooth' : 'instant' });
     }
     document.addEventListener('click', function(e){
       var a = e.target.closest('a[href^="#"]');
