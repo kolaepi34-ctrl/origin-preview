@@ -7389,3 +7389,16 @@ html body.home .svcmap__img{
   display:block !important; width:100% !important; height:100% !important;
   object-fit:cover !important; border:0 !important;
 }
+
+/* Карта: кадр шире блока и сдвинут, поэтому угол OpenStreetMap с кнопками
+   «+/−» и его подписи остаются за пределами видимой области.
+   Сама карта при этом настоящая, тайлы живые. */
+html body.home .svcmap__box{ position:relative !important; overflow:hidden !important; }
+html body.home .svcmap__frame{
+  position:absolute !important;
+  top:-58px !important; left:-58px !important;
+  width:calc(100% + 116px) !important;
+  height:calc(100% + 116px) !important;
+  border:0 !important; pointer-events:none !important;   /* карта как картинка, случайно не утащишь */
+  filter:saturate(.92) contrast(1.02) !important;
+}
