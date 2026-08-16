@@ -2,9 +2,10 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'AW-16920751041');
-  // fire call conversion when a phone link is clicked
-  function trackCall(){ gtag('event','conversion',{'send_to':'AW-16920751041/4qy3CMr96rsaEMHXuIQ_'}); }
+  // Счётчик Google Ads отключён: аккаунт AW-16920751041 принадлежит другой
+  // компании, а подмена номера показывала клиентам чужой телефон.
+  // Свой идентификатор Origin Movers подставить сюда, когда заведут аккаунт.
+  function trackCall(){}
   // scroll to the quote form and focus the first field
   function scrollToQuote(){
     var f=document.getElementById('quote-form');
