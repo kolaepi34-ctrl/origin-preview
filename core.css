@@ -7256,3 +7256,33 @@ html body.home .trustb .trustb__btn:hover{ background:#C25508 !important; }
   html body.home.home.home.home .prose__more{ margin:0 auto !important; }
   html body.home.home.home.home .seo-content{ padding-block:18px !important; }
 }
+
+/* ══ Блок «Explore more»: два отдельных абзаца, всё по центру ════════ */
+html body.home .related .links{ text-align:center !important; }
+html body.home .related .links__group{
+  display:block !important; text-align:center !important;
+  margin:0 auto 14px !important; max-width:44ch !important; line-height:2 !important;
+}
+html body.home .related .links__label{
+  display:block !important; margin:0 auto 6px !important;
+  color:#E86A0C !important; font-weight:900 !important;
+  text-transform:uppercase !important; letter-spacing:.14em !important; font-size:12px !important;
+}
+html body.home .related .links a{ margin:0 6px !important; }
+html body.home .related .eyebrow,
+html body.home .related .gbp{ display:block !important; text-align:center !important; margin-inline:auto !important; }
+:root[data-theme="dark"] html body.home .related .links__label{ color:#FFA24D !important; }
+
+/* ══ Названия городов из двух слов на телефоне ═══════════════════════
+   «Commerce City», «Highlands Ranch», «Wheat Ridge», «Castle Rock»
+   не помещались в одну строку и обрезались. Разрешаем перенос и
+   уменьшаем кегль — по словам, а не по буквам. */
+@media (max-width:820px){
+  html body.home.home.home.home .topband .topband__in .topband__title span{
+    font-size:clamp(34px, 12.5vw, 58px) !important;
+    white-space:normal !important; word-break:normal !important;
+    overflow-wrap:break-word !important; text-wrap:balance !important;
+    line-height:.98 !important; display:block !important; max-width:100% !important;
+  }
+  html body.home.home.home.home .topband{ padding-block:34px !important; }
+}

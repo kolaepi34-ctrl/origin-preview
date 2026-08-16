@@ -270,12 +270,12 @@
     var sp = document.querySelector('.topband__title span');
     if (!sp) return;
     function fit(){
-      var box = sp.parentElement.getBoundingClientRect().width;
+      var box = sp.parentElement.clientWidth;
       if (!box) return;
       sp.style.fontSize = '';
       var size = parseFloat(getComputedStyle(sp).fontSize);
       var guard = 0;
-      while (sp.scrollWidth > box - 4 && size > 22 && guard < 40){
+      while ((sp.scrollWidth > box - 4 || sp.getBoundingClientRect().height > size * 2.2) && size > 26 && guard < 40){
         size -= 2; sp.style.fontSize = size + 'px'; guard++;
       }
     }
