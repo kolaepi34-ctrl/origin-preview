@@ -5556,7 +5556,7 @@ body.home .topband{
   min-height:clamp(240px,32vw,420px) !important;
   display:flex !important; align-items:center !important; justify-content:center !important;
   overflow:hidden !important;
-  background:url('assets/hero-live-0.jpg') center 42%/cover no-repeat !important;
+  background:url('assets/hero-bright-0.jpg') center 42%/cover no-repeat !important;
 }
 body.home .topband::after{
   content:''; position:absolute; inset:0;
@@ -5826,7 +5826,7 @@ body.home .areas .chip{ transition:background .16s, border-color .16s, color .16
   background-color:#0B1524 !important;
 }
 :root[data-theme="dark"] body.home .topband{
-  background:url('assets/hero-live-0.jpg') center 42%/cover no-repeat !important;
+  background:url('assets/hero-bright-0.jpg') center 42%/cover no-repeat !important;
 }
 
 /* Кнопки Call us в тёмной теме: правило палитры перекрашивало их в синий,
