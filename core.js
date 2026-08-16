@@ -70,47 +70,53 @@
   else init();
 })();
 
-/* Мобильное меню: закрывается по нажатию на пункт, мимо панели и по Esc.
-   Раньше единственным способом закрыть был повторный тап по «бургеру»,
-   а после перехода по якорю панель оставалась висеть поверх страницы. */
+/* Мобильное меню. core.js подключён в <head> без defer, поэтому обработчики
+   ставим после разбора страницы — иначе nav ещё не существует и код молча выходил.
+   Панель закрывается по пункту, по тапу мимо и по Esc; SERVICES и LOCATIONS
+   раскрывают свой список, а не уводят на якорь. */
 (function(){
-  var nav = document.querySelector('header.site nav.main');
-  if (!nav) return;
-  function close(){
-    nav.classList.remove('open');
-    document.body.classList.remove('menu-open');
-  }
-  nav.addEventListener('click', function(e){
-    if (e.target.closest('a')) close();
-  });
-  document.addEventListener('click', function(e){
-    if (!nav.classList.contains('open')) return;
-    if (e.target.closest('nav.main') || e.target.closest('.hamburger')) return;
-    close();
-  });
-  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') close(); });
-  var burger = document.querySelector('.hamburger');
-  if (burger) burger.addEventListener('click', function(){
-    setTimeout(function(){
-      document.body.classList.toggle('menu-open', nav.classList.contains('open'));
-    }, 0);
-  });
-})();
+  function boot(){
+    var nav = document.querySelector('header.site nav.main');
+    if (!nav) return;
 
-/* На телефоне нажатие на SERVICES и LOCATIONS раскрывает список,
-   а не уводит на якорь: иначе подпункты висели раскрытыми всегда. */
-(function(){
-  var nav = document.querySelector('header.site nav.main');
-  if (!nav) return;
-  nav.addEventListener('click', function(e){
-    if (window.innerWidth > 1080) return;
-    var head = e.target.closest('.navdrop > a');
-    if (!head || !nav.classList.contains('open')) return;
-    e.preventDefault();
-    e.stopPropagation();
-    var drop = head.parentElement;
-    var open = drop.classList.contains('is-open');
-    nav.querySelectorAll('.navdrop.is-open').forEach(function(d){ d.classList.remove('is-open') });
-    if (!open) drop.classList.add('is-open');
-  }, true);
+    function close(){
+      nav.classList.remove('open');
+      nav.querySelectorAll('.navdrop.is-open').forEach(function(d){ d.classList.remove('is-open') });
+      document.body.classList.remove('menu-open');
+    }
+
+    nav.addEventListener('click', function(e){
+      if (window.innerWidth > 1080 || !nav.classList.contains('open')) return;
+      var head = e.target.closest('.navdrop > a');
+      if (!head) return;
+      e.preventDefault();
+      e.stopPropagation();
+      var drop = head.parentElement;
+      var wasOpen = drop.classList.contains('is-open');
+      nav.querySelectorAll('.navdrop.is-open').forEach(function(d){ d.classList.remove('is-open') });
+      if (!wasOpen) drop.classList.add('is-open');
+    }, true);
+
+    nav.addEventListener('click', function(e){
+      var a = e.target.closest('a');
+      if (a && !a.parentElement.classList.contains('navdrop')) close();
+    });
+
+    document.addEventListener('click', function(e){
+      if (!nav.classList.contains('open')) return;
+      if (e.target.closest('nav.main') || e.target.closest('.hamburger')) return;
+      close();
+    });
+
+    document.addEventListener('keydown', function(e){ if (e.key === 'Escape') close(); });
+
+    var burger = document.querySelector('.hamburger');
+    if (burger) burger.addEventListener('click', function(){
+      setTimeout(function(){
+        document.body.classList.toggle('menu-open', nav.classList.contains('open'));
+      }, 0);
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
+  else boot();
 })();
