@@ -7381,3 +7381,11 @@ html body.home .topband__title--one span{
     font-size:clamp(46px, 13.5vw, 64px) !important;
   }
 }
+
+/* Схема зоны работы вместо встроенной карты: тот же размер блока,
+   булавки городов лежат поверх и не сдвигаются. */
+html body.home .svcmap__box{ position:relative !important; overflow:hidden !important; }
+html body.home .svcmap__img{
+  display:block !important; width:100% !important; height:100% !important;
+  object-fit:cover !important; border:0 !important;
+}

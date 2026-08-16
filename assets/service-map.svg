@@ -1,0 +1,75 @@
+<!--
+  Схема зоны работы вместо встроенной карты OpenStreetMap.
+  Карта была живым iframe со своими кнопками «+/−» в углу — убрать их
+  снаружи нельзя, поэтому подложка нарисована своя.
+  Система координат совпадает с прежним bbox (-105.55..-104.45, 39.28..40.15),
+  поэтому булавки городов, заданные в процентах, остаются на своих местах.
+  x = (lon + 105.55) / 1.1 * 1100      y = (40.15 - lat) / 0.87 * 870
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 870" width="1100" height="870"
+     role="img" aria-label="Зона работы: Денвер и 50 миль вокруг">
+  <defs>
+    <linearGradient id="mapbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#EEF3FA"/>
+      <stop offset="1" stop-color="#E2EAF5"/>
+    </linearGradient>
+    <radialGradient id="ring" cx="50.9%" cy="47.1%" r="46%">
+      <stop offset="70%" stop-color="#E86A0C" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#E86A0C" stop-opacity=".10"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1100" height="870" fill="url(#mapbg)"/>
+
+  <!-- Скалистые горы западнее 105.2° -->
+  <path d="M0 0 h300 c-30 90 -10 150 -50 230 c-40 80 10 140 -30 220 c-35 70 5 130 -40 200 H0 z"
+        fill="#DCE6D8"/>
+  <path d="M0 120 l70 -60 l60 70 l50 -40 l70 80 l-250 40 z" fill="#CBD9C6"/>
+  <path d="M0 430 l90 -70 l70 80 l60 -50 l60 90 l-280 30 z" fill="#CBD9C6"/>
+
+  <!-- водохранилища -->
+  <ellipse cx="300" cy="300" rx="34" ry="18" fill="#BFD4EC"/>
+  <ellipse cx="415" cy="205" rx="26" ry="14" fill="#BFD4EC"/>
+
+  <!-- зона обслуживания: 50 миль вокруг Денвера -->
+  <ellipse cx="560" cy="410" rx="471" ry="362" fill="url(#ring)"/>
+  <ellipse cx="560" cy="410" rx="471" ry="362" fill="none"
+           stroke="#E86A0C" stroke-width="4" stroke-dasharray="14 12" opacity=".75"/>
+
+  <!-- I-25: север — юг -->
+  <path d="M566 0 C560 160 552 300 560 410 C566 520 548 700 540 870"
+        fill="none" stroke="#FFFFFF" stroke-width="16"/>
+  <path d="M566 0 C560 160 552 300 560 410 C566 520 548 700 540 870"
+        fill="none" stroke="#C3D2E6" stroke-width="4"/>
+
+  <!-- I-70: запад — восток -->
+  <path d="M0 396 C180 402 380 404 560 410 C760 416 940 408 1100 402"
+        fill="none" stroke="#FFFFFF" stroke-width="16"/>
+  <path d="M0 396 C180 402 380 404 560 410 C760 416 940 408 1100 402"
+        fill="none" stroke="#C3D2E6" stroke-width="4"/>
+
+  <!-- E-470 / C-470: кольцевые -->
+  <path d="M690 120 C860 220 880 470 800 660 C740 790 620 830 520 830"
+        fill="none" stroke="#FFFFFF" stroke-width="11"/>
+  <path d="M520 830 C430 828 350 760 320 660" fill="none" stroke="#FFFFFF" stroke-width="11"/>
+
+  <!-- второстепенные дороги -->
+  <g stroke="#FFFFFF" stroke-width="6" opacity=".85" fill="none">
+    <path d="M300 250 H1100"/>
+    <path d="M240 560 H1000"/>
+    <path d="M420 0 V870"/>
+    <path d="M760 60 V820"/>
+    <path d="M900 200 V760"/>
+  </g>
+
+  <!-- центр: Денвер -->
+  <circle cx="560" cy="410" r="13" fill="#0C1E3C"/>
+  <circle cx="560" cy="410" r="5" fill="#E86A0C"/>
+
+  <!-- подпись радиуса -->
+  <g transform="translate(560 410)">
+    <path d="M0 0 L455 -60" stroke="#0C1E3C" stroke-width="3" stroke-dasharray="8 8" opacity=".45"/>
+    <text x="250" y="-52" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="700"
+          fill="#0C1E3C" opacity=".65">50 miles</text>
+  </g>
+</svg>
