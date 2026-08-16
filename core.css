@@ -6769,3 +6769,7 @@ html{ scroll-behavior:auto !important; }
     background:#E86A0C !important; border-color:#E86A0C !important;
   }
 }
+
+/* Крестик выставлял display:none в атрибуте style, но правило с !important
+   его перебивало и полоса не пряталась. Прячем по классу на body. */
+html body.home.nobar .callbar{ display:none !important; }
