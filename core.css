@@ -7337,3 +7337,24 @@ html body.home .related .gbp{ display:block !important; text-align:center !impor
     display:inline !important; min-height:0 !important;
   }
 }
+
+/* Заголовок на фото у страниц услуг: первое слово — часть названия услуги
+   («Piano and specialty»), а не служебная надпись «Moving in», поэтому
+   мелким его делать нельзя. Оба слова крупные, второе — оранжевое. */
+html body.home .topband__title--svc{
+  font-size:clamp(30px, 5.6vw, 60px) !important;
+  letter-spacing:-.02em !important; line-height:1.02 !important;
+}
+html body.home .topband__title--svc span{
+  font-size:clamp(30px, 5.6vw, 60px) !important;
+  letter-spacing:-.02em !important; display:inline !important;
+}
+@media (max-width:820px){
+  html body.home.home.home.home .topband .topband__in .topband__title--svc{
+    font-size:32px !important; letter-spacing:-.02em !important; line-height:1.06 !important;
+  }
+  html body.home.home.home.home .topband .topband__in .topband__title--svc span{
+    font-size:32px !important; display:inline !important; letter-spacing:-.02em !important;
+    margin-top:0 !important;
+  }
+}
