@@ -188,18 +188,17 @@
       if (v.stepMismatch) return TEXT.stepMismatch;
       return '';
     }
-    document.addEventListener('invalid', function(e){
-      var el = e.target;
-      if (!el.setCustomValidity) return;
+    function refresh(el){
+      if (!el.setCustomValidity || !el.willValidate) return;
       el.setCustomValidity('');
       if (!el.validity.valid) el.setCustomValidity(message(el));
-    }, true);
-    document.addEventListener('input',  function(e){
-      if (e.target.setCustomValidity) e.target.setCustomValidity('');
-    }, true);
-    document.addEventListener('change', function(e){
-      if (e.target.setCustomValidity) e.target.setCustomValidity('');
-    }, true);
+    }
+    function refreshAll(){ document.querySelectorAll('input, select, textarea').forEach(refresh) }
+    refreshAll();
+    document.addEventListener('invalid', function(e){ refresh(e.target) }, true);
+    document.addEventListener('input',  function(e){ refresh(e.target) }, true);
+    document.addEventListener('change', function(e){ refresh(e.target) }, true);
+    document.addEventListener('blur',    function(e){ refresh(e.target) }, true);
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
   else boot();
