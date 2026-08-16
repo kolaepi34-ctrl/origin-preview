@@ -6791,3 +6791,26 @@ html body.home.nobar .callbar{ display:none !important; }
   html body.home .hero .lead{ max-width:32ch !important; }
   html body.home .topband{ padding-block:44px !important; }
 }
+
+/* Полоса звонка и куки не показываются, пока человек не пролистал первый экран */
+@media (max-width:820px){
+  html body.home .callbar.is-hidden,
+  html body.home .cookie.is-hidden{
+    opacity:0 !important; pointer-events:none !important; transform:translateY(100%) !important;
+  }
+  html body.home .callbar, html body.home .cookie{
+    transition:opacity .25s, transform .25s !important;
+  }
+  /* пока полосы нет — нижний отступ не нужен */
+  html body.home:has(.callbar.is-hidden){ padding-bottom:0 !important; }
+
+  /* Первый экран: компактно и по центру, чтобы влезал целиком */
+  html body.home .topband{ padding-block:38px !important; }
+  html body.home .hero{ padding-top:14px !important; padding-bottom:26px !important; }
+  html body.home .hero .eyebrow{ margin-bottom:6px !important; }
+  html body.home .hero h1{ font-size:27px !important; margin:0 auto 10px !important; }
+  html body.home .hero .lead{
+    font-size:14.5px !important; line-height:1.5 !important;
+    margin:0 auto 16px !important; max-width:32ch !important;
+  }
+}

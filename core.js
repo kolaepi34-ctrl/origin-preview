@@ -204,3 +204,29 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
   else boot();
 })();
+
+/* Первый экран на телефоне должен быть чистым: оранжевая полоса звонка
+   и плашка о куки раньше висели поверх него и съедали половину высоты.
+   Показываем их только после того, как человек начал листать. */
+(function(){
+  function boot(){
+    if (window.innerWidth > 820) return;
+    var bar = document.getElementById('callbar');
+    var cookie = document.getElementById('cookie');
+    var hidden = false;
+    try { hidden = localStorage.getItem('cb') === '1' } catch(e){}
+    if (bar && !hidden) bar.classList.add('is-hidden');
+    if (cookie) cookie.classList.add('is-hidden');
+    function onScroll(){
+      if (window.scrollY > 480){
+        if (bar && !hidden) bar.classList.remove('is-hidden');
+        if (cookie) cookie.classList.remove('is-hidden');
+        window.removeEventListener('scroll', onScroll);
+      }
+    }
+    window.addEventListener('scroll', onScroll, { passive:true });
+    onScroll();
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
+  else boot();
+})();
