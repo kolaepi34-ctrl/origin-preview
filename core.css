@@ -7410,3 +7410,27 @@ html body.home .svcmap__frame{
   html body.home.home.home.home .seo-body,
   html body.home.home.home.home .prose__more{ display:none !important; }
 }
+
+/* Кадр карты должен выходить за блок со ВСЕХ сторон, иначе кнопки
+   OpenStreetMap остаются видны с правого края. Снимаем ограничение ширины. */
+html body.home .svcmap__box .svcmap__frame,
+html body.home .svcmap__box iframe{
+  max-width:none !important; min-width:0 !important;
+  top:-60px !important; left:-60px !important;
+  width:calc(100% + 120px) !important;
+  height:calc(100% + 120px) !important;
+}
+
+/* Карточки «You might also need» — одной высоты, ровной сеткой */
+@media (max-width:820px){
+  html body.home.home.home.home .alsoneed .cards{
+    display:grid !important; grid-template-columns:1fr !important;
+    gap:12px !important; align-items:stretch !important;
+  }
+  html body.home.home.home.home .alsoneed .card{
+    width:100% !important; margin:0 !important; height:auto !important;
+    display:flex !important; flex-direction:column !important;
+    justify-content:flex-start !important; padding:18px 16px !important;
+  }
+  html body.home.home.home.home .alsoneed .card .callus{ margin-top:auto !important; }
+}
