@@ -6198,3 +6198,26 @@ body.home .cookie{ z-index:110 !important; }
   /* Плашки городов: текст по центру */
   body.home .chip{ padding-inline:14px !important; }
 }
+
+/* Подсветка пунктов меню при наведении обрезалась по первой букве —
+   у ссылок не было боковых отступов, фон начинался ровно от текста. */
+body.home header.site nav.main > a,
+body.home header.site .navdrop > a{
+  padding:10px 14px !important;
+  border-radius:9px !important;
+  transition:background .16s, color .16s !important;
+}
+body.home header.site nav.main > a:hover,
+body.home header.site .navdrop:hover > a,
+body.home header.site .navdrop > a:hover{
+  background:rgba(255,255,255,.12) !important;
+  color:#FFFFFF !important;
+}
+body.home header.site .dropmenu a{
+  padding:10px 16px !important;
+  border-radius:8px !important;
+}
+body.home header.site .dropmenu a:hover{
+  background:rgba(232,106,12,.16) !important;
+  color:#E86A0C !important;
+}
