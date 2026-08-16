@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /
+Sitemap: https://kolaepi34-ctrl.github.io/origin-preview/sitemap.xml

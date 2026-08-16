@@ -6013,3 +6013,33 @@ body.home .chatbubble{
   box-shadow:0 10px 26px rgba(232,106,12,.34) !important;
 }
 body.home .chatbubble:hover{ background:#C25508 !important; }
+
+/* ══════════════════════════════════════════════════════════════════════
+   МОБИЛЬНЫЕ: убираем горизонтальную прокрутку и мелкие цели нажатия
+   Проверено на 375 px: вылезали .cta, .callbtn, .hamburger и лента галереи.
+   ══════════════════════════════════════════════════════════════════════ */
+@media (max-width:820px){
+  body.home, body.home *{ max-width:100% !important; }
+  body.home .cta, body.home .callbtn, body.home .hamburger{
+    max-width:100% !important; right:auto !important;
+  }
+  body.home .rev-marquee, body.home .g-marquee{ max-width:100vw !important; overflow:hidden !important; }
+  body.home .gallery .gallery-row, body.home .rev-grid{ width:max-content !important; }
+  body.home .wrap{ padding-inline:16px !important; box-sizing:border-box !important; }
+  body.home .topband__title{ font-size:clamp(30px,10vw,54px) !important; }
+
+  /* Цели нажатия не меньше 44 px, шрифт не мельче 14 */
+  body.home a, body.home button, body.home .chip, body.home .callus{
+    min-height:44px !important;
+    display:inline-flex !important; align-items:center !important;
+  }
+  body.home nav a, body.home .navdrop a{ min-height:44px !important; }
+  body.home p, body.home li, body.home span, body.home label, body.home a{
+    font-size:max(14px, 1em) !important;
+  }
+  body.home .rev p, body.home .card p, body.home .about__item span{ font-size:15px !important; }
+  /* Кнопка наверх не должна перекрывать кнопки внизу */
+  body.home .chatbubble{ bottom:16px !important; right:16px !important; }
+}
+/* Подписи полей связаны с полями — правится в разметке, здесь только вид */
+body.home .field label{ cursor:pointer; }

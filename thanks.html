@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thank you — Origin Movers Denver</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="favicon.svg">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Inter:wght@400;500;600&display=swap">
+<!-- Google Ads global tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16920751041"></script>
+<script src="core.js"></script>
+<link rel="stylesheet" href="core.css">
+</head>
+<body>
+  <div class="card">
+    <div class="check">✓</div>
+    <h1>Thank you — we’ve got your request!</h1>
+    <p>Our Denver team will reach out within minutes during business hours (8am – 6pm) to prepare your free quote.</p>
+    <p>Need it faster? Call us right now:</p>
+    <a class="phone" href="tel:+17204620407">720-462-0407</a><br>
+    <a class="btn" href="index.html">← Back to home</a>
+  </div>
+<div id="pingate" style="position:fixed;inset:0;z-index:99999;background:#fff;display:flex;align-items:center;justify-content:center;font-family:Inter,sans-serif">
+<div style="text-align:center;max-width:320px;padding:24px;width:100%">
+<div style="font-family:Archivo,Inter,sans-serif;font-weight:800;font-size:24px;color:#1D222A;margin-bottom:6px">ORIGIN <span style="color:#DA1B1B">MOVERS</span></div>
+<p style="color:#5C6370;margin:0 0 14px;font-size:15px">Enter access code to view</p>
+<input id="pincode" type="password" placeholder="Access code" onkeydown="if(event.key==='Enter')checkPin()" style="width:100%;padding:12px;border:1px solid #E7E9EC;border-radius:9px;font-size:16px;box-sizing:border-box">
+<button onclick="checkPin()" style="width:100%;margin-top:10px;padding:12px;background:#DA1B1B;color:#fff;border:0;border-radius:9px;font-weight:700;font-size:16px;cursor:pointer">Enter</button>
+<p id="pinerr" style="color:#DA1B1B;font-size:13px;margin-top:8px;display:none">Wrong code, try again</p>
+</div></div>
+<script>(function(){var K="airus2026";function hide(){var g=document.getElementById("pingate");if(g)g.style.display="none";}window.checkPin=function(){var el=document.getElementById("pincode");if(el&&el.value==="airus2026"){try{sessionStorage.setItem("ak",K);}catch(e){}hide();}else{var er=document.getElementById("pinerr");if(er)er.style.display="block";}};try{if(sessionStorage.getItem("ak")===K)hide();}catch(e){}})();</script>
+</body>
+</html>
