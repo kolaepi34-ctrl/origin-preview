@@ -41,7 +41,7 @@ body{margin:0;font:400 17px/1.65 Manrope,system-ui,Arial,sans-serif;color:var(--
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 h1,h2,h3{margin:0;letter-spacing:-.03em;line-height:1.05;font-weight:700}
-h1{font-size:clamp(34px,5.4vw,58px)}
+h1{font-size:clamp(38px,6.6vw,68px);line-height:1.06}
 h2{font-size:clamp(28px,3.6vw,44px)}
 h3{font-size:20px;letter-spacing:-.02em}
 p{margin:0 0 14px}
@@ -87,14 +87,14 @@ nav.гл a:hover{color:var(--акцент)}
 .бургер svg{width:24px;height:24px;stroke:#fff}
 
 /* первый экран */
-.герой{position:relative;min-height:640px;display:flex;align-items:center;padding:96px 0;color:#fff;overflow:hidden}
+.герой{position:relative;min-height:100svh;display:flex;align-items:center;padding:110px 0 96px;color:#fff;overflow:hidden}
 .герой::before{content:'';position:absolute;inset:0;z-index:0;
   background:url(assets/hero-bright-0.webp) 50% 22%/134% no-repeat}
 .герой::after{content:'';position:absolute;inset:0;z-index:1;
   background:linear-gradient(90deg,rgba(21,20,20,.86) 0%,rgba(21,20,20,.62) 52%,rgba(21,20,20,.34) 100%)}
 .герой .wrap{position:relative;z-index:2}
-.герой h1{max-width:17ch}
-.герой .лид{color:#DCDCDC;margin:20px 0 30px;max-width:52ch}
+.герой h1{max-width:15ch;font-weight:700;letter-spacing:-.035em}
+.герой .лид{color:#DCDCDC;margin:24px 0 34px;max-width:50ch;font-size:20px;line-height:1.55}
 .герой .кнопки{display:flex;gap:14px;flex-wrap:wrap}
 .метки{display:flex;gap:26px;flex-wrap:wrap;margin:34px 0 0;padding:22px 0 0;border-top:1px solid rgba(255,255,255,.18)}
 .метка{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:600;color:#EAEAEA}
@@ -168,7 +168,7 @@ footer a:hover{color:var(--акцент)}
 
 @media(max-width:900px){
   .подвал{grid-template-columns:1fr 1fr}
-  .герой{min-height:auto;padding:72px 0}
+  .герой{min-height:88svh;padding:84px 0 64px}
   .герой::after{background:linear-gradient(180deg,rgba(21,20,20,.72) 0%,rgba(21,20,20,.88) 100%)}
 }
 @media(max-width:820px){
@@ -184,6 +184,8 @@ footer a:hover{color:var(--акцент)}
   .подвал{grid-template-columns:1fr;text-align:center}
   .города{justify-content:center}
   .герой .кнопки .кн{flex:1 1 100%}
+  .герой .лид{font-size:17px}
+  .герой h1{max-width:none}
 }
 </style>
 </head>
