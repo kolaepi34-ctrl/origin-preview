@@ -343,3 +343,20 @@ window.dataLayer = window.dataLayer || [];
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
   else boot();
 })();
+
+/* ══ Защита от кликджекинга (frame-busting) ═════════════════════════
+   Заголовок X-Frame-Options задаёт только сервер, а GitHub Pages его не даёт.
+   Поэтому проверяем сами: если страницу открыли внутри чужой рамки —
+   выводим её наружу. Это закрывает подмену кнопок поверх нашего сайта. */
+(function(){
+  try{
+    if (window.top !== window.self){
+      var свой = false;
+      try{ свой = window.top.location.origin === window.location.origin }catch(e){ свой = false }
+      if (!свой){
+        document.documentElement.style.display = 'none';
+        window.top.location = window.self.location;
+      }
+    }
+  }catch(e){}
+})();
