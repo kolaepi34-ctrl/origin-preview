@@ -304,3 +304,42 @@ window.dataLayer = window.dataLayer || [];
   else boot();
 })();
 (function(){function b(){var c=document.getElementById("cookie");if(!c)return;var k=c.querySelector("button");if(k)k.addEventListener("click",function(){document.body.classList.add("cookies-ok");c.style.setProperty("display","none","important")});try{if(localStorage.getItem("ck"))document.body.classList.add("cookies-ok")}catch(e){}}if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",b);else b()})();
+
+/* ══ Защита форм от спам-скриптов без капчи ═════════════════════════
+   Капча требует стороннего сервиса и портит жизнь настоящему клиенту.
+   Вместо неё три бесплатные проверки, которые отсекают простых ботов:
+     1. ловушка honeypot — уже стояла, скрытое поле должно остаться пустым;
+     2. время заполнения — человек не отправит форму быстрее чем за 3 секунды;
+     3. метка «было взаимодействие» — бот заполняет поля программно,
+        без единого нажатия клавиши или касания экрана.
+   Ни одна проверка не мешает человеку и не просит его ничего доказывать. */
+(function(){
+  function boot(){
+    var открыто = Date.now();
+    var трогали = false;
+    ['keydown','pointerdown','touchstart'].forEach(function(e){
+      document.addEventListener(e, function(){ трогали = true }, { once:true, passive:true });
+    });
+
+    document.querySelectorAll('form[action*=formsubmit]').forEach(function(form){
+      form.addEventListener('submit', function(e){
+        var прошло = (Date.now() - открыто) / 1000;
+        var ловушка = form.querySelector('[name=_honey], [name=bot-field]');
+
+        var подозрительно = (ловушка && ловушка.value) || прошло < 3 || !трогали;
+        if (!подозрительно) return;
+
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        var м = form.querySelector('.form-msg') || (function(){
+          var p = document.createElement('p'); p.className = 'form-msg'; form.appendChild(p); return p;
+        })();
+        м.classList.add('form-msg--error');
+        м.innerHTML = 'Please take a moment to fill the form in, or call '
+          + '<a href=tel:+17204620407>720-462-0407</a> — we answer every day, 8am – 6pm.';
+      }, true);
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
+  else boot();
+})();
