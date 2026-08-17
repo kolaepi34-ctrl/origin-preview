@@ -64,6 +64,9 @@ section{padding:88px 0}
 .кн--пр{background:transparent;color:var(--чёрный);border-color:var(--чёрный)}
 .кн--пр:hover{background:var(--чёрный);color:#fff}
 .тёмный .кн--пр{color:#fff;border-color:rgba(255,255,255,.55)}
+.герой .кн--пр{background:#fff;color:var(--чёрный);border-color:#fff;
+  box-shadow:0 8px 22px rgba(0,0,0,.28)}
+.герой .кн--пр:hover{background:#F0F0F0;color:var(--чёрный)}
 .тёмный .кн--пр:hover{background:#fff;color:var(--чёрный)}
 .кн svg{width:18px;height:18px;fill:currentColor}
 
@@ -85,7 +88,8 @@ nav.гл a:hover{color:var(--акцент)}
 
 /* первый экран */
 .герой{position:relative;min-height:640px;display:flex;align-items:center;padding:96px 0;color:#fff;overflow:hidden}
-.герой::before{content:'';position:absolute;inset:0;background:url(assets/hero-bright-0.webp) center/cover no-repeat;z-index:0}
+.герой::before{content:'';position:absolute;inset:0;z-index:0;
+  background:url(assets/hero-bright-0.webp) 50% 22%/134% no-repeat}
 .герой::after{content:'';position:absolute;inset:0;z-index:1;
   background:linear-gradient(90deg,rgba(21,20,20,.86) 0%,rgba(21,20,20,.62) 52%,rgba(21,20,20,.34) 100%)}
 .герой .wrap{position:relative;z-index:2}
