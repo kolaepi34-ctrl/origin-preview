@@ -1,0 +1,100 @@
+<!--
+  ORIGIN MOVERS — основной логотип (горизонтальный локап).
+
+  Главное здесь — имя компании: оно набрано крупно и отрисовано в кривых,
+  поэтому выглядит одинаково в браузере, в печати, в Canva и на плёнке для
+  борта машины. Системный шрифт в логотипе использовать нельзя — подменится.
+
+  Композиция построена по модулю 120 (высота прописной):
+    знак            240 × 240, слева
+    отступ          64
+    ORIGIN          строка 1, тёмно-синяя, трекинг растянут по ширине блока
+    MOVERS          строка 2, оранжевая, обе строки одной ширины — 690
+  Выключка по ширине даёт ровный прямоугольник текста, как у крупных перевозчиков.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 360" width="1080" height="360"
+     role="img" aria-label="Origin Movers">
+  <g transform="translate(40,26)">
+  <defs>
+    <linearGradient id="cpNavy" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1B3766"/><stop offset="1" stop-color="#0A1930"/>
+    </linearGradient>
+    <linearGradient id="cpOr" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFA24D"/><stop offset="1" stop-color="#FFD400"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ══ знак: щит с дорогой и крышей ══ -->
+  <g transform="translate(0,30)">
+    <path d="M120 0 l120 42 v96c0 66-50 110-120 142C50 248 0 204 0 138V42z" fill="url(#cpNavy)"/>
+    <path d="M120 0 l120 42 v96c0 66-50 110-120 142C50 248 0 204 0 138V42z"
+          fill="none" stroke="#FFD400" stroke-width="7"/>
+    <path d="M120 22 l100 35v81c0 55-42 92-100 119C62 230 20 193 20 138V57z"
+          fill="none" stroke="#FFFFFF" stroke-width="3" opacity=".3"/>
+    <!-- дорога, уходящая вдаль -->
+    <path d="M62 214 L104 118h32l42 96z" fill="#FFFFFF" opacity=".95"/>
+    <path d="M120 128 v78" stroke="#0A1930" stroke-width="9" stroke-dasharray="16 14"/>
+    <!-- крыша: дом на горизонте -->
+    <path d="M74 104 L120 62l46 42" fill="none" stroke="url(#cpOr)" stroke-width="18"
+          stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- ══ ORIGIN — тёмно-синий, буквы в кривых ══ -->
+  <g fill="#0C1E3C" transform="translate(304,34)">
+    <!-- O -->
+    <g transform="translate(0,0)">
+      <path fill-rule="evenodd" d="M52 0c28.7 0 52 23.3 52 44v32c0 20.7-23.3 44-52 44S0 96.7 0 76V44C0 23.3 23.3 0 52 0z
+        M52 26c-14.4 0-26 11-26 20v28c0 9 11.6 20 26 20s26-11 26-20V46c0-9-11.6-20-26-20z"/>
+    </g>
+    <!-- R -->
+    <g transform="translate(149,0)">
+      <path fill-rule="evenodd" d="M0 0h58c23.2 0 42 16.6 42 37 0 15-10 27.7-25 33.4L100 120H68L38 74H26v46H0V0z
+        M26 26v22h32c8.8 0 16-4.9 16-11s-7.2-11-16-11H26z"/>
+    </g>
+    <!-- I -->
+    <g transform="translate(294,0)"><path d="M0 0h26v120H0z"/></g>
+    <!-- G -->
+    <g transform="translate(365,0)">
+      <path d="M106 44H80c0-9-11.6-18-28-18-14.4 0-26 11-26 20v28c0 9 11.6 20 26 20 16.4 0 28-7 28-16v-6H54V48h52v28
+        c0 20.7-23.3 44-54 44S0 96.7 0 76V44C0 23.3 21.3 0 52 0s54 23.3 54 44z"/>
+    </g>
+    <!-- I -->
+    <g transform="translate(516,0)"><path d="M0 0h26v120H0z"/></g>
+    <!-- N -->
+    <g transform="translate(587,0)">
+      <path d="M0 0h24l55 76V0h24v120H79L24 44v76H0V0z"/>
+    </g>
+  </g>
+
+  <!-- ══ MOVERS — оранжевый ══ -->
+  <g fill="url(#cpOr)" transform="translate(304,184)">
+    <!-- M -->
+    <g transform="translate(0,0)">
+      <path d="M0 0h26l40 62L106 0h26v120h-26V46L70 100h-8L26 46v74H0V0z"/>
+    </g>
+    <!-- O -->
+    <g transform="translate(144,0)">
+      <path fill-rule="evenodd" d="M52 0c28.7 0 52 23.3 52 44v32c0 20.7-23.3 44-52 44S0 96.7 0 76V44C0 23.3 23.3 0 52 0z
+        M52 26c-14.4 0-26 11-26 20v28c0 9 11.6 20 26 20s26-11 26-20V46c0-9-11.6-20-26-20z"/>
+    </g>
+    <!-- V -->
+    <g transform="translate(260,0)">
+      <path d="M0 0h28l24 84L76 0h28l-38 120H38L0 0z"/>
+    </g>
+    <!-- E -->
+    <g transform="translate(376,0)">
+      <path d="M0 0h92v26H26v22h58v24H26v22h66v26H0V0z"/>
+    </g>
+    <!-- R -->
+    <g transform="translate(480,0)">
+      <path fill-rule="evenodd" d="M0 0h58c23.2 0 42 16.6 42 37 0 15-10 27.7-25 33.4L100 120H68L38 74H26v46H0V0z
+        M26 26v22h32c8.8 0 16-4.9 16-11s-7.2-11-16-11H26z"/>
+    </g>
+    <!-- S -->
+    <g transform="translate(592,0)">
+      <path d="M92 34H66c0-6-7-10-16-10-9 0-17 4-17 10 0 7 9 9 22 12l12 3c19 4 33 13 33 33 0 24-21 38-49 38S0 106 0 82h26
+        c0 8 10 14 24 14 13 0 22-5 22-12 0-7-8-10-22-13l-13-3C19 64 4 55 4 36 4 14 25 0 49 0s43 13 43 34z"/>
+    </g>
+  </g>
+</g>
+</svg>
