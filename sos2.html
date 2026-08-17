@@ -11,7 +11,7 @@
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/manrope-700.woff2" crossorigin>
-<link rel="preload" as="image" href="assets/hero-bright-0.webp" type="image/webp" fetchpriority="high">
+<link rel="preload" as="image" href="assets/hero-live-0.webp" type="image/webp" fetchpriority="high">
 <style>
 /* ══════════════════════════════════════════════════════════════════
    Вариант 4 — макет и подача как на sosmovingla.net, содержание наше.
@@ -64,9 +64,9 @@ section{padding:88px 0}
 .кн--пр{background:transparent;color:var(--чёрный);border-color:var(--чёрный)}
 .кн--пр:hover{background:var(--чёрный);color:#fff}
 .тёмный .кн--пр{color:#fff;border-color:rgba(255,255,255,.55)}
-.герой .кн--пр{background:#fff;color:var(--чёрный);border-color:#fff;
-  box-shadow:0 8px 22px rgba(0,0,0,.28)}
-.герой .кн--пр:hover{background:#F0F0F0;color:var(--чёрный)}
+.герой .кн--пр{background:rgba(255,255,255,.14);color:#fff;border-color:rgba(255,255,255,.55);
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.герой .кн--пр:hover{background:rgba(255,255,255,.26);color:#fff;border-color:#fff}
 .тёмный .кн--пр:hover{background:#fff;color:var(--чёрный)}
 .кн svg{width:18px;height:18px;fill:currentColor}
 
@@ -89,12 +89,14 @@ nav.гл a:hover{color:var(--акцент)}
 /* первый экран */
 .герой{position:relative;min-height:100svh;display:flex;align-items:center;padding:110px 0 96px;color:#fff;overflow:hidden}
 .герой::before{content:'';position:absolute;inset:0;z-index:0;
-  background:url(assets/hero-bright-0.webp) 50% 22%/134% no-repeat}
+  background:url(assets/hero-live-0.webp) 50% 26%/118% no-repeat}
 .герой::after{content:'';position:absolute;inset:0;z-index:1;
   background:linear-gradient(90deg,rgba(21,20,20,.86) 0%,rgba(21,20,20,.62) 52%,rgba(21,20,20,.34) 100%)}
 .герой .wrap{position:relative;z-index:2}
 .герой h1{max-width:15ch;font-weight:700;letter-spacing:-.035em}
-.герой .лид{color:#DCDCDC;margin:24px 0 34px;max-width:50ch;font-size:20px;line-height:1.55}
+.герой .лид{color:#DCDCDC;margin:24px 0 34px;max-width:50ch;font-size:20px;line-height:1.55;
+  text-align:left}
+.герой .wrap,.герой h1,.герой .над,.герой .метки{text-align:left}
 .герой .кнопки{display:flex;gap:14px;flex-wrap:wrap}
 .метки{display:flex;gap:26px;flex-wrap:wrap;margin:34px 0 0;padding:22px 0 0;border-top:1px solid rgba(255,255,255,.18)}
 .метка{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:600;color:#EAEAEA}
